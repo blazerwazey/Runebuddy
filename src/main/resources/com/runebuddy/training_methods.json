@@ -1,0 +1,149 @@
+[
+  {
+    "id": "mining_copper_tin",
+    "skill": "MINING",
+    "name": "Mine copper and tin",
+    "minLevel": 1,
+    "recommendedUntil": 15,
+    "xpCurve": [{"level": 1, "xpPerHour": 9000}],
+    "gpPerHour": 3000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Lumbridge Swamp or the Al Kharid mine",
+    "notes": "Only worth doing until iron opens up at 15.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Mining_training"
+  },
+  {
+    "id": "mining_iron_powermine",
+    "skill": "MINING",
+    "name": "Power-mine iron ore",
+    "minLevel": 15,
+    "recommendedUntil": 75,
+    "xpCurve": [
+      {"level": 15, "xpPerHour": 20000},
+      {"level": 60, "xpPerHour": 42000},
+      {"level": 99, "xpPerHour": 52000}
+    ],
+    "gpPerHour": 0,
+    "effort": "HIGH",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {"MINING": 15},
+      "items": [1275],
+      "notes": ["Best rates need a three-rock cluster"]
+    },
+    "location": "Ardougne east mine or the Al Kharid quarry",
+    "notes": "Drop the ore as you go. Banking it instead is about 30% slower but profitable.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Mining_training"
+  },
+  {
+    "id": "mining_motherlode_mine",
+    "skill": "MINING",
+    "name": "Motherlode Mine",
+    "minLevel": 30,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {"level": 30, "xpPerHour": 16000},
+      {"level": 72, "xpPerHour": 38000},
+      {"level": 99, "xpPerHour": 46000}
+    ],
+    "gpPerHour": 180000,
+    "effort": "LOW",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {"MINING": 30},
+      "items": [1275],
+      "notes": ["Upper level needs 72 Mining"]
+    },
+    "location": "Falador Motherlode Mine",
+    "notes": "Slower than iron but pays for itself in nuggets and ore.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Motherlode_Mine"
+  },
+  {
+    "id": "woodcutting_trees",
+    "skill": "WOODCUTTING",
+    "name": "Chop regular trees",
+    "minLevel": 1,
+    "recommendedUntil": 15,
+    "xpCurve": [{"level": 1, "xpPerHour": 8000}],
+    "gpPerHour": 0,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Anywhere with trees",
+    "notes": "Drop the logs. Oaks are better from 15.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Woodcutting_training"
+  },
+  {
+    "id": "woodcutting_willows",
+    "skill": "WOODCUTTING",
+    "name": "Chop willow logs",
+    "minLevel": 30,
+    "recommendedUntil": 60,
+    "xpCurve": [
+      {"level": 30, "xpPerHour": 25000},
+      {"level": 60, "xpPerHour": 45000}
+    ],
+    "gpPerHour": 12000,
+    "effort": "AFK",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {"WOODCUTTING": 30},
+      "items": [1359]
+    },
+    "location": "Draynor Village",
+    "notes": "The classic low-effort option. Bank the logs at Draynor.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Woodcutting_training"
+  },
+  {
+    "id": "attack_sand_crabs",
+    "skill": "ATTACK",
+    "name": "Sand crabs",
+    "minLevel": 1,
+    "recommendedUntil": 70,
+    "xpCurve": [
+      {"level": 1, "xpPerHour": 12000},
+      {"level": 60, "xpPerHour": 35000},
+      {"level": 99, "xpPerHour": 45000}
+    ],
+    "gpPerHour": -2000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "notes": ["Bring food for the first few levels"]
+    },
+    "location": "Hosidius shore or Crabclaw Isle",
+    "notes": "Rates scale with your gear more than your level. Check in every few minutes to reset aggression.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Sand_Crab"
+  },
+  {
+    "id": "attack_nightmare_zone",
+    "skill": "ATTACK",
+    "name": "Nightmare Zone",
+    "minLevel": 70,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {"level": 70, "xpPerHour": 55000},
+      {"level": 99, "xpPerHour": 85000}
+    ],
+    "gpPerHour": -120000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {"ATTACK": 70, "STRENGTH": 70},
+      "quests": ["DREAM_MENTOR"],
+      "notes": ["Needs five quests unlocking suitable bosses"]
+    },
+    "location": "Yanille",
+    "notes": "Absorption potions and a dwarf multicannon setup make this near-idle, but the potions cost real gold.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Nightmare_Zone"
+  }
+]

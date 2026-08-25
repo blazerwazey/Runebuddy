@@ -1,0 +1,135 @@
+[
+  {
+    "itemId": 1291,
+    "name": "Steel longsword",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 5,
+    "members": false,
+    "requirements": {"skills": {"ATTACK": 5}},
+    "notes": "Cheap and adequate until mithril."
+  },
+  {
+    "itemId": 1333,
+    "name": "Rune scimitar",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 40,
+    "members": false,
+    "requirements": {"skills": {"ATTACK": 40}},
+    "notes": "The free-to-play ceiling and a long-lived weapon."
+  },
+  {
+    "itemId": 4587,
+    "name": "Dragon scimitar",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 60,
+    "members": true,
+    "requirements": {
+      "skills": {"ATTACK": 60},
+      "quests": ["MONKEY_MADNESS_I"]
+    },
+    "notes": "Best training weapon until the abyssal whip."
+  },
+  {
+    "itemId": 4151,
+    "name": "Abyssal whip",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 70,
+    "members": true,
+    "requirements": {"skills": {"ATTACK": 70}},
+    "notes": "The standard melee training weapon."
+  },
+  {
+    "itemId": 1163,
+    "name": "Rune full helm",
+    "slot": "HEAD",
+    "category": "MELEE",
+    "tier": 40,
+    "members": false,
+    "requirements": {"skills": {"DEFENCE": 40}},
+    "notes": null
+  },
+  {
+    "itemId": 10828,
+    "name": "Helm of neitiznot",
+    "slot": "HEAD",
+    "category": "MELEE",
+    "tier": 55,
+    "members": true,
+    "requirements": {
+      "skills": {"DEFENCE": 55},
+      "quests": ["THE_FREMENNIK_ISLES"]
+    },
+    "notes": "A cheap, permanent upgrade over rune."
+  },
+  {
+    "itemId": 1127,
+    "name": "Rune platebody",
+    "slot": "BODY",
+    "category": "MELEE",
+    "tier": 40,
+    "members": false,
+    "requirements": {"skills": {"DEFENCE": 40}},
+    "notes": null
+  },
+  {
+    "itemId": 10551,
+    "name": "Fighter torso",
+    "slot": "BODY",
+    "category": "MELEE",
+    "tier": 45,
+    "members": true,
+    "requirements": {
+      "skills": {"DEFENCE": 40},
+      "notes": ["Earned in the Barbarian Assault minigame"]
+    },
+    "notes": "The best strength bonus in the slot for a very long time."
+  },
+  {
+    "itemId": 1275,
+    "name": "Rune pickaxe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 41,
+    "members": false,
+    "toolFor": "MINING",
+    "requirements": {"skills": {"MINING": 41, "ATTACK": 40}},
+    "notes": "Wieldable at 40 Attack, which frees an inventory slot."
+  },
+  {
+    "itemId": 11920,
+    "name": "Dragon pickaxe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 61,
+    "members": true,
+    "toolFor": "MINING",
+    "requirements": {"skills": {"MINING": 61, "ATTACK": 60}},
+    "notes": "Roughly 10% faster than rune, plus a special attack."
+  },
+  {
+    "itemId": 1359,
+    "name": "Rune axe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 41,
+    "members": false,
+    "toolFor": "WOODCUTTING",
+    "requirements": {"skills": {"WOODCUTTING": 41, "ATTACK": 40}},
+    "notes": null
+  },
+  {
+    "itemId": 6739,
+    "name": "Dragon axe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 61,
+    "members": true,
+    "toolFor": "WOODCUTTING",
+    "requirements": {"skills": {"WOODCUTTING": 61, "ATTACK": 60}},
+    "notes": "Dropped by the Dagannoth Kings or bought from other players."
+  }
+]
