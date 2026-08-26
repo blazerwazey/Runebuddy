@@ -136,6 +136,20 @@ public class RequirementReport
 	}
 
 	/**
+	 * Merges two reports into one covering both sets of requirements.
+	 *
+	 * <p>Used to layer the extra demands an ironman faces on top of the ones everybody
+	 * faces. Satisfied and distance are derived from the merged status list, so a
+	 * failure in either half carries through.
+	 */
+	public static RequirementReport combine(RequirementReport first, RequirementReport second)
+	{
+		List<RequirementStatus> merged = new ArrayList<>(first.statuses);
+		merged.addAll(second.statuses);
+		return new RequirementReport(merged);
+	}
+
+	/**
 	 * The requirements the player does not meet, in the order they were checked.
 	 */
 	public List<RequirementStatus> unmet()

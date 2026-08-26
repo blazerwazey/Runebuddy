@@ -151,7 +151,7 @@ public class GearAdvisor
 				owned = item;
 			}
 
-			if (RequirementReport.check(item.getRequirements(), profile, itemNames).isSatisfied()
+			if (requirementsOf(item, profile, itemNames).isSatisfied()
 				&& (goal == null || item.getTier() > goal.getTier()))
 			{
 				goal = item;
@@ -172,7 +172,7 @@ public class GearAdvisor
 				continue;
 			}
 
-			RequirementReport report = RequirementReport.check(item.getRequirements(), profile, itemNames);
+			RequirementReport report = requirementsOf(item, profile, itemNames);
 			if (!report.isSatisfied())
 			{
 				locked = item;
@@ -190,7 +190,10 @@ public class GearAdvisor
 			int floor = owned == null ? Integer.MIN_VALUE : owned.getTier();
 			next = goal;
 
-			if (prices != null)
+			// An ironman cannot buy gear at any price, so coins gate nothing for them
+			// and the best thing they qualify for is simply the answer. What holds them
+			// back is levels, which the requirement check has already applied.
+			if (prices != null && !profile.isIronman())
 			{
 				GearItem affordable = null;
 				for (GearItem item : reachable)
@@ -200,16 +203,16 @@ public class GearAdvisor
 						continue;
 					}
 
-					if (!RequirementReport.check(item.getRequirements(), profile, itemNames).isSatisfied())
+					if (!requirementsOf(item, profile, itemNames).isSatisfied())
 					{
 						continue;
 					}
 
-					int price = prices.priceOf(item.getItemId());
+					// Untradeables have no price to weigh, so they are judged on their
+					// requirements alone rather than being treated as free.
+					boolean withinBudget = !item.isTradeable()
+						|| prices.priceOf(item.getItemId()) <= profile.getLiquidGp();
 
-					// A price of zero means untradeable or unknown, which is not the
-					// same as free; those are judged on requirements alone.
-					boolean withinBudget = price <= 0 || price <= profile.getLiquidGp();
 					if (withinBudget && (affordable == null || item.getTier() > affordable.getTier()))
 					{
 						affordable = item;
@@ -225,6 +228,23 @@ public class GearAdvisor
 
 		return new GearSuggestion(slot, toolFor, equippedIn(slot, reachable, profile),
 			owned, next, goal, locked, lockedReport);
+	}
+
+	/**
+	 * Checks an item's requirements against the account, layering on the extra demands
+	 * that only apply when you have to obtain the thing yourself.
+	 */
+	private static RequirementReport requirementsOf(GearItem item, PlayerProfile profile,
+													@Nullable RequirementReport.ItemNameResolver itemNames)
+	{
+		RequirementReport base = RequirementReport.check(item.getRequirements(), profile, itemNames);
+		if (!profile.isIronman() || !item.hasIronmanGate())
+		{
+			return base;
+		}
+
+		return RequirementReport.combine(base,
+			RequirementReport.check(item.getIronmanRequirements(), profile, itemNames));
 	}
 
 	/**

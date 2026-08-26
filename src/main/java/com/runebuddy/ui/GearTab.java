@@ -187,7 +187,7 @@ class GearTab extends JPanel
 
 			for (GearSuggestion suggestion : suggestions)
 			{
-				rows.add(new GearRow(suggestion, context));
+				rows.add(new GearRow(suggestion, context, profile.isIronman()));
 			}
 		}
 

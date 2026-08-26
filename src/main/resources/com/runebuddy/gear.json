@@ -6,6 +6,8 @@
     "category": "MELEE",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any sword shop",
     "requirements": {
       "skills": {
         "ATTACK": 1
@@ -20,6 +22,8 @@
     "category": "MELEE",
     "tier": 5,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any sword shop",
     "requirements": {
       "skills": {
         "ATTACK": 5
@@ -34,6 +38,8 @@
     "category": "MELEE",
     "tier": 10,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any sword shop",
     "requirements": {
       "skills": {
         "ATTACK": 10
@@ -48,6 +54,8 @@
     "category": "MELEE",
     "tier": 20,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any sword shop",
     "requirements": {
       "skills": {
         "ATTACK": 20
@@ -62,6 +70,8 @@
     "category": "MELEE",
     "tier": 30,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any sword shop",
     "requirements": {
       "skills": {
         "ATTACK": 30
@@ -76,6 +86,8 @@
     "category": "MELEE",
     "tier": 40,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any sword shop",
     "requirements": {
       "skills": {
         "ATTACK": 40
@@ -90,6 +102,8 @@
     "category": "MELEE",
     "tier": 60,
     "members": true,
+    "tradeable": true,
+    "source": "Ape Atoll shop, after Monkey Madness I",
     "requirements": {
       "skills": {
         "ATTACK": 60
@@ -107,9 +121,16 @@
     "category": "MELEE",
     "tier": 70,
     "members": true,
+    "tradeable": true,
+    "source": "Abyssal demons",
     "requirements": {
       "skills": {
         "ATTACK": 70
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 85
       }
     },
     "notes": "The standard melee training weapon, and cheap for what it does."
@@ -121,10 +142,22 @@
     "category": "MELEE",
     "tier": 75,
     "members": true,
+    "tradeable": true,
+    "source": "Theatre of Blood",
     "requirements": {
       "skills": {
         "ATTACK": 75
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "ATTACK": 80,
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "A Theatre of Blood team"
+      ]
     },
     "notes": "A stab upgrade over the whip. Expensive; the whip is fine for a long time."
   },
@@ -135,6 +168,8 @@
     "category": "MELEE",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 1
@@ -149,6 +184,8 @@
     "category": "MELEE",
     "tier": 5,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 5
@@ -163,6 +200,8 @@
     "category": "MELEE",
     "tier": 20,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 20
@@ -177,6 +216,8 @@
     "category": "MELEE",
     "tier": 30,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 30
@@ -191,6 +232,8 @@
     "category": "MELEE",
     "tier": 40,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 40
@@ -205,6 +248,8 @@
     "category": "MELEE",
     "tier": 55,
     "members": true,
+    "tradeable": true,
+    "source": "Bought on Neitiznot after the quest",
     "requirements": {
       "skills": {
         "DEFENCE": 55
@@ -222,6 +267,8 @@
     "category": "MELEE",
     "tier": 70,
     "members": true,
+    "tradeable": true,
+    "source": "Bought on Neitiznot after the quest",
     "requirements": {
       "skills": {
         "DEFENCE": 70
@@ -239,6 +286,8 @@
     "category": "MELEE",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 1
@@ -253,6 +302,8 @@
     "category": "MELEE",
     "tier": 5,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 5
@@ -267,6 +318,8 @@
     "category": "MELEE",
     "tier": 20,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 20
@@ -281,6 +334,8 @@
     "category": "MELEE",
     "tier": 30,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 30
@@ -295,6 +350,8 @@
     "category": "MELEE",
     "tier": 40,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 40
@@ -309,6 +366,8 @@
     "category": "MELEE",
     "tier": 45,
     "members": true,
+    "tradeable": false,
+    "source": "Barbarian Assault points",
     "requirements": {
       "skills": {
         "DEFENCE": 40
@@ -326,10 +385,23 @@
     "category": "MELEE",
     "tier": 65,
     "members": true,
+    "tradeable": true,
+    "source": "General Graardor, God Wars Dungeon",
     "requirements": {
       "skills": {
         "DEFENCE": 65
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "ATTACK": 75,
+        "STRENGTH": 75,
+        "DEFENCE": 70,
+        "HITPOINTS": 80
+      },
+      "notes": [
+        "God Wars Dungeon killcount"
+      ]
     },
     "notes": "Only worth it once you are doing content where the defence matters."
   },
@@ -340,6 +412,8 @@
     "category": "MELEE",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 1
@@ -354,6 +428,8 @@
     "category": "MELEE",
     "tier": 5,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 5
@@ -368,6 +444,8 @@
     "category": "MELEE",
     "tier": 20,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 20
@@ -382,6 +460,8 @@
     "category": "MELEE",
     "tier": 30,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 30
@@ -396,6 +476,8 @@
     "category": "MELEE",
     "tier": 40,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 40
@@ -410,10 +492,23 @@
     "category": "MELEE",
     "tier": 65,
     "members": true,
+    "tradeable": true,
+    "source": "General Graardor, God Wars Dungeon",
     "requirements": {
       "skills": {
         "DEFENCE": 65
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "ATTACK": 75,
+        "STRENGTH": 75,
+        "DEFENCE": 70,
+        "HITPOINTS": 80
+      },
+      "notes": [
+        "God Wars Dungeon killcount"
+      ]
     },
     "notes": null
   },
@@ -424,6 +519,8 @@
     "category": "MELEE",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 1
@@ -438,6 +535,8 @@
     "category": "MELEE",
     "tier": 5,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 5
@@ -452,6 +551,8 @@
     "category": "MELEE",
     "tier": 20,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 20
@@ -466,6 +567,8 @@
     "category": "MELEE",
     "tier": 30,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 30
@@ -480,6 +583,8 @@
     "category": "MELEE",
     "tier": 40,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any armour shop",
     "requirements": {
       "skills": {
         "DEFENCE": 40
@@ -494,6 +599,8 @@
     "category": "MELEE",
     "tier": 60,
     "members": true,
+    "tradeable": false,
+    "source": "Cyclopes, Warriors' Guild",
     "requirements": {
       "skills": {
         "ATTACK": 60,
@@ -512,6 +619,8 @@
     "category": "MELEE",
     "tier": 70,
     "members": true,
+    "tradeable": false,
+    "source": "Theatre of Blood hilt on a dragon defender",
     "requirements": {
       "skills": {
         "ATTACK": 70,
@@ -519,6 +628,16 @@
       },
       "notes": [
         "A dragon defender plus a hilt from the Theatre of Blood"
+      ]
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "ATTACK": 80,
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "A Theatre of Blood team"
       ]
     },
     "notes": "Needs a dragon defender and a hilt from the Theatre of Blood."
@@ -530,7 +649,14 @@
     "category": "MELEE",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Crafted from soft leather",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 1
+      }
+    },
     "notes": null
   },
   {
@@ -540,6 +666,8 @@
     "category": "MELEE",
     "tier": 40,
     "members": true,
+    "tradeable": false,
+    "source": "Recipe for Disaster reward",
     "requirements": {
       "skills": {
         "DEFENCE": 40
@@ -557,10 +685,22 @@
     "category": "MELEE",
     "tier": 80,
     "members": true,
+    "tradeable": true,
+    "source": "Cerberus, via a hydra leather",
     "requirements": {
       "skills": {
         "DEFENCE": 80
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 95,
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Cerberus and the Alchemical Hydra"
+      ]
     },
     "notes": null
   },
@@ -571,7 +711,14 @@
     "category": "MELEE",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Crafted from soft leather",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 7
+      }
+    },
     "notes": null
   },
   {
@@ -581,6 +728,8 @@
     "category": "MELEE",
     "tier": 10,
     "members": true,
+    "tradeable": true,
+    "source": "Tenzing, after Death Plateau",
     "requirements": {
       "quests": [
         "DEATH_PLATEAU"
@@ -595,9 +744,16 @@
     "category": "MELEE",
     "tier": 60,
     "members": true,
+    "tradeable": true,
+    "source": "Spiritual mages, God Wars Dungeon",
     "requirements": {
       "skills": {
         "DEFENCE": 60
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 83
       }
     },
     "notes": null
@@ -609,10 +765,22 @@
     "category": "MELEE",
     "tier": 75,
     "members": true,
+    "tradeable": true,
+    "source": "Cerberus, via a primordial crystal",
     "requirements": {
       "skills": {
         "DEFENCE": 75
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 91,
+        "DEFENCE": 80,
+        "HITPOINTS": 85
+      },
+      "notes": [
+        "Cerberus"
+      ]
     },
     "notes": null
   },
@@ -623,7 +791,14 @@
     "category": "MELEE",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "A diamond amulet, enchanted",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 70
+      }
+    },
     "notes": null
   },
   {
@@ -633,10 +808,17 @@
     "category": "MELEE",
     "tier": 20,
     "members": true,
+    "tradeable": true,
+    "source": "A dragonstone, cut and enchanted",
     "requirements": {
       "notes": [
         "Heroes' Quest to recharge it at the Fountain of Heroes"
       ]
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 80
+      }
     },
     "notes": "Also four teleports a charge, which is most of why you want one."
   },
@@ -647,7 +829,14 @@
     "category": "MELEE",
     "tier": 60,
     "members": true,
+    "tradeable": true,
+    "source": "An onyx, cut and enchanted",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 90
+      }
+    },
     "notes": "The long-term neck slot for melee."
   },
   {
@@ -657,7 +846,14 @@
     "category": "MELEE",
     "tier": 75,
     "members": true,
+    "tradeable": true,
+    "source": "Demonic gorillas, via a zenyte",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 98
+      }
+    },
     "notes": null
   },
   {
@@ -667,6 +863,8 @@
     "category": "MELEE",
     "tier": 10,
     "members": true,
+    "tradeable": true,
+    "source": "The TzHaar shops",
     "requirements": {},
     "notes": null
   },
@@ -677,6 +875,8 @@
     "category": "MELEE",
     "tier": 60,
     "members": true,
+    "tradeable": false,
+    "source": "Fight Caves",
     "requirements": {
       "notes": [
         "Earned by beating the Fight Caves"
@@ -696,6 +896,8 @@
     "category": "MELEE",
     "tier": 80,
     "members": true,
+    "tradeable": false,
+    "source": "The Inferno",
     "requirements": {
       "notes": [
         "Earned by beating the Inferno"
@@ -716,7 +918,14 @@
     "category": "MELEE",
     "tier": 1,
     "members": true,
+    "tradeable": true,
+    "source": "An emerald ring, enchanted",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 27
+      }
+    },
     "notes": "Not a combat bonus, but the teleports save a lot of walking."
   },
   {
@@ -726,7 +935,18 @@
     "category": "MELEE",
     "tier": 40,
     "members": true,
+    "tradeable": true,
+    "source": "Dagannoth Rex",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 70,
+        "HITPOINTS": 80
+      },
+      "notes": [
+        "Dagannoth Kings, which needs Fremennik Trials"
+      ]
+    },
     "notes": null
   },
   {
@@ -736,10 +956,22 @@
     "category": "MELEE",
     "tier": 70,
     "members": true,
+    "tradeable": true,
+    "source": "Alchemical Hydra, via a hydra ring",
     "requirements": {
       "skills": {
         "SLAYER": 90
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 95,
+        "DEFENCE": 70,
+        "HITPOINTS": 80
+      },
+      "notes": [
+        "Alchemical Hydra"
+      ]
     },
     "notes": null
   },
@@ -750,9 +982,16 @@
     "category": "RANGED",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Cut and strung from logs",
     "requirements": {
       "skills": {
         "RANGED": 1
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "FLETCHING": 5
       }
     },
     "notes": null
@@ -764,9 +1003,16 @@
     "category": "RANGED",
     "tier": 20,
     "members": false,
+    "tradeable": true,
+    "source": "Cut and strung from willow logs",
     "requirements": {
       "skills": {
         "RANGED": 20
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "FLETCHING": 35
       }
     },
     "notes": null
@@ -778,9 +1024,16 @@
     "category": "RANGED",
     "tier": 30,
     "members": false,
+    "tradeable": true,
+    "source": "Cut and strung from maple logs",
     "requirements": {
       "skills": {
         "RANGED": 30
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "FLETCHING": 55
       }
     },
     "notes": null
@@ -792,9 +1045,16 @@
     "category": "RANGED",
     "tier": 61,
     "members": true,
+    "tradeable": true,
+    "source": "Crafted from a runite limb and a yew stock",
     "requirements": {
       "skills": {
         "RANGED": 61
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "FLETCHING": 69
       }
     },
     "notes": "The workhorse ranged weapon. Cheap, and strong with the right bolts."
@@ -806,9 +1066,16 @@
     "category": "RANGED",
     "tier": 50,
     "members": false,
+    "tradeable": true,
+    "source": "Cut and strung from magic logs",
     "requirements": {
       "skills": {
         "RANGED": 50
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "FLETCHING": 80
       }
     },
     "notes": null
@@ -820,6 +1087,8 @@
     "category": "RANGED",
     "tier": 55,
     "members": true,
+    "tradeable": false,
+    "source": "Imbued at Nightmare Zone or the PvP arena",
     "requirements": {
       "skills": {
         "RANGED": 50
@@ -834,10 +1103,22 @@
     "category": "RANGED",
     "tier": 75,
     "members": true,
+    "tradeable": true,
+    "source": "Zulrah, via a tanzanite fang",
     "requirements": {
       "skills": {
         "RANGED": 75
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 75,
+        "DEFENCE": 70,
+        "HITPOINTS": 80
+      },
+      "notes": [
+        "Zulrah, which needs Regicide"
+      ]
     },
     "notes": "The fastest ranged training weapon by a wide margin."
   },
@@ -848,10 +1129,22 @@
     "category": "RANGED",
     "tier": 70,
     "members": true,
+    "tradeable": true,
+    "source": "Kree'arra, God Wars Dungeon",
     "requirements": {
       "skills": {
         "RANGED": 70
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 75,
+        "DEFENCE": 70,
+        "HITPOINTS": 80
+      },
+      "notes": [
+        "God Wars Dungeon killcount"
+      ]
     },
     "notes": null
   },
@@ -862,10 +1155,22 @@
     "category": "RANGED",
     "tier": 80,
     "members": true,
+    "tradeable": true,
+    "source": "Chambers of Xeric",
     "requirements": {
       "skills": {
         "RANGED": 65
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 75,
+        "DEFENCE": 75,
+        "HITPOINTS": 85
+      },
+      "notes": [
+        "Chambers of Xeric"
+      ]
     },
     "notes": "Only for dragons, but enormous there."
   },
@@ -876,10 +1181,22 @@
     "category": "RANGED",
     "tier": 85,
     "members": true,
+    "tradeable": true,
+    "source": "Chambers of Xeric",
     "requirements": {
       "skills": {
         "RANGED": 85
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 85,
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Chambers of Xeric"
+      ]
     },
     "notes": null
   },
@@ -890,9 +1207,16 @@
     "category": "RANGED",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Crafted from soft leather",
     "requirements": {
       "skills": {
         "RANGED": 1
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 38
       }
     },
     "notes": null
@@ -904,6 +1228,8 @@
     "category": "RANGED",
     "tier": 45,
     "members": true,
+    "tradeable": true,
+    "source": "Fremennik Trials reward, or a shop",
     "requirements": {
       "skills": {
         "DEFENCE": 45
@@ -921,6 +1247,8 @@
     "category": "RANGED",
     "tier": 40,
     "members": true,
+    "tradeable": true,
+    "source": "Temple Trekking rewards",
     "requirements": {
       "notes": [
         "Bought with marks from the Temple Trekking minigame"
@@ -935,9 +1263,16 @@
     "category": "RANGED",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Crafted from soft leather",
     "requirements": {
       "skills": {
         "RANGED": 1
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 14
       }
     },
     "notes": null
@@ -949,9 +1284,16 @@
     "category": "RANGED",
     "tier": 20,
     "members": false,
+    "tradeable": true,
+    "source": "Steel studs on a leather body",
     "requirements": {
       "skills": {
         "RANGED": 20
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 41
       }
     },
     "notes": null
@@ -963,10 +1305,17 @@
     "category": "RANGED",
     "tier": 40,
     "members": true,
+    "tradeable": true,
+    "source": "Green dragonhide, tanned and crafted",
     "requirements": {
       "skills": {
         "RANGED": 40,
         "DEFENCE": 40
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 63
       }
     },
     "notes": null
@@ -978,10 +1327,17 @@
     "category": "RANGED",
     "tier": 50,
     "members": true,
+    "tradeable": true,
+    "source": "Blue dragonhide, tanned and crafted",
     "requirements": {
       "skills": {
         "RANGED": 50,
         "DEFENCE": 40
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 71
       }
     },
     "notes": null
@@ -993,10 +1349,17 @@
     "category": "RANGED",
     "tier": 60,
     "members": true,
+    "tradeable": true,
+    "source": "Red dragonhide, tanned and crafted",
     "requirements": {
       "skills": {
         "RANGED": 60,
         "DEFENCE": 40
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 77
       }
     },
     "notes": null
@@ -1008,10 +1371,17 @@
     "category": "RANGED",
     "tier": 70,
     "members": true,
+    "tradeable": true,
+    "source": "Black dragonhide, tanned and crafted",
     "requirements": {
       "skills": {
         "RANGED": 70,
         "DEFENCE": 40
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 84
       }
     },
     "notes": "Cheap and near best-in-slot for a very long time."
@@ -1023,9 +1393,16 @@
     "category": "RANGED",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Crafted from soft leather",
     "requirements": {
       "skills": {
         "RANGED": 1
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 18
       }
     },
     "notes": null
@@ -1037,9 +1414,16 @@
     "category": "RANGED",
     "tier": 20,
     "members": false,
+    "tradeable": true,
+    "source": "Steel studs on leather chaps",
     "requirements": {
       "skills": {
         "RANGED": 20
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 44
       }
     },
     "notes": null
@@ -1051,9 +1435,16 @@
     "category": "RANGED",
     "tier": 40,
     "members": true,
+    "tradeable": true,
+    "source": "Green dragonhide, tanned and crafted",
     "requirements": {
       "skills": {
         "RANGED": 40
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 60
       }
     },
     "notes": null
@@ -1065,9 +1456,16 @@
     "category": "RANGED",
     "tier": 50,
     "members": true,
+    "tradeable": true,
+    "source": "Blue dragonhide, tanned and crafted",
     "requirements": {
       "skills": {
         "RANGED": 50
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 66
       }
     },
     "notes": null
@@ -1079,9 +1477,16 @@
     "category": "RANGED",
     "tier": 60,
     "members": true,
+    "tradeable": true,
+    "source": "Red dragonhide, tanned and crafted",
     "requirements": {
       "skills": {
         "RANGED": 60
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 75
       }
     },
     "notes": null
@@ -1093,9 +1498,16 @@
     "category": "RANGED",
     "tier": 70,
     "members": true,
+    "tradeable": true,
+    "source": "Black dragonhide, tanned and crafted",
     "requirements": {
       "skills": {
         "RANGED": 70
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 82
       }
     },
     "notes": null
@@ -1107,7 +1519,14 @@
     "category": "RANGED",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Crafted from soft leather",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 1
+      }
+    },
     "notes": null
   },
   {
@@ -1117,6 +1536,8 @@
     "category": "RANGED",
     "tier": 40,
     "members": true,
+    "tradeable": false,
+    "source": "Recipe for Disaster reward",
     "requirements": {
       "skills": {
         "DEFENCE": 40
@@ -1134,7 +1555,14 @@
     "category": "RANGED",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Crafted from soft leather",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 7
+      }
+    },
     "notes": null
   },
   {
@@ -1144,10 +1572,17 @@
     "category": "RANGED",
     "tier": 30,
     "members": true,
+    "tradeable": true,
+    "source": "Crafted from snakeskin",
     "requirements": {
       "skills": {
         "RANGED": 30,
         "DEFENCE": 30
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 45
       }
     },
     "notes": null
@@ -1159,6 +1594,8 @@
     "category": "RANGED",
     "tier": 40,
     "members": true,
+    "tradeable": true,
+    "source": "Medium clue scrolls",
     "requirements": {
       "skills": {
         "RANGED": 40
@@ -1173,7 +1610,14 @@
     "category": "RANGED",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "A diamond amulet, enchanted",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 70
+      }
+    },
     "notes": null
   },
   {
@@ -1183,10 +1627,17 @@
     "category": "RANGED",
     "tier": 20,
     "members": true,
+    "tradeable": true,
+    "source": "A dragonstone, cut and enchanted",
     "requirements": {
       "notes": [
         "Heroes' Quest to recharge it at the Fountain of Heroes"
       ]
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 80
+      }
     },
     "notes": null
   },
@@ -1197,7 +1648,14 @@
     "category": "RANGED",
     "tier": 60,
     "members": true,
+    "tradeable": true,
+    "source": "An onyx, cut and enchanted",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 90
+      }
+    },
     "notes": null
   },
   {
@@ -1207,7 +1665,14 @@
     "category": "RANGED",
     "tier": 75,
     "members": true,
+    "tradeable": true,
+    "source": "Demonic gorillas, via a zenyte",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 98
+      }
+    },
     "notes": null
   },
   {
@@ -1217,6 +1682,8 @@
     "category": "RANGED",
     "tier": 30,
     "members": true,
+    "tradeable": false,
+    "source": "Animal Magnetism reward",
     "requirements": {
       "skills": {
         "RANGED": 30
@@ -1234,6 +1701,8 @@
     "category": "RANGED",
     "tier": 50,
     "members": true,
+    "tradeable": false,
+    "source": "Animal Magnetism reward",
     "requirements": {
       "skills": {
         "RANGED": 50
@@ -1251,12 +1720,24 @@
     "category": "RANGED",
     "tier": 70,
     "members": true,
+    "tradeable": false,
+    "source": "Vorkath, or the assembler kit",
     "requirements": {
       "skills": {
         "RANGED": 70
       },
       "quests": [
         "DRAGON_SLAYER_II"
+      ]
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 75,
+        "DEFENCE": 70,
+        "HITPOINTS": 80
+      },
+      "notes": [
+        "Vorkath, which needs Dragon Slayer II"
       ]
     },
     "notes": null
@@ -1268,7 +1749,14 @@
     "category": "RANGED",
     "tier": 1,
     "members": true,
+    "tradeable": true,
+    "source": "An emerald ring, enchanted",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 27
+      }
+    },
     "notes": null
   },
   {
@@ -1278,7 +1766,19 @@
     "category": "RANGED",
     "tier": 40,
     "members": true,
+    "tradeable": true,
+    "source": "Dagannoth Supreme",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 70,
+        "DEFENCE": 70,
+        "HITPOINTS": 80
+      },
+      "notes": [
+        "Dagannoth Kings, which needs Fremennik Trials"
+      ]
+    },
     "notes": null
   },
   {
@@ -1288,10 +1788,22 @@
     "category": "RANGED",
     "tier": 70,
     "members": true,
+    "tradeable": true,
+    "source": "Alchemical Hydra, via a hydra ring",
     "requirements": {
       "skills": {
         "SLAYER": 90
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 95,
+        "DEFENCE": 70,
+        "HITPOINTS": 80
+      },
+      "notes": [
+        "Alchemical Hydra"
+      ]
     },
     "notes": null
   },
@@ -1302,6 +1814,8 @@
     "category": "MAGIC",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Any magic shop",
     "requirements": {
       "skills": {
         "MAGIC": 1
@@ -1316,6 +1830,8 @@
     "category": "MAGIC",
     "tier": 5,
     "members": false,
+    "tradeable": true,
+    "source": "Any magic shop",
     "requirements": {
       "skills": {
         "MAGIC": 5
@@ -1330,6 +1846,8 @@
     "category": "MAGIC",
     "tier": 40,
     "members": true,
+    "tradeable": true,
+    "source": "Dropped by many mid-level monsters",
     "requirements": {
       "skills": {
         "MAGIC": 40
@@ -1344,9 +1862,16 @@
     "category": "MAGIC",
     "tier": 75,
     "members": true,
+    "tradeable": false,
+    "source": "Cave krakens",
     "requirements": {
       "skills": {
         "MAGIC": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 87
       }
     },
     "notes": "Self-contained spell, no runes to buy. The standard magic training weapon."
@@ -1358,9 +1883,16 @@
     "category": "MAGIC",
     "tier": 78,
     "members": true,
+    "tradeable": false,
+    "source": "Zulrah, or a magic fang on a trident",
     "requirements": {
       "skills": {
         "MAGIC": 78
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 87
       }
     },
     "notes": null
@@ -1372,10 +1904,22 @@
     "category": "MAGIC",
     "tier": 85,
     "members": true,
+    "tradeable": true,
+    "source": "Chambers of Xeric, via a kodai insignia",
     "requirements": {
       "skills": {
         "MAGIC": 80
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "MAGIC": 85,
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Chambers of Xeric"
+      ]
     },
     "notes": null
   },
@@ -1386,6 +1930,8 @@
     "category": "MAGIC",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Any magic shop",
     "requirements": {
       "skills": {
         "MAGIC": 1
@@ -1400,6 +1946,8 @@
     "category": "MAGIC",
     "tier": 40,
     "members": true,
+    "tradeable": true,
+    "source": "Dropped by many mid-level monsters",
     "requirements": {
       "skills": {
         "MAGIC": 40,
@@ -1415,11 +1963,22 @@
     "category": "MAGIC",
     "tier": 70,
     "members": true,
+    "tradeable": true,
+    "source": "Barrows",
     "requirements": {
       "skills": {
         "MAGIC": 70,
         "DEFENCE": 70
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 70,
+        "HITPOINTS": 70
+      },
+      "notes": [
+        "Barrows, which needs Priest in Peril"
+      ]
     },
     "notes": null
   },
@@ -1430,6 +1989,8 @@
     "category": "MAGIC",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Any magic shop",
     "requirements": {
       "skills": {
         "MAGIC": 1
@@ -1444,6 +2005,8 @@
     "category": "MAGIC",
     "tier": 40,
     "members": true,
+    "tradeable": true,
+    "source": "Dropped by many mid-level monsters",
     "requirements": {
       "skills": {
         "MAGIC": 40,
@@ -1459,11 +2022,22 @@
     "category": "MAGIC",
     "tier": 70,
     "members": true,
+    "tradeable": true,
+    "source": "Barrows",
     "requirements": {
       "skills": {
         "MAGIC": 70,
         "DEFENCE": 70
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 70,
+        "HITPOINTS": 70
+      },
+      "notes": [
+        "Barrows, which needs Priest in Peril"
+      ]
     },
     "notes": null
   },
@@ -1474,6 +2048,8 @@
     "category": "MAGIC",
     "tier": 40,
     "members": true,
+    "tradeable": true,
+    "source": "Dropped by many mid-level monsters",
     "requirements": {
       "skills": {
         "MAGIC": 40,
@@ -1489,11 +2065,22 @@
     "category": "MAGIC",
     "tier": 70,
     "members": true,
+    "tradeable": true,
+    "source": "Barrows",
     "requirements": {
       "skills": {
         "MAGIC": 70,
         "DEFENCE": 70
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 70,
+        "HITPOINTS": 70
+      },
+      "notes": [
+        "Barrows, which needs Priest in Peril"
+      ]
     },
     "notes": null
   },
@@ -1504,7 +2091,14 @@
     "category": "MAGIC",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Crafted from soft leather",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 1
+      }
+    },
     "notes": null
   },
   {
@@ -1514,6 +2108,8 @@
     "category": "MAGIC",
     "tier": 40,
     "members": true,
+    "tradeable": false,
+    "source": "Recipe for Disaster reward",
     "requirements": {
       "skills": {
         "DEFENCE": 40
@@ -1531,6 +2127,8 @@
     "category": "MAGIC",
     "tier": 1,
     "members": true,
+    "tradeable": true,
+    "source": "Medium clue scrolls",
     "requirements": {},
     "notes": null
   },
@@ -1541,6 +2139,8 @@
     "category": "MAGIC",
     "tier": 50,
     "members": true,
+    "tradeable": false,
+    "source": "Mage Training Arena points",
     "requirements": {
       "skills": {
         "MAGIC": 50,
@@ -1559,11 +2159,23 @@
     "category": "MAGIC",
     "tier": 75,
     "members": true,
+    "tradeable": true,
+    "source": "Cerberus, via an eternal crystal",
     "requirements": {
       "skills": {
         "MAGIC": 75,
         "DEFENCE": 75
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 91,
+        "DEFENCE": 80,
+        "HITPOINTS": 85
+      },
+      "notes": [
+        "Cerberus"
+      ]
     },
     "notes": null
   },
@@ -1574,10 +2186,17 @@
     "category": "MAGIC",
     "tier": 20,
     "members": true,
+    "tradeable": true,
+    "source": "A dragonstone, cut and enchanted",
     "requirements": {
       "notes": [
         "Heroes' Quest to recharge it at the Fountain of Heroes"
       ]
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 80
+      }
     },
     "notes": null
   },
@@ -1588,7 +2207,14 @@
     "category": "MAGIC",
     "tier": 60,
     "members": true,
+    "tradeable": true,
+    "source": "An onyx, cut and enchanted",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 90
+      }
+    },
     "notes": null
   },
   {
@@ -1598,7 +2224,14 @@
     "category": "MAGIC",
     "tier": 70,
     "members": true,
+    "tradeable": true,
+    "source": "Smoke devils",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 93
+      }
+    },
     "notes": "A big magic damage boost for the price. Get one early."
   },
   {
@@ -1608,6 +2241,8 @@
     "category": "MAGIC",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Any clothes shop",
     "requirements": {},
     "notes": null
   },
@@ -1618,6 +2253,8 @@
     "category": "MAGIC",
     "tier": 60,
     "members": true,
+    "tradeable": false,
+    "source": "Mage Arena, then imbued",
     "requirements": {
       "notes": [
         "Won in the Mage Arena, then imbued"
@@ -1632,7 +2269,17 @@
     "category": "MAGIC",
     "tier": 50,
     "members": true,
+    "tradeable": true,
+    "source": "The Wintertodt",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "FIREMAKING": 50
+      },
+      "notes": [
+        "Wintertodt drops"
+      ]
+    },
     "notes": "Boosts every fire spell and saves the runes. Pairs with a fire staff."
   },
   {
@@ -1642,7 +2289,14 @@
     "category": "MAGIC",
     "tier": 1,
     "members": true,
+    "tradeable": true,
+    "source": "An emerald ring, enchanted",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 27
+      }
+    },
     "notes": null
   },
   {
@@ -1652,7 +2306,19 @@
     "category": "MAGIC",
     "tier": 40,
     "members": true,
+    "tradeable": true,
+    "source": "Dagannoth Prime",
     "requirements": {},
+    "ironmanRequirements": {
+      "skills": {
+        "MAGIC": 70,
+        "DEFENCE": 70,
+        "HITPOINTS": 80
+      },
+      "notes": [
+        "Dagannoth Kings, which needs Fremennik Trials"
+      ]
+    },
     "notes": null
   },
   {
@@ -1662,10 +2328,22 @@
     "category": "MAGIC",
     "tier": 70,
     "members": true,
+    "tradeable": true,
+    "source": "Alchemical Hydra, via a hydra ring",
     "requirements": {
       "skills": {
         "SLAYER": 90
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 95,
+        "DEFENCE": 70,
+        "HITPOINTS": 80
+      },
+      "notes": [
+        "Alchemical Hydra"
+      ]
     },
     "notes": null
   },
@@ -1676,6 +2354,8 @@
     "category": "SKILLING",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any mining shop",
     "toolFor": "MINING",
     "requirements": {
       "skills": {
@@ -1691,6 +2371,8 @@
     "category": "SKILLING",
     "tier": 6,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any mining shop",
     "toolFor": "MINING",
     "requirements": {
       "skills": {
@@ -1706,6 +2388,8 @@
     "category": "SKILLING",
     "tier": 11,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any mining shop",
     "toolFor": "MINING",
     "requirements": {
       "skills": {
@@ -1722,6 +2406,8 @@
     "category": "SKILLING",
     "tier": 16,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any mining shop",
     "toolFor": "MINING",
     "requirements": {
       "skills": {
@@ -1738,6 +2424,8 @@
     "category": "SKILLING",
     "tier": 21,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any mining shop",
     "toolFor": "MINING",
     "requirements": {
       "skills": {
@@ -1754,6 +2442,8 @@
     "category": "SKILLING",
     "tier": 31,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any mining shop",
     "toolFor": "MINING",
     "requirements": {
       "skills": {
@@ -1770,6 +2460,8 @@
     "category": "SKILLING",
     "tier": 41,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or a Mining Guild shop",
     "toolFor": "MINING",
     "requirements": {
       "skills": {
@@ -1786,12 +2478,23 @@
     "category": "SKILLING",
     "tier": 61,
     "members": true,
+    "tradeable": true,
+    "source": "The Chaos Elemental or Wilderness bosses",
     "toolFor": "MINING",
     "requirements": {
       "skills": {
         "MINING": 61,
         "ATTACK": 60
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 60,
+        "HITPOINTS": 70
+      },
+      "notes": [
+        "Wilderness bosses, or 61 Mining at the Volcanic Mine"
+      ]
     },
     "notes": null
   },
@@ -1802,11 +2505,19 @@
     "category": "SKILLING",
     "tier": 71,
     "members": true,
+    "tradeable": false,
+    "source": "Crystal tool seed and a dragon pickaxe",
     "toolFor": "MINING",
     "requirements": {
       "skills": {
         "MINING": 71,
         "ATTACK": 70
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SMITHING": 76,
+        "CRAFTING": 76
       }
     },
     "notes": null
@@ -1818,6 +2529,8 @@
     "category": "SKILLING",
     "tier": 81,
     "members": true,
+    "tradeable": false,
+    "source": "Smouldering stone on a dragon pickaxe",
     "toolFor": "MINING",
     "requirements": {
       "skills": {
@@ -1828,6 +2541,11 @@
         "Made from a dragon pickaxe and a smouldering stone"
       ]
     },
+    "ironmanRequirements": {
+      "skills": {
+        "SMITHING": 85
+      }
+    },
     "notes": "Same requirements as the dragon pickaxe, and it smelts the ore as you mine."
   },
   {
@@ -1837,6 +2555,8 @@
     "category": "SKILLING",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any axe shop",
     "toolFor": "WOODCUTTING",
     "requirements": {
       "skills": {
@@ -1852,6 +2572,8 @@
     "category": "SKILLING",
     "tier": 6,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any axe shop",
     "toolFor": "WOODCUTTING",
     "requirements": {
       "skills": {
@@ -1867,6 +2589,8 @@
     "category": "SKILLING",
     "tier": 11,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any axe shop",
     "toolFor": "WOODCUTTING",
     "requirements": {
       "skills": {
@@ -1883,6 +2607,8 @@
     "category": "SKILLING",
     "tier": 16,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any axe shop",
     "toolFor": "WOODCUTTING",
     "requirements": {
       "skills": {
@@ -1899,6 +2625,8 @@
     "category": "SKILLING",
     "tier": 21,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any axe shop",
     "toolFor": "WOODCUTTING",
     "requirements": {
       "skills": {
@@ -1915,6 +2643,8 @@
     "category": "SKILLING",
     "tier": 31,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or any axe shop",
     "toolFor": "WOODCUTTING",
     "requirements": {
       "skills": {
@@ -1931,6 +2661,8 @@
     "category": "SKILLING",
     "tier": 41,
     "members": false,
+    "tradeable": true,
+    "source": "Smithed, or dropped",
     "toolFor": "WOODCUTTING",
     "requirements": {
       "skills": {
@@ -1947,12 +2679,23 @@
     "category": "SKILLING",
     "tier": 61,
     "members": true,
+    "tradeable": true,
+    "source": "The Dagannoth Kings",
     "toolFor": "WOODCUTTING",
     "requirements": {
       "skills": {
         "WOODCUTTING": 61,
         "ATTACK": 60
       }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 60,
+        "HITPOINTS": 70
+      },
+      "notes": [
+        "Dagannoth Kings"
+      ]
     },
     "notes": null
   },
@@ -1963,11 +2706,19 @@
     "category": "SKILLING",
     "tier": 71,
     "members": true,
+    "tradeable": false,
+    "source": "Crystal tool seed and a dragon axe",
     "toolFor": "WOODCUTTING",
     "requirements": {
       "skills": {
         "WOODCUTTING": 71,
         "ATTACK": 70
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SMITHING": 76,
+        "CRAFTING": 76
       }
     },
     "notes": null
@@ -1979,6 +2730,8 @@
     "category": "SKILLING",
     "tier": 81,
     "members": true,
+    "tradeable": false,
+    "source": "Smouldering stone on a dragon axe",
     "toolFor": "WOODCUTTING",
     "requirements": {
       "skills": {
@@ -1989,6 +2742,11 @@
         "Made from a dragon axe and a smouldering stone"
       ]
     },
+    "ironmanRequirements": {
+      "skills": {
+        "FIREMAKING": 85
+      }
+    },
     "notes": "Same requirements as the dragon axe, and it burns the logs as you cut."
   },
   {
@@ -1998,6 +2756,8 @@
     "category": "SKILLING",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Fishing shops",
     "toolFor": "FISHING",
     "requirements": {
       "skills": {
@@ -2013,6 +2773,8 @@
     "category": "SKILLING",
     "tier": 30,
     "members": true,
+    "tradeable": true,
+    "source": "Caught at the Barbarian Outpost",
     "toolFor": "FISHING",
     "requirements": {
       "skills": {
@@ -2028,11 +2790,18 @@
     "category": "SKILLING",
     "tier": 61,
     "members": true,
+    "tradeable": true,
+    "source": "Wyrms",
     "toolFor": "FISHING",
     "requirements": {
       "skills": {
         "FISHING": 61,
         "ATTACK": 60
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 62
       }
     },
     "notes": "About 20% faster than a plain harpoon."
@@ -2044,6 +2813,8 @@
     "category": "SKILLING",
     "tier": 75,
     "members": true,
+    "tradeable": false,
+    "source": "Smouldering stone on a dragon harpoon",
     "toolFor": "FISHING",
     "requirements": {
       "skills": {
@@ -2054,6 +2825,11 @@
         "Made from a dragon harpoon and a smouldering stone"
       ]
     },
+    "ironmanRequirements": {
+      "skills": {
+        "COOKING": 85
+      }
+    },
     "notes": "Cooks the fish as you catch them."
   },
   {
@@ -2063,6 +2839,8 @@
     "category": "SKILLING",
     "tier": 1,
     "members": false,
+    "tradeable": true,
+    "source": "Farming shops",
     "toolFor": "FARMING",
     "requirements": {
       "skills": {
@@ -2078,6 +2856,8 @@
     "category": "SKILLING",
     "tier": 20,
     "members": true,
+    "tradeable": true,
+    "source": "Fairytale I reward",
     "toolFor": "FARMING",
     "requirements": {
       "skills": {
@@ -2093,6 +2873,8 @@
     "category": "SKILLING",
     "tier": 1,
     "members": true,
+    "tradeable": false,
+    "source": "The Abyss",
     "toolFor": "RUNECRAFT",
     "requirements": {
       "skills": {
@@ -2108,6 +2890,8 @@
     "category": "SKILLING",
     "tier": 25,
     "members": true,
+    "tradeable": false,
+    "source": "The Abyss",
     "toolFor": "RUNECRAFT",
     "requirements": {
       "skills": {
@@ -2123,6 +2907,8 @@
     "category": "SKILLING",
     "tier": 50,
     "members": true,
+    "tradeable": false,
+    "source": "The Abyss",
     "toolFor": "RUNECRAFT",
     "requirements": {
       "skills": {
@@ -2138,6 +2924,8 @@
     "category": "SKILLING",
     "tier": 75,
     "members": true,
+    "tradeable": false,
+    "source": "The Abyss",
     "toolFor": "RUNECRAFT",
     "requirements": {
       "skills": {
@@ -2153,10 +2941,17 @@
     "category": "SKILLING",
     "tier": 85,
     "members": true,
+    "tradeable": false,
+    "source": "Crafted from the other four pouches",
     "toolFor": "RUNECRAFT",
     "requirements": {
       "skills": {
         "RUNECRAFT": 85
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "CRAFTING": 56
       }
     },
     "notes": "Replaces all four pouches. Crafted after the Guardians of the Rift."
@@ -2168,6 +2963,8 @@
     "category": "SKILLING",
     "tier": 1,
     "members": true,
+    "tradeable": true,
+    "source": "Any construction shop",
     "toolFor": "CONSTRUCTION",
     "requirements": {
       "skills": {
@@ -2183,6 +2980,8 @@
     "category": "SKILLING",
     "tier": 20,
     "members": true,
+    "tradeable": false,
+    "source": "The Eyes of Glouphrie reward",
     "toolFor": "CONSTRUCTION",
     "requirements": {
       "skills": {
