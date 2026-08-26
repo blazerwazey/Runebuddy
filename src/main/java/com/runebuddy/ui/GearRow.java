@@ -19,7 +19,7 @@ class GearRow extends JPanel
 {
 	private static final int ICON_SIZE = 32;
 
-	GearRow(GearSuggestion suggestion, PanelContext context)
+	GearRow(GearSuggestion suggestion, PanelContext context, boolean ironman)
 	{
 		setLayout(new BorderLayout(6, 0));
 		setBackground(ColorScheme.DARKER_GRAY_COLOR);
@@ -41,29 +41,32 @@ class GearRow extends JPanel
 
 		if (suggestion.getNext() != null)
 		{
-			body.add(upgradeLine("Buy next", suggestion.getNext(), context, UiUtils.MET));
+			body.add(upgradeLine("Next upgrade", suggestion.getNext(), context, UiUtils.MET, ironman));
+			addSourceLine(body, suggestion.getNext(), ironman);
 
 			// When price held us back from the ceiling, name the ceiling too so the
-			// player knows what they are saving toward.
+			// player knows what they are saving toward. Never happens on an ironman,
+			// where price is not what holds anything back.
 			GearItem goal = suggestion.getGoal();
 			if (goal != null && goal.getItemId() != suggestion.getNext().getItemId())
 			{
-				body.add(upgradeLine("Best for your level", goal, context, ColorScheme.BRAND_ORANGE));
+				body.add(upgradeLine("Best for your level", goal, context, ColorScheme.BRAND_ORANGE, ironman));
 			}
 		}
 		else if (suggestion.isSatisfied())
 		{
-			body.add(UiUtils.body("Best you can use — nothing to buy"));
+			body.add(UiUtils.body("Best you can use"));
 		}
 
 		if (suggestion.getLocked() != null && suggestion.getLockedReport() != null)
 		{
-			body.add(upgradeLine("Aim for", suggestion.getLocked(), context, UiUtils.PENDING));
+			body.add(upgradeLine("Aim for", suggestion.getLocked(), context, UiUtils.PENDING, ironman));
 
 			JLabel blocking = UiUtils.muted(
 				UiUtils.ellipsise(suggestion.getLockedReport().blockingSummary(), 36));
 			blocking.setForeground(UiUtils.UNMET);
 			body.add(blocking);
+			addSourceLine(body, suggestion.getLocked(), ironman);
 		}
 
 		add(body, BorderLayout.CENTER);
@@ -88,13 +91,36 @@ class GearRow extends JPanel
 		return UiUtils.muted("Nothing here yet");
 	}
 
-	private static JLabel upgradeLine(String prefix, GearItem item, PanelContext context, java.awt.Color color)
+	/**
+	 * Where an item comes from. Always worth saying on an ironman, who has to go and get
+	 * it; on a main only worth saying when they cannot simply buy it.
+	 */
+	private static void addSourceLine(JPanel body, GearItem item, boolean ironman)
 	{
-		int price = context.priceOf(item.getItemId());
-		String text = prefix + ": " + UiUtils.ellipsise(item.getName(), 22);
-		if (price > 0)
+		if (item.getSource() == null || (!ironman && item.isTradeable()))
 		{
-			text += "  " + UiUtils.price(price);
+			return;
+		}
+
+		JLabel source = UiUtils.muted("From: " + UiUtils.ellipsise(item.getSource(), 32));
+		source.setToolTipText(item.getSource());
+		body.add(source);
+	}
+
+	private static JLabel upgradeLine(String prefix, GearItem item, PanelContext context,
+									  java.awt.Color color, boolean ironman)
+	{
+		String text = prefix + ": " + UiUtils.ellipsise(item.getName(), 22);
+
+		// A price is only information if the reader can act on it: the item has to be
+		// buyable, and the account has to be one that can buy.
+		if (item.isTradeable() && !ironman)
+		{
+			int price = context.priceOf(item.getItemId());
+			if (price > 0)
+			{
+				text += "  " + UiUtils.price(price);
+			}
 		}
 
 		JLabel label = UiUtils.body(text);

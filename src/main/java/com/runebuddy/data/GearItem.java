@@ -31,12 +31,34 @@ public class GearItem
 	private boolean members;
 
 	/**
+	 * Whether the item can be bought. Untradeable items have no price to weigh against
+	 * what a player can afford, so they are judged on their requirements alone.
+	 */
+	private boolean tradeable = true;
+
+	/**
+	 * How you get hold of one: "Grand Exchange", "Abyssal demons", "Fight Caves". The
+	 * only answer that matters on an ironman, and still useful to a main for the
+	 * untradeables.
+	 */
+	@Nullable
+	private String source;
+
+	/**
 	 * For {@link GearCategory#SKILLING}: the skill this tool is used for.
 	 */
 	@Nullable
 	private String toolFor;
 
 	private Requirements requirements;
+
+	/**
+	 * Extra requirements that apply only to accounts that have to obtain the item
+	 * themselves. An abyssal whip asks a main for 70 Attack and some coins; it asks an
+	 * ironman for 70 Attack and 85 Slayer.
+	 */
+	@Nullable
+	private Requirements ironmanRequirements;
 
 	@Nullable
 	private String notes;
@@ -67,6 +89,23 @@ public class GearItem
 	public Requirements getRequirements()
 	{
 		return requirements == null ? Requirements.none() : requirements;
+	}
+
+	/**
+	 * The extra requirements an account that cannot buy this has to meet. Empty for
+	 * items that are no harder to obtain yourself than to buy.
+	 */
+	public Requirements getIronmanRequirements()
+	{
+		return ironmanRequirements == null ? Requirements.none() : ironmanRequirements;
+	}
+
+	/**
+	 * True when this item asks more of an account that has to obtain it itself.
+	 */
+	public boolean hasIronmanGate()
+	{
+		return !getIronmanRequirements().isEmpty();
 	}
 
 	/**
@@ -139,6 +178,16 @@ public class GearItem
 		else
 		{
 			requirements.resolve(name, warn);
+		}
+
+		if (ironmanRequirements != null)
+		{
+			ironmanRequirements.resolve(name + " (ironman)", warn);
+		}
+
+		if (source == null || source.trim().isEmpty())
+		{
+			throw new IllegalArgumentException(name + ": missing source");
 		}
 	}
 }

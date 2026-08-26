@@ -26,6 +26,8 @@ public class GearAdvisorTest
 	private static final int DRAGON_PICKAXE = 11920;
 	private static final int INFERNAL_PICKAXE = 13243;
 	private static final int RUNE_PICKAXE = 1275;
+	private static final int FIGHTER_TORSO = 10551;
+	private static final int GHRAZI_RAPIER = 22324;
 
 	private GearAdvisor advisor;
 
@@ -196,6 +198,142 @@ public class GearAdvisorTest
 		assertEquals("40 Attack is still missing for the rune pickaxe",
 			RUNE_PICKAXE, pickaxe.getLocked().getItemId());
 		assertTrue(pickaxe.getLockedReport().blockingSummary().contains("Attack"));
+	}
+
+	@Test
+	public void ironmenAreNotFilteredByWhatTheyCanAfford()
+	{
+		// Coins buy nothing on an ironman, so the best they qualify for is the answer
+		// regardless of how little gold they are holding.
+		PlayerProfile ironman = PlayerProfile.flat(75).toBuilder()
+			.ironman(true)
+			.bankKnown(true)
+			.liquidGp(0)
+			.build();
+
+		GearAdvisor.PriceResolver expensive = itemId -> 100_000_000;
+
+		GearSuggestion weapon = slot(
+			advisor.adviseCombat(GearCategory.MELEE, ironman, null, expensive), EquipSlot.WEAPON);
+
+		assertEquals("price should not hold an ironman back from their ceiling",
+			weapon.getGoal().getItemId(), weapon.getNext().getItemId());
+	}
+
+	@Test
+	public void mainsAreStillFilteredByWhatTheyCanAfford()
+	{
+		// The same levels as a main, with enough gold for a middling rung but not the
+		// top one, must still be held back to what they can pay for.
+		PlayerProfile main = PlayerProfile.flat(75).toBuilder()
+			.completedQuest(Quest.MONKEY_MADNESS_I)
+			.bankKnown(true)
+			.liquidGp(100_000)
+			.build();
+
+		// Everything above the dragon scimitar is priced out of reach.
+		GearAdvisor.PriceResolver steep = itemId ->
+			itemId == ABYSSAL_WHIP || itemId == GHRAZI_RAPIER ? 100_000_000 : 50_000;
+
+		GearSuggestion weapon = slot(
+			advisor.adviseCombat(GearCategory.MELEE, main, null, steep), EquipSlot.WEAPON);
+
+		assertEquals("the affordable rung is what to buy",
+			DRAGON_SCIMITAR, weapon.getNext().getItemId());
+		assertEquals("the ceiling is still named separately",
+			GHRAZI_RAPIER, weapon.getGoal().getItemId());
+	}
+
+	@Test
+	public void aMainWhoCanAffordNothingIsStillShownTheGoal()
+	{
+		// With no gold at all there is no cheaper rung to fall back to, so naming the
+		// target beats naming nothing.
+		PlayerProfile broke = PlayerProfile.flat(75).toBuilder()
+			.bankKnown(true)
+			.liquidGp(0)
+			.build();
+
+		GearSuggestion weapon = slot(
+			advisor.adviseCombat(GearCategory.MELEE, broke, null, itemId -> 100_000_000),
+			EquipSlot.WEAPON);
+
+		assertEquals(weapon.getGoal().getItemId(), weapon.getNext().getItemId());
+	}
+
+	@Test
+	public void untradeablesAreNeverFilteredOutOnPrice()
+	{
+		// A fighter torso cannot be bought, so no amount of poverty rules it out.
+		PlayerProfile main = PlayerProfile.flat(45).toBuilder()
+			.bankKnown(true)
+			.liquidGp(0)
+			.build();
+
+		GearSuggestion body = slot(
+			advisor.adviseCombat(GearCategory.MELEE, main, null, itemId -> 100_000_000), EquipSlot.BODY);
+
+		assertEquals("the fighter torso is earned, not bought",
+			FIGHTER_TORSO, body.getNext().getItemId());
+	}
+
+	@Test
+	public void ironmenMustMeetTheRequirementsOfObtainingAnItemThemselves()
+	{
+		// 70 Attack is all a main needs to wield a whip. An ironman also has to be able
+		// to farm one, which means 85 Slayer. The quest is granted so that the dragon
+		// scimitar is cleared out of the way and the whip is the rung under test.
+		PlayerProfile.PlayerProfileBuilder base = PlayerProfile.flat(70).toBuilder()
+			.completedQuest(Quest.MONKEY_MADNESS_I)
+			.bankKnown(true)
+			.liquidGp(500_000_000L);
+
+		GearSuggestion asMain = slot(
+			advisor.adviseCombat(GearCategory.MELEE, base.build(), null, null), EquipSlot.WEAPON);
+		assertEquals("a main with the gold and the level can just buy one",
+			ABYSSAL_WHIP, asMain.getGoal().getItemId());
+
+		GearSuggestion asIronman = slot(
+			advisor.adviseCombat(GearCategory.MELEE, base.ironman(true).build(), null, null),
+			EquipSlot.WEAPON);
+
+		assertEquals("the ceiling should drop to the scimitar without the Slayer level",
+			DRAGON_SCIMITAR, asIronman.getGoal().getItemId());
+		assertEquals("the whip becomes the thing to aim for",
+			ABYSSAL_WHIP, asIronman.getLocked().getItemId());
+		assertTrue("the blocker should name the Slayer level, not a price: "
+				+ asIronman.getLockedReport().blockingSummary(),
+			asIronman.getLockedReport().blockingSummary().contains("85 Slayer"));
+	}
+
+	@Test
+	public void anIronmanWhoMeetsTheGateIsOfferedTheItem()
+	{
+		PlayerProfile ironman = PlayerProfile.flat(70).toBuilder()
+			.ironman(true)
+			.completedQuest(Quest.MONKEY_MADNESS_I)
+			.level(Skill.SLAYER, 85)
+			.build();
+
+		GearSuggestion weapon = slot(
+			advisor.adviseCombat(GearCategory.MELEE, ironman, null, null), EquipSlot.WEAPON);
+
+		assertEquals(ABYSSAL_WHIP, weapon.getGoal().getItemId());
+	}
+
+	@Test
+	public void ironmanGatesDoNotLeakOntoMains()
+	{
+		// The Slayer level attached to the whip must apply to ironmen only.
+		PlayerProfile main = PlayerProfile.flat(70).toBuilder()
+			.completedQuest(Quest.MONKEY_MADNESS_I)
+			.level(Skill.SLAYER, 1)
+			.build();
+
+		GearSuggestion weapon = slot(
+			advisor.adviseCombat(GearCategory.MELEE, main, null, null), EquipSlot.WEAPON);
+
+		assertEquals(ABYSSAL_WHIP, weapon.getGoal().getItemId());
 	}
 
 	@Test

@@ -127,7 +127,10 @@ Append an object to `gear.json`:
   "category": "MELEE",
   "tier": 70,
   "members": true,
+  "tradeable": true,
+  "source": "Abyssal demons",
   "requirements": {"skills": {"ATTACK": 70}},
+  "ironmanRequirements": {"skills": {"SLAYER": 85}},
   "notes": "The standard melee training weapon."
 }
 ```
@@ -137,16 +140,42 @@ within a ladder; the number itself is arbitrary, so using the level requirement 
 convenient convention. `category` is `MELEE`, `RANGED`, `MAGIC` or `SKILLING`; skilling
 entries use `"slot": "TOOL"` and must name the skill they serve with `"toolFor"`.
 
-Remember that untradeable items have no Grand Exchange price to hold them back, so give
-them realistic requirements or they will be suggested to everyone.
+- `source` — how you get one. Required on every entry, and it may not be
+  "Grand Exchange": that is the one source an ironman cannot use, so every item needs a
+  way to obtain it yourself.
+- `tradeable` — whether it can be bought at all. Untradeables are never filtered out on
+  price and never show one.
+- `ironmanRequirements` — extra requirements that apply **only** to ironman accounts,
+  using the same shape as `requirements`. This is where the real cost of self-obtaining
+  goes.
+
+That last field is the one to get right. Without it, anything gated behind a boss rather
+than a level reads as freely available to an ironman, which floats raid drops above an
+abyssal whip. Where the gate is a boss, use the stats you would realistically need to go
+and kill it, and put the boss itself in `notes`.
+
+## Ironman accounts
+
+The account type is read from the client, covering standard, hardcore, ultimate and both
+group variants, with an override in the config.
+
+On the **Skills** and **Plan** tabs, methods flagged `ironmanFriendly: false` — the ones
+that only work if you can buy the inputs, such as Nightmare Zone, Blast Furnace or dart
+fletching — are dropped entirely. Every skill still has at least one option left, and
+there is a test enforcing that.
+
+On the **Gear** tab, coins buy nothing, so the affordability filter is skipped and the
+best item you qualify for is simply the answer. What holds an ironman back is levels, so
+`ironmanRequirements` are applied on top of the ordinary ones, prices are not shown, and
+every row names where the item comes from.
 
 ### Validation
 
 The data is checked when it loads and again by the test suite: ids are unique, every
 skill and slot name resolves, experience curves are non-empty and ordered, tiers do not
-collide, every skill has methods, and every skill has something an ironman and a
-free-to-play account can do. A structural mistake fails the build rather than quietly
-producing bad advice.
+collide, every skill has methods, every gear entry names a source that is not the Grand
+Exchange, and every skill has something an ironman and a free-to-play account can do. A
+structural mistake fails the build rather than quietly producing bad advice.
 
 A quest name that this version of the RuneLite API does not know about is the one
 exception: it becomes a text note instead of failing, because the data files are

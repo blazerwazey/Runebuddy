@@ -195,6 +195,46 @@ public class DataStoreTest
 	}
 
 	@Test
+	public void everyGearItemSaysWhereItComesFrom()
+	{
+		for (GearItem item : store.getGear())
+		{
+			assertNotNull(item.getName() + " has no source", item.getSource());
+			assertFalse(item.getName() + " has an empty source", item.getSource().trim().isEmpty());
+
+			// The Grand Exchange is the one source an ironman cannot use, so no entry
+			// may fall back to it — every item needs a way to obtain it yourself.
+			assertFalse(item.getName() + " only says \"Grand Exchange\"",
+				"Grand Exchange".equalsIgnoreCase(item.getSource().trim()));
+		}
+	}
+
+	@Test
+	public void ironmanGatesResolveAndAreDistinctFromTheOrdinaryOnes()
+	{
+		boolean anyGate = false;
+
+		for (GearItem item : store.getGear())
+		{
+			if (!item.hasIronmanGate())
+			{
+				continue;
+			}
+
+			anyGate = true;
+			for (java.util.Map.Entry<Skill, Integer> req
+				: item.getIronmanRequirements().getSkillLevels().entrySet())
+			{
+				assertTrue(item.getName() + " has an impossible ironman level in " + req.getKey(),
+					req.getValue() >= 1 && req.getValue() <= 99);
+			}
+		}
+
+		assertTrue("no item declares an ironman gate, so the feature is untested by the data",
+			anyGate);
+	}
+
+	@Test
 	public void toolsAreIndexedBySkill()
 	{
 		List<GearItem> pickaxes = store.toolsFor(Skill.MINING);
