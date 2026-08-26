@@ -165,8 +165,8 @@ class GearTab extends JPanel
 		}
 
 		List<GearSuggestion> suggestions = chosen == TOOLS
-			? context.gear().adviseTools(profile, context.itemNames())
-			: context.gear().adviseCombat(chosen, profile, context.itemNames());
+			? context.gear().adviseTools(profile, context.itemNames(), context.prices())
+			: context.gear().adviseCombat(chosen, profile, context.itemNames(), context.prices());
 
 		if (suggestions.isEmpty())
 		{

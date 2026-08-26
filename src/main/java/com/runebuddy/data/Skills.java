@@ -44,6 +44,15 @@ public final class Skills
 	}
 
 	/**
+	 * The level every account starts a skill at. Hitpoints is the exception: it begins
+	 * at 10, so "level 1" is not a meaningful floor for it.
+	 */
+	public static int startingLevel(Skill skill)
+	{
+		return skill == Skill.HITPOINTS ? 10 : 1;
+	}
+
+	/**
 	 * True for the {@code OVERALL} pseudo-skill.
 	 */
 	public static boolean isAggregate(Skill skill)

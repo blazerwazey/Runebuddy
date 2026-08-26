@@ -42,6 +42,14 @@ class GearRow extends JPanel
 		if (suggestion.getNext() != null)
 		{
 			body.add(upgradeLine("Buy next", suggestion.getNext(), context, UiUtils.MET));
+
+			// When price held us back from the ceiling, name the ceiling too so the
+			// player knows what they are saving toward.
+			GearItem goal = suggestion.getGoal();
+			if (goal != null && goal.getItemId() != suggestion.getNext().getItemId())
+			{
+				body.add(upgradeLine("Best for your level", goal, context, ColorScheme.BRAND_ORANGE));
+			}
 		}
 		else if (suggestion.isSatisfied())
 		{

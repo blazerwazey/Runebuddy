@@ -36,8 +36,8 @@ public class GearSuggestion
 	GearItem owned;
 
 	/**
-	 * The next rung up that the player already qualifies for. Null when they are
-	 * already at the top of what they qualify for.
+	 * What to buy now: the best item the player qualifies for and does not own. Null
+	 * when they already have it.
 	 */
 	@Nullable
 	GearItem next;

@@ -16,9 +16,9 @@ import net.runelite.api.Skill;
  *
  * <p>Each ladder is ordered worst to best. The player's position on it is the highest
  * rung they own; the goal is the highest rung whose requirements they meet; the next
- * upgrade is the cheapest step between the two. The first rung above the goal is
- * reported as well, with the requirement blocking it, because "70 Attack unlocks a whip"
- * is the more useful answer to "what should I aim for".
+ * upgrade is the best rung they meet, do not own, and can afford. The first rung above
+ * the goal is reported as well, with the requirement blocking it, because "70 Attack
+ * unlocks a whip" is the more useful answer to "what should I aim for".
  */
 public class GearAdvisor
 {
@@ -35,6 +35,19 @@ public class GearAdvisor
 	public List<GearSuggestion> adviseCombat(GearCategory category, PlayerProfile profile,
 											 @Nullable RequirementReport.ItemNameResolver itemNames)
 	{
+		return adviseCombat(category, profile, itemNames, null);
+	}
+
+	/**
+	 * Suggestions for every slot in a combat ladder, in slot order.
+	 *
+	 * @param prices resolves the current price of an item so "buy next" stays within
+	 *               what the player can pay, or null to ignore price
+	 */
+	public List<GearSuggestion> adviseCombat(GearCategory category, PlayerProfile profile,
+											 @Nullable RequirementReport.ItemNameResolver itemNames,
+											 @Nullable PriceResolver prices)
+	{
 		List<GearSuggestion> suggestions = new ArrayList<>();
 		for (EquipSlot slot : EquipSlot.values())
 		{
@@ -44,7 +57,7 @@ public class GearAdvisor
 				continue;
 			}
 
-			GearSuggestion suggestion = advise(slot, null, ladder, profile, itemNames);
+			GearSuggestion suggestion = advise(slot, null, ladder, profile, itemNames, prices);
 			if (!suggestion.isEmpty())
 			{
 				suggestions.add(suggestion);
@@ -60,6 +73,18 @@ public class GearAdvisor
 	public List<GearSuggestion> adviseTools(PlayerProfile profile,
 											@Nullable RequirementReport.ItemNameResolver itemNames)
 	{
+		return adviseTools(profile, itemNames, null);
+	}
+
+	/**
+	 * Suggestions for the tool ladders, one per skill that uses tools.
+	 *
+	 * @param prices resolves the current price of an item, or null to ignore price
+	 */
+	public List<GearSuggestion> adviseTools(PlayerProfile profile,
+											@Nullable RequirementReport.ItemNameResolver itemNames,
+											@Nullable PriceResolver prices)
+	{
 		List<GearSuggestion> suggestions = new ArrayList<>();
 		for (Skill skill : data.skillsWithTools())
 		{
@@ -69,7 +94,7 @@ public class GearAdvisor
 				continue;
 			}
 
-			GearSuggestion suggestion = advise(EquipSlot.TOOL, skill, ladder, profile, itemNames);
+			GearSuggestion suggestion = advise(EquipSlot.TOOL, skill, ladder, profile, itemNames, prices);
 			if (!suggestion.isEmpty())
 			{
 				suggestions.add(suggestion);
@@ -104,7 +129,8 @@ public class GearAdvisor
 
 	private GearSuggestion advise(EquipSlot slot, @Nullable Skill toolFor, List<GearItem> ladder,
 								  PlayerProfile profile,
-								  @Nullable RequirementReport.ItemNameResolver itemNames)
+								  @Nullable RequirementReport.ItemNameResolver itemNames,
+								  @Nullable PriceResolver prices)
 	{
 		List<GearItem> reachable = new ArrayList<>();
 		for (GearItem item : ladder)
@@ -154,26 +180,45 @@ public class GearAdvisor
 			}
 		}
 
-		// The next upgrade is the smallest step from what they own toward the goal.
+		// What to buy next is the best thing they qualify for, do not own, and can
+		// actually pay for. Both extremes are bad advice: stepping one rung at a time
+		// tells a level 61 miner to buy a bronze pickaxe, while ignoring price tells a
+		// player with 15m to go and buy a Bandos chestplate.
 		GearItem next = null;
-		if (goal != null)
+		if (goal != null && (owned == null || owned.getTier() < goal.getTier()))
 		{
 			int floor = owned == null ? Integer.MIN_VALUE : owned.getTier();
-			for (GearItem item : reachable)
+			next = goal;
+
+			if (prices != null)
 			{
-				if (item.getTier() <= floor || item.getTier() > goalTier)
+				GearItem affordable = null;
+				for (GearItem item : reachable)
 				{
-					continue;
+					if (item.getTier() <= floor || item.getTier() > goalTier)
+					{
+						continue;
+					}
+
+					if (!RequirementReport.check(item.getRequirements(), profile, itemNames).isSatisfied())
+					{
+						continue;
+					}
+
+					int price = prices.priceOf(item.getItemId());
+
+					// A price of zero means untradeable or unknown, which is not the
+					// same as free; those are judged on requirements alone.
+					boolean withinBudget = price <= 0 || price <= profile.getLiquidGp();
+					if (withinBudget && (affordable == null || item.getTier() > affordable.getTier()))
+					{
+						affordable = item;
+					}
 				}
 
-				if (!RequirementReport.check(item.getRequirements(), profile, itemNames).isSatisfied())
+				if (affordable != null)
 				{
-					continue;
-				}
-
-				if (next == null || item.getTier() < next.getTier())
-				{
-					next = item;
+					next = affordable;
 				}
 			}
 		}
@@ -209,5 +254,17 @@ public class GearAdvisor
 		}
 
 		return null;
+	}
+
+	/**
+	 * Resolves an item id to its current price. The panel backs this with the client's
+	 * item manager; tests pass a stub or null.
+	 */
+	public interface PriceResolver
+	{
+		/**
+		 * @return the price, or 0 when the item is untradeable or the price is unknown
+		 */
+		int priceOf(int itemId);
 	}
 }

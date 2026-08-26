@@ -81,6 +81,17 @@ class PanelContext
 	}
 
 	/**
+	 * Resolves prices for the gear advisor, so "buy next" stays within what the player
+	 * can actually pay. Null when the user has turned prices off, which makes the
+	 * advisor fall back to judging on requirements alone.
+	 */
+	@Nullable
+	GearAdvisor.PriceResolver prices()
+	{
+		return config.useLivePrices() ? this::priceOf : null;
+	}
+
+	/**
 	 * Current Grand Exchange price, or 0 when prices are switched off or unknown.
 	 */
 	int priceOf(int itemId)

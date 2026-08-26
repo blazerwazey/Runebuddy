@@ -1,6 +1,7 @@
 package com.runebuddy.data;
 
 import com.google.gson.Gson;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -29,6 +30,90 @@ public class DataStoreTest
 		assertFalse("no training methods loaded", store.getMethods().isEmpty());
 		assertFalse("no gear loaded", store.getGear().isEmpty());
 		assertEquals("data warnings: " + store.getWarnings(), 0, store.getWarnings().size());
+	}
+
+	@Test
+	public void everyTrainableSkillHasMethods()
+	{
+		List<String> missing = new ArrayList<>();
+		for (Skill skill : Skills.trainable())
+		{
+			// Sailing is in the API's skill enum but the data set deliberately leaves
+			// it out until its training methods are settled; see the README.
+			if (skill == Skill.SAILING)
+			{
+				continue;
+			}
+
+			if (store.methodsFor(skill).isEmpty())
+			{
+				missing.add(skill.name());
+			}
+		}
+
+		assertTrue("skills with no training methods: " + missing, missing.isEmpty());
+	}
+
+	@Test
+	public void freeToPlayAccountsHaveSomethingForTheFreeSkills()
+	{
+		// A free account can train these, so leaving them members-only would leave the
+		// panel blank for a large share of players.
+		for (Skill skill : new Skill[]{Skill.ATTACK, Skill.STRENGTH, Skill.DEFENCE, Skill.MINING,
+			Skill.WOODCUTTING, Skill.FISHING, Skill.COOKING, Skill.SMITHING, Skill.CRAFTING,
+			Skill.MAGIC, Skill.RANGED, Skill.PRAYER, Skill.FIREMAKING})
+		{
+			boolean anyFree = store.methodsFor(skill).stream().anyMatch(m -> !m.isMembers());
+			assertTrue(skill + " has no free-to-play method", anyFree);
+		}
+	}
+
+	@Test
+	public void ironmenHaveSomethingForEverySkill()
+	{
+		List<String> missing = new ArrayList<>();
+		for (Skill skill : Skills.trainable())
+		{
+			if (skill == Skill.SAILING)
+			{
+				continue;
+			}
+
+			if (store.methodsFor(skill).stream().noneMatch(TrainingMethod::isIronmanFriendly))
+			{
+				missing.add(skill.name());
+			}
+		}
+
+		assertTrue("skills with nothing an ironman can do: " + missing, missing.isEmpty());
+	}
+
+	@Test
+	public void everySkillHasAMethodAvailableFromLevelOne()
+	{
+		List<String> missing = new ArrayList<>();
+		for (Skill skill : Skills.trainable())
+		{
+			if (skill == Skill.SAILING)
+			{
+				continue;
+			}
+
+			int lowest = store.methodsFor(skill).stream()
+				.mapToInt(TrainingMethod::getMinLevel)
+				.min()
+				.orElse(Integer.MAX_VALUE);
+
+			// A brand new account should not open a skill tab and be told nothing is
+			// available. Some skills genuinely start above their floor (Herblore needs
+			// Druidic Ritual first), so allow a small opening gap.
+			if (lowest > Skills.startingLevel(skill) + 4)
+			{
+				missing.add(skill.name() + " starts at " + lowest);
+			}
+		}
+
+		assertTrue("skills a new account cannot start: " + missing, missing.isEmpty());
 	}
 
 	@Test
@@ -74,6 +159,38 @@ public class DataStoreTest
 		{
 			assertTrue("melee weapon ladder is out of order at " + item.getName(), item.getTier() > previous);
 			previous = item.getTier();
+		}
+	}
+
+	@Test
+	public void everyCombatStyleCoversTheMainSlots()
+	{
+		// These are the slots the gear tab shows for a combat ladder; a gap means an
+		// empty row for anyone training that style.
+		EquipSlot[] core = {EquipSlot.HEAD, EquipSlot.BODY, EquipSlot.LEGS, EquipSlot.WEAPON,
+			EquipSlot.HANDS, EquipSlot.FEET, EquipSlot.NECK, EquipSlot.RING};
+
+		for (GearCategory category : new GearCategory[]{GearCategory.MELEE, GearCategory.RANGED,
+			GearCategory.MAGIC})
+		{
+			for (EquipSlot slot : core)
+			{
+				assertFalse(category + " has no " + slot + " ladder",
+					store.ladder(category, slot).isEmpty());
+			}
+		}
+	}
+
+	@Test
+	public void everyLadderStartsSomewhereReachable()
+	{
+		for (GearItem item : store.getGear())
+		{
+			for (java.util.Map.Entry<Skill, Integer> req : item.getRequirements().getSkillLevels().entrySet())
+			{
+				assertTrue(item.getName() + " requires an impossible level in " + req.getKey(),
+					req.getValue() >= 1 && req.getValue() <= 99);
+			}
 		}
 	}
 

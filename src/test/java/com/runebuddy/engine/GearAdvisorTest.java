@@ -18,9 +18,14 @@ import static org.junit.Assert.assertTrue;
 
 public class GearAdvisorTest
 {
+	private static final int BLACK_SCIMITAR = 1327;
+	private static final int MITHRIL_SCIMITAR = 1329;
 	private static final int RUNE_SCIMITAR = 1333;
 	private static final int DRAGON_SCIMITAR = 4587;
 	private static final int ABYSSAL_WHIP = 4151;
+	private static final int DRAGON_PICKAXE = 11920;
+	private static final int INFERNAL_PICKAXE = 13243;
+	private static final int RUNE_PICKAXE = 1275;
 
 	private GearAdvisor advisor;
 
@@ -44,6 +49,21 @@ public class GearAdvisorTest
 			.filter(s -> s.getToolFor() == skill)
 			.findFirst()
 			.orElseThrow(() -> new AssertionError("no tool suggestion for " + skill));
+	}
+
+	@Test
+	public void doesNotProposeAnItemWorseThanWhatYouAlreadyOwn()
+	{
+		// Owning the top of the ladder, there is nothing to buy even though the ladder
+		// has plenty of cheaper rungs below.
+		PlayerProfile player = PlayerProfile.flat(60).toBuilder()
+			.completedQuest(Quest.MONKEY_MADNESS_I)
+			.owned(DRAGON_SCIMITAR, 1)
+			.build();
+
+		GearSuggestion weapon = slot(advisor.adviseCombat(GearCategory.MELEE, player, null), EquipSlot.WEAPON);
+
+		assertNull(weapon.getNext());
 	}
 
 	@Test
@@ -99,10 +119,11 @@ public class GearAdvisorTest
 
 		GearSuggestion weapon = slot(advisor.adviseCombat(GearCategory.MELEE, fresh, null), EquipSlot.WEAPON);
 
-		assertEquals("only the steel longsword is within reach at 10 Attack",
-			1291, weapon.getGoal().getItemId());
-		assertEquals("the rune scimitar is the thing to aim for",
-			RUNE_SCIMITAR, weapon.getLocked().getItemId());
+		assertEquals("the black scimitar is the best within reach at 10 Attack",
+			BLACK_SCIMITAR, weapon.getGoal().getItemId());
+		assertEquals("the next rung up is the thing to aim for",
+			MITHRIL_SCIMITAR, weapon.getLocked().getItemId());
+		assertEquals("needs 20 Attack", weapon.getLockedReport().blockingSummary());
 	}
 
 	@Test
@@ -155,8 +176,10 @@ public class GearAdvisorTest
 		assertFalse("tools should be suggested", tools.isEmpty());
 
 		GearSuggestion pickaxe = tool(tools, Skill.MINING);
-		assertEquals("61 Mining and 60 Attack reaches the dragon pickaxe",
-			11920, pickaxe.getGoal().getItemId());
+		assertEquals("the infernal pickaxe shares the dragon's requirements and outranks it",
+			INFERNAL_PICKAXE, pickaxe.getGoal().getItemId());
+		assertEquals("owning nothing, the thing to buy is the best they qualify for",
+			INFERNAL_PICKAXE, pickaxe.getNext().getItemId());
 		assertEquals("a tool row is labelled by its skill", "Mining", pickaxe.label());
 	}
 
@@ -171,7 +194,7 @@ public class GearAdvisorTest
 		GearSuggestion pickaxe = tool(advisor.adviseTools(miner, null), Skill.MINING);
 
 		assertEquals("40 Attack is still missing for the rune pickaxe",
-			1275, pickaxe.getLocked().getItemId());
+			RUNE_PICKAXE, pickaxe.getLocked().getItemId());
 		assertTrue(pickaxe.getLockedReport().blockingSummary().contains("Attack"));
 	}
 

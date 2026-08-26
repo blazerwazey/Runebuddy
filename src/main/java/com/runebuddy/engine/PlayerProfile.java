@@ -80,12 +80,12 @@ public class PlayerProfile
 	private final boolean bankKnown;
 
 	/**
-	 * Real level in a skill, defaulting to 1.
+	 * Real level in a skill, defaulting to whatever that skill starts at.
 	 */
 	public int level(Skill skill)
 	{
 		Integer level = levels.get(skill);
-		return level == null ? 1 : level;
+		return level == null ? Skills.startingLevel(skill) : level;
 	}
 
 	/**
@@ -138,7 +138,7 @@ public class PlayerProfile
 		Map<Skill, Integer> levels = new EnumMap<>(Skill.class);
 		for (Skill skill : Skills.trainable())
 		{
-			levels.put(skill, skill == Skill.HITPOINTS ? Math.max(level, 10) : level);
+			levels.put(skill, Math.max(level, Skills.startingLevel(skill)));
 		}
 
 		return PlayerProfile.builder()

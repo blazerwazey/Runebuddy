@@ -1,12 +1,15 @@
 package com.runebuddy.engine;
 
 import com.runebuddy.data.DataStore;
+import com.runebuddy.data.Effort;
 import com.runebuddy.data.Skills;
 import com.runebuddy.data.TrainingMethod;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.annotation.Nullable;
 import net.runelite.api.Skill;
 
@@ -32,6 +35,11 @@ public class RecommendationEngine
 	 * listed — it does still work — but drops below anything level-appropriate.
 	 */
 	private static final double OUTGROWN_PENALTY = 0.6;
+
+	/**
+	 * Gold per hour above which a method is worth calling out as a money maker.
+	 */
+	private static final int PROFITABLE = 150_000;
 
 	private final DataStore data;
 
@@ -123,6 +131,13 @@ public class RecommendationEngine
 
 		for (Skill skill : Skills.trainable())
 		{
+			// Hitpoints trains itself whenever you fight, so it is never the answer to
+			// "what should I do next".
+			if (skill == Skill.HITPOINTS)
+			{
+				continue;
+			}
+
 			SkillAdvice advice = adviceFor(skill, profile, settings, itemNames);
 			if (advice.getRecommended().isEmpty())
 			{
@@ -135,10 +150,22 @@ public class RecommendationEngine
 
 		best.sort(Comparator.comparingDouble((ScoredSuggestion s) -> s.weighted).reversed());
 
+		// Attack, Strength and Defence are trained by the same activities, so without
+		// this the overview is the same suggestion listed three times over.
+		Set<String> seenActivities = new HashSet<>();
 		List<MethodScore> result = new ArrayList<>();
-		for (ScoredSuggestion suggestion : best.subList(0, Math.min(limit, best.size())))
+
+		for (ScoredSuggestion suggestion : best)
 		{
-			result.add(suggestion.score);
+			if (result.size() >= limit)
+			{
+				break;
+			}
+
+			if (seenActivities.add(suggestion.score.getMethod().getName()))
+			{
+				result.add(suggestion.score);
+			}
 		}
 
 		return result;
@@ -203,7 +230,7 @@ public class RecommendationEngine
 				method.getGpPerHour(),
 				RequirementReport.check(method.getRequirements(), profile, itemNames),
 				outgrown,
-				rationale(method, outgrown, xpTerm, gpTerm, afkTerm, wXp, wGp, wAfk)));
+				rationale(method, outgrown, xpTerm, gpTerm)));
 		}
 
 		return scored;
@@ -244,36 +271,88 @@ public class RecommendationEngine
 	}
 
 	/**
-	 * Turns the winning term into a sentence. The user sees this instead of the score.
+	 * Describes what stands out about this method, for the user to read instead of the
+	 * score.
+	 *
+	 * <p>Deliberately built from the method's own character rather than from whichever
+	 * scoring term happened to win. The experience term is normalised per skill, so the
+	 * top method in every skill scores 1.0 on it — keying the text off that alone would
+	 * label almost everything "fastest experience" and tell the reader nothing.
 	 */
-	private String rationale(TrainingMethod method, boolean outgrown,
-							 double xpTerm, double gpTerm, double afkTerm,
-							 double wXp, double wGp, double wAfk)
+	private String rationale(TrainingMethod method, boolean outgrown, double xpTerm, double gpTerm)
 	{
 		if (outgrown)
 		{
 			return "Still works, but you have out-levelled it";
 		}
 
-		double xpContribution = wXp * xpTerm;
-		double gpContribution = wGp * gpTerm;
-		double afkContribution = wAfk * afkTerm;
+		List<String> traits = new ArrayList<>();
 
-		if (xpContribution >= gpContribution && xpContribution >= afkContribution)
+		if (method.getGpPerHour() >= PROFITABLE)
 		{
-			return xpTerm >= 0.999
-				? "Fastest experience at your level"
-				: "Strong experience for what it asks of you";
+			traits.add("it pays well");
+		}
+		else if (method.getGpPerHour() > 0)
+		{
+			traits.add("it makes a little money");
+		}
+		else if (gpTerm < 0.35)
+		{
+			traits.add("but it is expensive to sustain");
+		}
+		else if (method.getGpPerHour() == 0)
+		{
+			traits.add("it costs nothing");
 		}
 
-		if (gpContribution >= afkContribution)
+		if (method.getEffort() == Effort.AFK)
 		{
-			return method.getGpPerHour() > 0
-				? "Makes money while you train"
-				: "Cheap to keep going";
+			traits.add("it barely needs your attention");
+		}
+		else if (method.getEffort() == Effort.HIGH)
+		{
+			traits.add("it wants constant clicking");
 		}
 
-		return method.getEffort().getLabel() + ", so it fits around other things";
+		// The rate goes last, and only if there is room. Every skill's top method scores
+		// full marks on the normalised experience term, so leading with it would print
+		// the same sentence on every row of the overview.
+		if (xpTerm >= 0.999)
+		{
+			traits.add("it is the fastest option you have");
+		}
+		else if (xpTerm >= 0.75)
+		{
+			traits.add("the rate is close to the best you can get");
+		}
+
+		if (traits.isEmpty())
+		{
+			return "A solid option at your level";
+		}
+
+		return capitalise(join(traits.subList(0, Math.min(2, traits.size()))));
+	}
+
+	/**
+	 * "a, b and c", with "but" clauses joined without a comma so they read naturally.
+	 */
+	private static String join(List<String> parts)
+	{
+		StringBuilder sentence = new StringBuilder(parts.get(0));
+		for (int i = 1; i < parts.size(); i++)
+		{
+			String part = parts.get(i);
+			boolean last = i == parts.size() - 1;
+			sentence.append(part.startsWith("but ") ? ", " : (last ? " and " : ", ")).append(part);
+		}
+
+		return sentence.toString();
+	}
+
+	private static String capitalise(String text)
+	{
+		return text.isEmpty() ? text : Character.toUpperCase(text.charAt(0)) + text.substring(1);
 	}
 
 	private String unlockRationale(TrainingMethod method, int level, RequirementReport report)

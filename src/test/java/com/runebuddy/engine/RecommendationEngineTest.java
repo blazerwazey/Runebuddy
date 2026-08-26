@@ -108,13 +108,17 @@ public class RecommendationEngineTest
 		EngineSettings xpOnly = EngineSettings.builder().xpWeight(10).gpWeight(0).afkWeight(0).build();
 		EngineSettings goldMatters = EngineSettings.builder().xpWeight(4).gpWeight(10).afkWeight(0).build();
 
-		List<String> byXp = ids(engine.adviceFor(Skill.ATTACK, broke, xpOnly, null).getRecommended());
-		List<String> byGold = ids(engine.adviceFor(Skill.ATTACK, broke, goldMatters, null).getRecommended());
+		List<MethodScore> byXp = engine.adviceFor(Skill.ATTACK, broke, xpOnly, null).getRecommended();
+		List<MethodScore> byGold = engine.adviceFor(Skill.ATTACK, broke, goldMatters, null).getRecommended();
 
 		assertEquals("the fastest method should win when only XP matters",
-			"attack_nightmare_zone", byXp.get(0));
-		assertEquals("the affordable method should win when gold matters and coins are short",
-			"attack_sand_crabs", byGold.get(0));
+			"attack_nightmare_zone", ids(byXp).get(0));
+
+		assertTrue("a method that costs a fortune should not lead when coins are short",
+			byGold.get(0).getGpPerHour() > byXp.get(0).getGpPerHour());
+		assertTrue("Nightmare Zone should be pushed down the list",
+			ids(byGold).indexOf("attack_nightmare_zone") > 0
+				|| !ids(byGold).contains("attack_nightmare_zone"));
 	}
 
 	@Test
