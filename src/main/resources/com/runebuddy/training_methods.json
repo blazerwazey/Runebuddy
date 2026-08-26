@@ -1,0 +1,3102 @@
+[
+  {
+    "id": "attack_chickens",
+    "skill": "ATTACK",
+    "name": "Chickens and cows",
+    "minLevel": 1,
+    "recommendedUntil": 20,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 6000
+      },
+      {
+        "level": 20,
+        "xpPerHour": 11000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Lumbridge",
+    "notes": "Only for the first few levels. Move on as soon as you can survive crabs.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Combat_training"
+  },
+  {
+    "id": "attack_sand_crabs",
+    "skill": "ATTACK",
+    "name": "Sand crabs",
+    "minLevel": 10,
+    "recommendedUntil": 70,
+    "xpCurve": [
+      {
+        "level": 10,
+        "xpPerHour": 12000
+      },
+      {
+        "level": 40,
+        "xpPerHour": 26000
+      },
+      {
+        "level": 70,
+        "xpPerHour": 38000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 45000
+      }
+    ],
+    "gpPerHour": -2000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "notes": [
+        "Food for the first few levels"
+      ]
+    },
+    "location": "Hosidius shore or Crabclaw Isle",
+    "notes": "They reset if you step away, so you get a lot of experience for very little attention. Rates depend on your gear more than your level.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Sand_Crab"
+  },
+  {
+    "id": "attack_ammonite_crabs",
+    "skill": "ATTACK",
+    "name": "Ammonite crabs",
+    "minLevel": 30,
+    "recommendedUntil": 80,
+    "xpCurve": [
+      {
+        "level": 30,
+        "xpPerHour": 18000
+      },
+      {
+        "level": 60,
+        "xpPerHour": 32000
+      },
+      {
+        "level": 90,
+        "xpPerHour": 42000
+      }
+    ],
+    "gpPerHour": -2000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "quests": [
+        "BONE_VOYAGE"
+      ]
+    },
+    "location": "Fossil Island",
+    "notes": "More hitpoints than sand crabs, so fewer respawns to reset.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Ammonite_Crab"
+  },
+  {
+    "id": "attack_nightmare_zone",
+    "skill": "ATTACK",
+    "name": "Nightmare Zone",
+    "minLevel": 70,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 70,
+        "xpPerHour": 55000
+      },
+      {
+        "level": 85,
+        "xpPerHour": 70000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 85000
+      }
+    ],
+    "gpPerHour": -120000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {
+        "ATTACK": 70,
+        "STRENGTH": 70
+      },
+      "quests": [
+        "DREAM_MENTOR"
+      ],
+      "notes": [
+        "Five qualifying quests to unlock enough bosses"
+      ]
+    },
+    "location": "Yanille",
+    "notes": "Absorption potions make this close to idle, but they cost real money and have to be bought.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Nightmare_Zone"
+  },
+  {
+    "id": "attack_slayer_tasks",
+    "skill": "ATTACK",
+    "name": "Slayer tasks",
+    "minLevel": 40,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 40,
+        "xpPerHour": 20000
+      },
+      {
+        "level": 70,
+        "xpPerHour": 40000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 55000
+      }
+    ],
+    "gpPerHour": 250000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "SLAYER": 40
+      }
+    },
+    "location": "Wherever your task sends you",
+    "notes": "Slower than dedicated training, but it pays for itself many times over and levels Slayer at the same time.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Slayer"
+  },
+  {
+    "id": "strength_chickens",
+    "skill": "STRENGTH",
+    "name": "Chickens and cows",
+    "minLevel": 1,
+    "recommendedUntil": 20,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 6000
+      },
+      {
+        "level": 20,
+        "xpPerHour": 11000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Lumbridge",
+    "notes": "Only for the first few levels. Move on as soon as you can survive crabs.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Combat_training"
+  },
+  {
+    "id": "strength_sand_crabs",
+    "skill": "STRENGTH",
+    "name": "Sand crabs",
+    "minLevel": 10,
+    "recommendedUntil": 70,
+    "xpCurve": [
+      {
+        "level": 10,
+        "xpPerHour": 12000
+      },
+      {
+        "level": 40,
+        "xpPerHour": 26000
+      },
+      {
+        "level": 70,
+        "xpPerHour": 38000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 45000
+      }
+    ],
+    "gpPerHour": -2000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "notes": [
+        "Food for the first few levels"
+      ]
+    },
+    "location": "Hosidius shore or Crabclaw Isle",
+    "notes": "They reset if you step away, so you get a lot of experience for very little attention. Rates depend on your gear more than your level.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Sand_Crab"
+  },
+  {
+    "id": "strength_ammonite_crabs",
+    "skill": "STRENGTH",
+    "name": "Ammonite crabs",
+    "minLevel": 30,
+    "recommendedUntil": 80,
+    "xpCurve": [
+      {
+        "level": 30,
+        "xpPerHour": 18000
+      },
+      {
+        "level": 60,
+        "xpPerHour": 32000
+      },
+      {
+        "level": 90,
+        "xpPerHour": 42000
+      }
+    ],
+    "gpPerHour": -2000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "quests": [
+        "BONE_VOYAGE"
+      ]
+    },
+    "location": "Fossil Island",
+    "notes": "More hitpoints than sand crabs, so fewer respawns to reset.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Ammonite_Crab"
+  },
+  {
+    "id": "strength_nightmare_zone",
+    "skill": "STRENGTH",
+    "name": "Nightmare Zone",
+    "minLevel": 70,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 70,
+        "xpPerHour": 55000
+      },
+      {
+        "level": 85,
+        "xpPerHour": 70000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 85000
+      }
+    ],
+    "gpPerHour": -120000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {
+        "ATTACK": 70,
+        "STRENGTH": 70
+      },
+      "quests": [
+        "DREAM_MENTOR"
+      ],
+      "notes": [
+        "Five qualifying quests to unlock enough bosses"
+      ]
+    },
+    "location": "Yanille",
+    "notes": "Absorption potions make this close to idle, but they cost real money and have to be bought.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Nightmare_Zone"
+  },
+  {
+    "id": "strength_slayer_tasks",
+    "skill": "STRENGTH",
+    "name": "Slayer tasks",
+    "minLevel": 40,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 40,
+        "xpPerHour": 20000
+      },
+      {
+        "level": 70,
+        "xpPerHour": 40000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 55000
+      }
+    ],
+    "gpPerHour": 250000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "SLAYER": 40
+      }
+    },
+    "location": "Wherever your task sends you",
+    "notes": "Slower than dedicated training, but it pays for itself many times over and levels Slayer at the same time.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Slayer"
+  },
+  {
+    "id": "defence_chickens",
+    "skill": "DEFENCE",
+    "name": "Chickens and cows",
+    "minLevel": 1,
+    "recommendedUntil": 20,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 6000
+      },
+      {
+        "level": 20,
+        "xpPerHour": 11000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Lumbridge",
+    "notes": "Only for the first few levels. Move on as soon as you can survive crabs.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Combat_training"
+  },
+  {
+    "id": "defence_sand_crabs",
+    "skill": "DEFENCE",
+    "name": "Sand crabs",
+    "minLevel": 10,
+    "recommendedUntil": 70,
+    "xpCurve": [
+      {
+        "level": 10,
+        "xpPerHour": 12000
+      },
+      {
+        "level": 40,
+        "xpPerHour": 26000
+      },
+      {
+        "level": 70,
+        "xpPerHour": 38000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 45000
+      }
+    ],
+    "gpPerHour": -2000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "notes": [
+        "Food for the first few levels"
+      ]
+    },
+    "location": "Hosidius shore or Crabclaw Isle",
+    "notes": "They reset if you step away, so you get a lot of experience for very little attention. Rates depend on your gear more than your level.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Sand_Crab"
+  },
+  {
+    "id": "defence_ammonite_crabs",
+    "skill": "DEFENCE",
+    "name": "Ammonite crabs",
+    "minLevel": 30,
+    "recommendedUntil": 80,
+    "xpCurve": [
+      {
+        "level": 30,
+        "xpPerHour": 18000
+      },
+      {
+        "level": 60,
+        "xpPerHour": 32000
+      },
+      {
+        "level": 90,
+        "xpPerHour": 42000
+      }
+    ],
+    "gpPerHour": -2000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "quests": [
+        "BONE_VOYAGE"
+      ]
+    },
+    "location": "Fossil Island",
+    "notes": "More hitpoints than sand crabs, so fewer respawns to reset.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Ammonite_Crab"
+  },
+  {
+    "id": "defence_nightmare_zone",
+    "skill": "DEFENCE",
+    "name": "Nightmare Zone",
+    "minLevel": 70,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 70,
+        "xpPerHour": 55000
+      },
+      {
+        "level": 85,
+        "xpPerHour": 70000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 85000
+      }
+    ],
+    "gpPerHour": -120000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {
+        "ATTACK": 70,
+        "STRENGTH": 70
+      },
+      "quests": [
+        "DREAM_MENTOR"
+      ],
+      "notes": [
+        "Five qualifying quests to unlock enough bosses"
+      ]
+    },
+    "location": "Yanille",
+    "notes": "Absorption potions make this close to idle, but they cost real money and have to be bought.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Nightmare_Zone"
+  },
+  {
+    "id": "defence_slayer_tasks",
+    "skill": "DEFENCE",
+    "name": "Slayer tasks",
+    "minLevel": 40,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 40,
+        "xpPerHour": 20000
+      },
+      {
+        "level": 70,
+        "xpPerHour": 40000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 55000
+      }
+    ],
+    "gpPerHour": 250000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "SLAYER": 40
+      }
+    },
+    "location": "Wherever your task sends you",
+    "notes": "Slower than dedicated training, but it pays for itself many times over and levels Slayer at the same time.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Slayer"
+  },
+  {
+    "id": "attack_f2p_hill_giants",
+    "skill": "ATTACK",
+    "name": "Hill giants",
+    "minLevel": 20,
+    "recommendedUntil": 45,
+    "xpCurve": [
+      {
+        "level": 20,
+        "xpPerHour": 14000
+      },
+      {
+        "level": 45,
+        "xpPerHour": 22000
+      }
+    ],
+    "gpPerHour": 30000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Edgeville dungeon",
+    "notes": "A free-to-play staple. The big bones pay for Prayer levels later.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Combat_training"
+  },
+  {
+    "id": "strength_f2p_hill_giants",
+    "skill": "STRENGTH",
+    "name": "Hill giants",
+    "minLevel": 20,
+    "recommendedUntil": 45,
+    "xpCurve": [
+      {
+        "level": 20,
+        "xpPerHour": 14000
+      },
+      {
+        "level": 45,
+        "xpPerHour": 22000
+      }
+    ],
+    "gpPerHour": 30000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Edgeville dungeon",
+    "notes": "A free-to-play staple. The big bones pay for Prayer levels later.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Combat_training"
+  },
+  {
+    "id": "hitpoints_passive",
+    "skill": "HITPOINTS",
+    "name": "Any combat training",
+    "minLevel": 10,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 10,
+        "xpPerHour": 4000
+      },
+      {
+        "level": 50,
+        "xpPerHour": 11000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 18000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "AFK",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Anywhere you fight",
+    "notes": "Hitpoints comes along with everything else you kill, at roughly a third the rate of the combat skill you are training.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Hitpoints"
+  },
+  {
+    "id": "hitpoints_nightmare_zone",
+    "skill": "HITPOINTS",
+    "name": "Nightmare Zone on controlled",
+    "minLevel": 70,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 70,
+        "xpPerHour": 25000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 32000
+      }
+    ],
+    "gpPerHour": -120000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {
+        "ATTACK": 70
+      },
+      "quests": [
+        "DREAM_MENTOR"
+      ]
+    },
+    "location": "Yanille",
+    "notes": "Controlled attack style spreads experience across all three melee skills while Hitpoints ticks up regardless.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Nightmare_Zone"
+  },
+  {
+    "id": "ranged_chickens",
+    "skill": "RANGED",
+    "name": "Chickens",
+    "minLevel": 1,
+    "recommendedUntil": 20,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 7000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Lumbridge",
+    "notes": "Collect the feathers; they pay for your arrows.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Ranged_training"
+  },
+  {
+    "id": "ranged_sand_crabs",
+    "skill": "RANGED",
+    "name": "Sand crabs",
+    "minLevel": 20,
+    "recommendedUntil": 70,
+    "xpCurve": [
+      {
+        "level": 20,
+        "xpPerHour": 20000
+      },
+      {
+        "level": 50,
+        "xpPerHour": 33000
+      },
+      {
+        "level": 75,
+        "xpPerHour": 42000
+      }
+    ],
+    "gpPerHour": -8000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Hosidius shore",
+    "notes": "Bring an Ava's device so you keep your ammunition.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Sand_Crab"
+  },
+  {
+    "id": "ranged_chinchompas",
+    "skill": "RANGED",
+    "name": "Chinchompas at Maniacal monkeys",
+    "minLevel": 60,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 60,
+        "xpPerHour": 110000
+      },
+      {
+        "level": 80,
+        "xpPerHour": 200000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 260000
+      }
+    ],
+    "gpPerHour": -900000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {
+        "RANGED": 60
+      },
+      "quests": [
+        "MONKEY_MADNESS_II"
+      ]
+    },
+    "location": "Kruk's Dungeon",
+    "notes": "The fastest ranged experience in the game, and priced to match. Budget before you commit.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Chinchompa"
+  },
+  {
+    "id": "ranged_nightmare_zone",
+    "skill": "RANGED",
+    "name": "Nightmare Zone",
+    "minLevel": 70,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 70,
+        "xpPerHour": 60000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 90000
+      }
+    ],
+    "gpPerHour": -150000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "quests": [
+        "DREAM_MENTOR"
+      ]
+    },
+    "location": "Yanille",
+    "notes": "A cheaper alternative to chinchompas that asks almost nothing of you.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Nightmare_Zone"
+  },
+  {
+    "id": "ranged_cannon_slayer",
+    "skill": "RANGED",
+    "name": "Slayer tasks with a cannon",
+    "minLevel": 50,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 50,
+        "xpPerHour": 45000
+      },
+      {
+        "level": 75,
+        "xpPerHour": 65000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 80000
+      }
+    ],
+    "gpPerHour": -100000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "SLAYER": 40
+      },
+      "notes": [
+        "Dwarf Cannon for the cannon"
+      ]
+    },
+    "location": "Wherever your task sends you",
+    "notes": "Turns slow tasks into fast ones and keeps the drops coming.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Dwarf_multicannon"
+  },
+  {
+    "id": "prayer_big_bones",
+    "skill": "PRAYER",
+    "name": "Bury big bones",
+    "minLevel": 1,
+    "recommendedUntil": 40,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 12000
+      },
+      {
+        "level": 40,
+        "xpPerHour": 18000
+      }
+    ],
+    "gpPerHour": -40000,
+    "effort": "HIGH",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Anywhere",
+    "notes": "Cheap and slow. Fine early, but an altar is worth switching to quickly.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Prayer_training"
+  },
+  {
+    "id": "prayer_gilded_altar_dragon",
+    "skill": "PRAYER",
+    "name": "Dragon bones on a gilded altar",
+    "minLevel": 30,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 30,
+        "xpPerHour": 250000
+      },
+      {
+        "level": 70,
+        "xpPerHour": 380000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 450000
+      }
+    ],
+    "gpPerHour": -1400000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "notes": [
+        "A player-owned house with a gilded altar, or use someone else's"
+      ]
+    },
+    "location": "Any gilded altar house",
+    "notes": "The standard way to buy Prayer levels. Expensive per hour but very fast, so the total cost to 70 is what matters, not the rate.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Prayer_training"
+  },
+  {
+    "id": "prayer_ensouled_heads",
+    "skill": "PRAYER",
+    "name": "Ensouled heads",
+    "minLevel": 1,
+    "recommendedUntil": 80,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 60000
+      },
+      {
+        "level": 50,
+        "xpPerHour": 200000
+      },
+      {
+        "level": 80,
+        "xpPerHour": 280000
+      }
+    ],
+    "gpPerHour": -250000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "quests": [
+        "CLIENT_OF_KOUREND"
+      ]
+    },
+    "location": "Arceuus, Great Kourend",
+    "notes": "Needs Arceuus spellbook runes rather than bones, which suits an account that has more runes than gold.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Ensouled_head"
+  },
+  {
+    "id": "prayer_wilderness_altar",
+    "skill": "PRAYER",
+    "name": "Chaos altar in the Wilderness",
+    "minLevel": 30,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 30,
+        "xpPerHour": 300000
+      },
+      {
+        "level": 70,
+        "xpPerHour": 450000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 550000
+      }
+    ],
+    "gpPerHour": -700000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Wilderness, level 38",
+    "notes": "Half your bones are not consumed, so the cost per level roughly halves \u2014 but you are in the Wilderness, and people do come for you.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Chaos_Temple"
+  },
+  {
+    "id": "magic_curse_altar",
+    "skill": "MAGIC",
+    "name": "Curse spells on splashers",
+    "minLevel": 1,
+    "recommendedUntil": 20,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 15000
+      }
+    ],
+    "gpPerHour": -20000,
+    "effort": "AFK",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Anywhere safe",
+    "notes": "Cast a curse with no damage bonus so you never kill the target.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Magic_training"
+  },
+  {
+    "id": "magic_splashing",
+    "skill": "MAGIC",
+    "name": "Splashing",
+    "minLevel": 5,
+    "recommendedUntil": 55,
+    "xpCurve": [
+      {
+        "level": 5,
+        "xpPerHour": 22000
+      },
+      {
+        "level": 30,
+        "xpPerHour": 30000
+      },
+      {
+        "level": 55,
+        "xpPerHour": 40000
+      }
+    ],
+    "gpPerHour": -60000,
+    "effort": "AFK",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Anywhere with a low-level monster",
+    "notes": "Deliberately wear negative magic accuracy so every cast misses. Nearly zero attention, and priced entirely in runes.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Splashing"
+  },
+  {
+    "id": "magic_high_alchemy",
+    "skill": "MAGIC",
+    "name": "High Level Alchemy",
+    "minLevel": 55,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 55,
+        "xpPerHour": 78000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 78000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 55
+      }
+    },
+    "location": "Anywhere",
+    "notes": "Rate is fixed by the spell, not your level. Pick an item that alchs for more than the nature rune costs and this is free experience.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/High_Level_Alchemy"
+  },
+  {
+    "id": "magic_stun_alch",
+    "skill": "MAGIC",
+    "name": "Stun-alching",
+    "minLevel": 80,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 80,
+        "xpPerHour": 170000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 195000
+      }
+    ],
+    "gpPerHour": -400000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 80
+      }
+    },
+    "location": "Anywhere with a stunnable target",
+    "notes": "Alternate Stun with High Alchemy. Roughly double the alching rate, and it asks for your full attention.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Magic_training"
+  },
+  {
+    "id": "magic_trident_slayer",
+    "skill": "MAGIC",
+    "name": "Trident on Slayer tasks",
+    "minLevel": 75,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 75,
+        "xpPerHour": 50000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 65000
+      }
+    ],
+    "gpPerHour": 200000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 75,
+        "SLAYER": 40
+      }
+    },
+    "location": "Wherever your task sends you",
+    "notes": "Slower than alching but it pays you and levels Slayer at the same time.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Trident_of_the_seas"
+  },
+  {
+    "id": "cooking_shrimp",
+    "skill": "COOKING",
+    "name": "Cook shrimp and sardines",
+    "minLevel": 1,
+    "recommendedUntil": 25,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 30000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Lumbridge",
+    "notes": "Catch them yourself and this costs nothing.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Cooking_training"
+  },
+  {
+    "id": "cooking_trout_salmon",
+    "skill": "COOKING",
+    "name": "Cook trout and salmon",
+    "minLevel": 25,
+    "recommendedUntil": 62,
+    "xpCurve": [
+      {
+        "level": 25,
+        "xpPerHour": 90000
+      },
+      {
+        "level": 50,
+        "xpPerHour": 130000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Any range",
+    "notes": "Whatever you caught while training Fishing.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Cooking_training"
+  },
+  {
+    "id": "cooking_karambwan",
+    "skill": "COOKING",
+    "name": "Cook karambwan",
+    "minLevel": 30,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 30,
+        "xpPerHour": 140000
+      },
+      {
+        "level": 70,
+        "xpPerHour": 220000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 300000
+      }
+    ],
+    "gpPerHour": -80000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "notes": [
+        "Tai Bwo Wannai Trio to cook them"
+      ]
+    },
+    "location": "Any range with a bank nearby",
+    "notes": "Cooked one at a time rather than as a batch, so it is fast but constant clicking. The fish are cheap.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Karambwan"
+  },
+  {
+    "id": "cooking_wines",
+    "skill": "COOKING",
+    "name": "Make jugs of wine",
+    "minLevel": 35,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 35,
+        "xpPerHour": 200000
+      },
+      {
+        "level": 70,
+        "xpPerHour": 320000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 440000
+      }
+    ],
+    "gpPerHour": -180000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": false,
+    "requirements": {},
+    "location": "Anywhere with a bank",
+    "notes": "The fastest cooking experience there is, and it needs no range at all.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Jug_of_wine"
+  },
+  {
+    "id": "woodcutting_trees",
+    "skill": "WOODCUTTING",
+    "name": "Chop regular trees",
+    "minLevel": 1,
+    "recommendedUntil": 15,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 8000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Anywhere with trees",
+    "notes": "Drop the logs. Oaks are better from 15.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Woodcutting_training"
+  },
+  {
+    "id": "woodcutting_oaks",
+    "skill": "WOODCUTTING",
+    "name": "Chop oak logs",
+    "minLevel": 15,
+    "recommendedUntil": 30,
+    "xpCurve": [
+      {
+        "level": 15,
+        "xpPerHour": 17000
+      },
+      {
+        "level": 30,
+        "xpPerHour": 24000
+      }
+    ],
+    "gpPerHour": 8000,
+    "effort": "AFK",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 15
+      }
+    },
+    "location": "Draynor Manor or Lumbridge",
+    "notes": "Oaks do not deplete, so you can settle in on one tree.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Woodcutting_training"
+  },
+  {
+    "id": "woodcutting_willows",
+    "skill": "WOODCUTTING",
+    "name": "Chop willow logs",
+    "minLevel": 30,
+    "recommendedUntil": 60,
+    "xpCurve": [
+      {
+        "level": 30,
+        "xpPerHour": 25000
+      },
+      {
+        "level": 60,
+        "xpPerHour": 45000
+      }
+    ],
+    "gpPerHour": 12000,
+    "effort": "AFK",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 30
+      }
+    },
+    "location": "Draynor Village",
+    "notes": "The classic low-effort option, and the bank is right there.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Woodcutting_training"
+  },
+  {
+    "id": "woodcutting_teaks",
+    "skill": "WOODCUTTING",
+    "name": "Chop teak trees",
+    "minLevel": 35,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 35,
+        "xpPerHour": 40000
+      },
+      {
+        "level": 70,
+        "xpPerHour": 90000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 130000
+      }
+    ],
+    "gpPerHour": 130000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 35
+      }
+    },
+    "location": "Ape Atoll or Fossil Island",
+    "notes": "Fast and profitable if you tick-manipulate; still good if you do not.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Teak"
+  },
+  {
+    "id": "woodcutting_sulliusceps",
+    "skill": "WOODCUTTING",
+    "name": "Chop sulliusceps",
+    "minLevel": 65,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 65,
+        "xpPerHour": 70000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 105000
+      }
+    ],
+    "gpPerHour": 190000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 65
+      },
+      "quests": [
+        "BONE_VOYAGE"
+      ]
+    },
+    "location": "Fossil Island tar swamp",
+    "notes": "Good experience, good money, and no banking.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Sulliuscep"
+  },
+  {
+    "id": "woodcutting_redwoods",
+    "skill": "WOODCUTTING",
+    "name": "Chop redwood logs",
+    "minLevel": 90,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 90,
+        "xpPerHour": 65000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 70000
+      }
+    ],
+    "gpPerHour": 190000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 90
+      }
+    },
+    "location": "Woodcutting Guild, Hosidius",
+    "notes": "Slower than teaks but almost completely idle, and it pays well.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Redwood"
+  },
+  {
+    "id": "fletching_arrow_shafts",
+    "skill": "FLETCHING",
+    "name": "Cut arrow shafts",
+    "minLevel": 1,
+    "recommendedUntil": 10,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 25000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Anywhere",
+    "notes": "A few minutes of work to get past the first levels.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Fletching_training"
+  },
+  {
+    "id": "fletching_shortbows",
+    "skill": "FLETCHING",
+    "name": "String unstrung bows",
+    "minLevel": 5,
+    "recommendedUntil": 70,
+    "xpCurve": [
+      {
+        "level": 5,
+        "xpPerHour": 60000
+      },
+      {
+        "level": 35,
+        "xpPerHour": 130000
+      },
+      {
+        "level": 70,
+        "xpPerHour": 200000
+      }
+    ],
+    "gpPerHour": 40000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": false,
+    "requirements": {},
+    "location": "Anywhere with a bank",
+    "notes": "Buy unstrung bows and bowstring, string them, sell them back. Often turns a small profit.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Fletching_training"
+  },
+  {
+    "id": "fletching_darts",
+    "skill": "FLETCHING",
+    "name": "Make darts",
+    "minLevel": 10,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 10,
+        "xpPerHour": 100000
+      },
+      {
+        "level": 60,
+        "xpPerHour": 700000
+      },
+      {
+        "level": 95,
+        "xpPerHour": 1200000
+      }
+    ],
+    "gpPerHour": -600000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {
+        "FLETCHING": 10
+      }
+    },
+    "location": "Anywhere with a bank",
+    "notes": "By far the fastest fletching experience, and by far the most expensive. Instant on click, so it is pure clicking speed.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Dart"
+  },
+  {
+    "id": "fletching_broad_bolts",
+    "skill": "FLETCHING",
+    "name": "Tip broad bolts",
+    "minLevel": 55,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 55,
+        "xpPerHour": 300000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 400000
+      }
+    ],
+    "gpPerHour": -100000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "FLETCHING": 55,
+        "SLAYER": 55
+      }
+    },
+    "location": "Anywhere with a bank",
+    "notes": "Cheaper than darts and still quick. Uses Slayer points for the tips.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Broad_bolts"
+  },
+  {
+    "id": "fishing_shrimp",
+    "skill": "FISHING",
+    "name": "Net shrimp and anchovies",
+    "minLevel": 1,
+    "recommendedUntil": 20,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 9000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Lumbridge Swamp or Draynor",
+    "notes": "Just the first twenty levels.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Fishing_training"
+  },
+  {
+    "id": "fishing_fly_fishing",
+    "skill": "FISHING",
+    "name": "Fly fish trout and salmon",
+    "minLevel": 20,
+    "recommendedUntil": 62,
+    "xpCurve": [
+      {
+        "level": 20,
+        "xpPerHour": 25000
+      },
+      {
+        "level": 40,
+        "xpPerHour": 40000
+      },
+      {
+        "level": 62,
+        "xpPerHour": 50000
+      }
+    ],
+    "gpPerHour": 15000,
+    "effort": "AFK",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "FISHING": 20
+      }
+    },
+    "location": "Barbarian Village or Shilo Village",
+    "notes": "Drop the fish for speed, or cook them for Cooking levels on the side.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Fishing_training"
+  },
+  {
+    "id": "fishing_barbarian",
+    "skill": "FISHING",
+    "name": "Barbarian fishing",
+    "minLevel": 58,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 58,
+        "xpPerHour": 35000
+      },
+      {
+        "level": 80,
+        "xpPerHour": 55000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 65000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "LOW",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "FISHING": 58,
+        "AGILITY": 15,
+        "STRENGTH": 15
+      },
+      "quests": [
+        "BARBARIAN_TRAINING"
+      ]
+    },
+    "location": "Otto's Grotto",
+    "notes": "Gives Agility and Strength experience alongside the Fishing, which is most of the reason to do it.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Barbarian_Fishing"
+  },
+  {
+    "id": "fishing_karambwan",
+    "skill": "FISHING",
+    "name": "Fish karambwan",
+    "minLevel": 65,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 65,
+        "xpPerHour": 30000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 40000
+      }
+    ],
+    "gpPerHour": 250000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "FISHING": 65
+      },
+      "notes": [
+        "Tai Bwo Wannai Trio"
+      ]
+    },
+    "location": "Karamja",
+    "notes": "Three-tick fishing makes this fast, but it needs constant precise clicking.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Karambwan"
+  },
+  {
+    "id": "fishing_anglerfish",
+    "skill": "FISHING",
+    "name": "Fish anglerfish",
+    "minLevel": 82,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 82,
+        "xpPerHour": 30000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 35000
+      }
+    ],
+    "gpPerHour": 400000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "FISHING": 82
+      },
+      "notes": [
+        "100% Piscarilius favour"
+      ]
+    },
+    "location": "Port Piscarilius",
+    "notes": "Slow experience, but anglerfish sell well and it asks nothing of you.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Anglerfish"
+  },
+  {
+    "id": "firemaking_logs",
+    "skill": "FIREMAKING",
+    "name": "Burn logs on a line",
+    "minLevel": 1,
+    "recommendedUntil": 50,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 45000
+      },
+      {
+        "level": 30,
+        "xpPerHour": 90000
+      },
+      {
+        "level": 50,
+        "xpPerHour": 130000
+      }
+    ],
+    "gpPerHour": -30000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Grand Exchange or Varrock west bank",
+    "notes": "Buy the logs, walk a line burning them, repeat.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Firemaking_training"
+  },
+  {
+    "id": "firemaking_wintertodt",
+    "skill": "FIREMAKING",
+    "name": "Wintertodt",
+    "minLevel": 50,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 50,
+        "xpPerHour": 180000
+      },
+      {
+        "level": 75,
+        "xpPerHour": 280000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 380000
+      }
+    ],
+    "gpPerHour": 200000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "FIREMAKING": 50
+      }
+    },
+    "location": "North of Great Kourend",
+    "notes": "The default answer for Firemaking: good experience, useful supplies as rewards, and no log cost at all.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Wintertodt"
+  },
+  {
+    "id": "firemaking_magic_logs",
+    "skill": "FIREMAKING",
+    "name": "Burn magic logs",
+    "minLevel": 75,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 75,
+        "xpPerHour": 220000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 250000
+      }
+    ],
+    "gpPerHour": -900000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {
+        "FIREMAKING": 75
+      }
+    },
+    "location": "Grand Exchange or any bank",
+    "notes": "Faster than Wintertodt and needs no minigame, but you are burning close to a million gold an hour to do it.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Firemaking_training"
+  },
+  {
+    "id": "crafting_leather",
+    "skill": "CRAFTING",
+    "name": "Craft leather gloves and boots",
+    "minLevel": 1,
+    "recommendedUntil": 20,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 25000
+      }
+    ],
+    "gpPerHour": -10000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Anywhere with a bank",
+    "notes": "Cheap way past the opening levels.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Crafting_training"
+  },
+  {
+    "id": "crafting_gems",
+    "skill": "CRAFTING",
+    "name": "Cut gems",
+    "minLevel": 20,
+    "recommendedUntil": 70,
+    "xpCurve": [
+      {
+        "level": 20,
+        "xpPerHour": 80000
+      },
+      {
+        "level": 43,
+        "xpPerHour": 160000
+      },
+      {
+        "level": 70,
+        "xpPerHour": 200000
+      }
+    ],
+    "gpPerHour": -100000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": false,
+    "requirements": {},
+    "location": "Anywhere with a bank",
+    "notes": "Sapphires, then emeralds, then rubies and diamonds as you level.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Crafting_training"
+  },
+  {
+    "id": "crafting_dhide",
+    "skill": "CRAFTING",
+    "name": "Craft dragonhide bodies",
+    "minLevel": 63,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 63,
+        "xpPerHour": 180000
+      },
+      {
+        "level": 84,
+        "xpPerHour": 280000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 340000
+      }
+    ],
+    "gpPerHour": -600000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {
+        "CRAFTING": 63
+      }
+    },
+    "location": "Anywhere with a bank",
+    "notes": "The standard route to 99. Costly, but it is the fastest sustained rate.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Crafting_training"
+  },
+  {
+    "id": "crafting_glassblowing",
+    "skill": "CRAFTING",
+    "name": "Blow glass",
+    "minLevel": 46,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 46,
+        "xpPerHour": 90000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 130000
+      }
+    ],
+    "gpPerHour": -60000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "CRAFTING": 46
+      }
+    },
+    "location": "Anywhere with a bank",
+    "notes": "Much cheaper than dragonhide, at roughly half the rate.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Glassblowing"
+  },
+  {
+    "id": "smithing_bronze",
+    "skill": "SMITHING",
+    "name": "Smith bronze and iron",
+    "minLevel": 1,
+    "recommendedUntil": 30,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 20000
+      }
+    ],
+    "gpPerHour": -10000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Varrock west anvil",
+    "notes": "Just to get moving.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Smithing_training"
+  },
+  {
+    "id": "smithing_cannonballs",
+    "skill": "SMITHING",
+    "name": "Smelt cannonballs",
+    "minLevel": 35,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 35,
+        "xpPerHour": 18000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 18000
+      }
+    ],
+    "gpPerHour": 60000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "SMITHING": 35
+      },
+      "notes": [
+        "Dwarf Cannon for the ammo mould"
+      ]
+    },
+    "location": "Edgeville or Port Phasmatys furnace",
+    "notes": "Very slow experience, but it makes money and you can leave it alone for long stretches.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Cannonball"
+  },
+  {
+    "id": "smithing_blast_furnace",
+    "skill": "SMITHING",
+    "name": "Blast Furnace",
+    "minLevel": 30,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 30,
+        "xpPerHour": 90000
+      },
+      {
+        "level": 60,
+        "xpPerHour": 200000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 320000
+      }
+    ],
+    "gpPerHour": -250000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {
+        "SMITHING": 30
+      }
+    },
+    "location": "Keldagrim",
+    "notes": "The fastest smithing by a wide margin, and it needs your full attention.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Blast_Furnace"
+  },
+  {
+    "id": "smithing_gold_bars",
+    "skill": "SMITHING",
+    "name": "Smelt gold bars with goldsmith gauntlets",
+    "minLevel": 40,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 40,
+        "xpPerHour": 220000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 380000
+      }
+    ],
+    "gpPerHour": -400000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {
+        "SMITHING": 40
+      },
+      "notes": [
+        "Family Crest for the goldsmith gauntlets"
+      ]
+    },
+    "location": "Blast Furnace, Keldagrim",
+    "notes": "The single fastest smithing experience in the game.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Gold_bar"
+  },
+  {
+    "id": "mining_copper_tin",
+    "skill": "MINING",
+    "name": "Mine copper and tin",
+    "minLevel": 1,
+    "recommendedUntil": 15,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 9000
+      }
+    ],
+    "gpPerHour": 3000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Lumbridge Swamp or the Al Kharid mine",
+    "notes": "Only until iron opens up at 15.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Mining_training"
+  },
+  {
+    "id": "mining_iron_powermine",
+    "skill": "MINING",
+    "name": "Power-mine iron ore",
+    "minLevel": 15,
+    "recommendedUntil": 75,
+    "xpCurve": [
+      {
+        "level": 15,
+        "xpPerHour": 20000
+      },
+      {
+        "level": 60,
+        "xpPerHour": 42000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 52000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "HIGH",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "MINING": 15
+      },
+      "items": [
+        1275
+      ],
+      "notes": [
+        "A three-rock cluster for the best rates"
+      ]
+    },
+    "location": "Ardougne east mine or the Al Kharid quarry",
+    "notes": "Drop the ore as you go. Banking it instead is slower but profitable.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Mining_training"
+  },
+  {
+    "id": "mining_motherlode_mine",
+    "skill": "MINING",
+    "name": "Motherlode Mine",
+    "minLevel": 30,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 30,
+        "xpPerHour": 16000
+      },
+      {
+        "level": 72,
+        "xpPerHour": 38000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 46000
+      }
+    ],
+    "gpPerHour": 180000,
+    "effort": "LOW",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "MINING": 30
+      },
+      "items": [
+        1275
+      ],
+      "notes": [
+        "72 Mining for the upper level"
+      ]
+    },
+    "location": "Falador Motherlode Mine",
+    "notes": "Slower than iron, but it pays for itself in nuggets and ore and needs little attention.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Motherlode_Mine"
+  },
+  {
+    "id": "mining_volcanic_ash",
+    "skill": "MINING",
+    "name": "Mine volcanic ash",
+    "minLevel": 22,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 22,
+        "xpPerHour": 30000
+      },
+      {
+        "level": 60,
+        "xpPerHour": 60000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 80000
+      }
+    ],
+    "gpPerHour": 150000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "MINING": 22
+      },
+      "quests": [
+        "BONE_VOYAGE"
+      ]
+    },
+    "location": "Fossil Island",
+    "notes": "Better experience than the Motherlode Mine and it still makes money.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Volcanic_ash"
+  },
+  {
+    "id": "mining_amethyst",
+    "skill": "MINING",
+    "name": "Mine amethyst",
+    "minLevel": 92,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 92,
+        "xpPerHour": 20000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 22000
+      }
+    ],
+    "gpPerHour": 250000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "MINING": 92
+      },
+      "items": [
+        1275
+      ]
+    },
+    "location": "Mining Guild, Falador",
+    "notes": "Slow, but very idle and it pays well.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Amethyst"
+  },
+  {
+    "id": "herblore_attack_potions",
+    "skill": "HERBLORE",
+    "name": "Make attack potions",
+    "minLevel": 3,
+    "recommendedUntil": 30,
+    "xpCurve": [
+      {
+        "level": 3,
+        "xpPerHour": 30000
+      }
+    ],
+    "gpPerHour": -20000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "quests": [
+        "DRUIDIC_RITUAL"
+      ]
+    },
+    "location": "Anywhere with a bank",
+    "notes": "Cheap, and gets you to the potions worth making.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Herblore_training"
+  },
+  {
+    "id": "herblore_prayer_potions",
+    "skill": "HERBLORE",
+    "name": "Make prayer potions",
+    "minLevel": 38,
+    "recommendedUntil": 72,
+    "xpCurve": [
+      {
+        "level": 38,
+        "xpPerHour": 180000
+      },
+      {
+        "level": 72,
+        "xpPerHour": 220000
+      }
+    ],
+    "gpPerHour": 60000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "HERBLORE": 38
+      },
+      "quests": [
+        "DRUIDIC_RITUAL"
+      ]
+    },
+    "location": "Anywhere with a bank",
+    "notes": "Usually profitable, which makes it the rare Herblore method that pays you.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Prayer_potion"
+  },
+  {
+    "id": "herblore_super_restores",
+    "skill": "HERBLORE",
+    "name": "Make super restores",
+    "minLevel": 63,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 63,
+        "xpPerHour": 240000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 300000
+      }
+    ],
+    "gpPerHour": -100000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "HERBLORE": 63
+      },
+      "quests": [
+        "DRUIDIC_RITUAL"
+      ]
+    },
+    "location": "Anywhere with a bank",
+    "notes": "Steady experience and you will use the potions yourself.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Super_restore"
+  },
+  {
+    "id": "herblore_saradomin_brews",
+    "skill": "HERBLORE",
+    "name": "Make Saradomin brews",
+    "minLevel": 81,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 81,
+        "xpPerHour": 290000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 340000
+      }
+    ],
+    "gpPerHour": -200000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "HERBLORE": 81
+      },
+      "quests": [
+        "DRUIDIC_RITUAL"
+      ]
+    },
+    "location": "Anywhere with a bank",
+    "notes": "The fastest sustained Herblore rate.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Saradomin_brew"
+  },
+  {
+    "id": "agility_gnome_course",
+    "skill": "AGILITY",
+    "name": "Gnome Stronghold course",
+    "minLevel": 1,
+    "recommendedUntil": 30,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 8000
+      },
+      {
+        "level": 30,
+        "xpPerHour": 10000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Tree Gnome Stronghold",
+    "notes": "Slow, but there is nothing better this early.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Agility_training"
+  },
+  {
+    "id": "agility_draynor_rooftop",
+    "skill": "AGILITY",
+    "name": "Draynor Village rooftops",
+    "minLevel": 10,
+    "recommendedUntil": 30,
+    "xpCurve": [
+      {
+        "level": 10,
+        "xpPerHour": 9000
+      },
+      {
+        "level": 30,
+        "xpPerHour": 12000
+      }
+    ],
+    "gpPerHour": 5000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "AGILITY": 10
+      }
+    },
+    "location": "Draynor Village",
+    "notes": "Rooftop courses also drop marks of grace, which buy the graceful outfit.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Rooftop_course"
+  },
+  {
+    "id": "agility_seers_rooftop",
+    "skill": "AGILITY",
+    "name": "Seers' Village rooftops",
+    "minLevel": 60,
+    "recommendedUntil": 90,
+    "xpCurve": [
+      {
+        "level": 60,
+        "xpPerHour": 45000
+      },
+      {
+        "level": 90,
+        "xpPerHour": 52000
+      }
+    ],
+    "gpPerHour": 8000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "AGILITY": 60
+      }
+    },
+    "location": "Seers' Village",
+    "notes": "The usual mid-game course. A camelot teleport tab resets you to the start.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Rooftop_course"
+  },
+  {
+    "id": "agility_ardougne_rooftop",
+    "skill": "AGILITY",
+    "name": "Ardougne rooftops",
+    "minLevel": 90,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 90,
+        "xpPerHour": 60000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 62000
+      }
+    ],
+    "gpPerHour": 10000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "AGILITY": 90
+      }
+    },
+    "location": "East Ardougne",
+    "notes": "The last and fastest rooftop course.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Rooftop_course"
+  },
+  {
+    "id": "agility_hallowed_sepulchre",
+    "skill": "AGILITY",
+    "name": "Hallowed Sepulchre",
+    "minLevel": 52,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 52,
+        "xpPerHour": 40000
+      },
+      {
+        "level": 72,
+        "xpPerHour": 65000
+      },
+      {
+        "level": 92,
+        "xpPerHour": 95000
+      }
+    ],
+    "gpPerHour": 300000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "AGILITY": 52
+      },
+      "quests": [
+        "SINS_OF_THE_FATHER"
+      ]
+    },
+    "location": "Darkmeyer",
+    "notes": "Faster than rooftops from the mid-70s and it pays properly, but it is a precision course rather than a click-and-wait one.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Hallowed_Sepulchre"
+  },
+  {
+    "id": "thieving_men",
+    "skill": "THIEVING",
+    "name": "Pickpocket men and women",
+    "minLevel": 1,
+    "recommendedUntil": 5,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 12000
+      }
+    ],
+    "gpPerHour": 5000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Lumbridge or Varrock",
+    "notes": "Four levels and you are done with this.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Thieving_training"
+  },
+  {
+    "id": "thieving_cake_stall",
+    "skill": "THIEVING",
+    "name": "Steal from the cake stall",
+    "minLevel": 5,
+    "recommendedUntil": 45,
+    "xpCurve": [
+      {
+        "level": 5,
+        "xpPerHour": 25000
+      },
+      {
+        "level": 45,
+        "xpPerHour": 45000
+      }
+    ],
+    "gpPerHour": 20000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "THIEVING": 5
+      }
+    },
+    "location": "Ardougne market",
+    "notes": "Also feeds you, which matters when you have no food.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Thieving_training"
+  },
+  {
+    "id": "thieving_ardougne_knights",
+    "skill": "THIEVING",
+    "name": "Pickpocket Ardougne knights",
+    "minLevel": 55,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 55,
+        "xpPerHour": 80000
+      },
+      {
+        "level": 80,
+        "xpPerHour": 200000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 260000
+      }
+    ],
+    "gpPerHour": 800000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "THIEVING": 55
+      },
+      "notes": [
+        "Ardougne Diary for the extra pickpocket chance"
+      ]
+    },
+    "location": "East Ardougne market",
+    "notes": "The mainstay of Thieving training: fast experience and real money, at the cost of constant clicking and dodging stuns.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Knight_of_Ardougne"
+  },
+  {
+    "id": "thieving_master_farmers",
+    "skill": "THIEVING",
+    "name": "Pickpocket master farmers",
+    "minLevel": 38,
+    "recommendedUntil": 60,
+    "xpCurve": [
+      {
+        "level": 38,
+        "xpPerHour": 55000
+      },
+      {
+        "level": 60,
+        "xpPerHour": 70000
+      }
+    ],
+    "gpPerHour": 100000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "THIEVING": 38
+      }
+    },
+    "location": "Draynor or Ardougne",
+    "notes": "The seeds are worth more than the experience early on.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Master_Farmer"
+  },
+  {
+    "id": "thieving_vyres",
+    "skill": "THIEVING",
+    "name": "Pickpocket vyres",
+    "minLevel": 82,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 82,
+        "xpPerHour": 250000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 290000
+      }
+    ],
+    "gpPerHour": 600000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "THIEVING": 82
+      },
+      "quests": [
+        "SINS_OF_THE_FATHER"
+      ]
+    },
+    "location": "Darkmeyer",
+    "notes": "The fastest Thieving in the game once you can reach it.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Vyre"
+  },
+  {
+    "id": "slayer_turael",
+    "skill": "SLAYER",
+    "name": "Turael tasks",
+    "minLevel": 1,
+    "recommendedUntil": 30,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 8000
+      },
+      {
+        "level": 30,
+        "xpPerHour": 15000
+      }
+    ],
+    "gpPerHour": 20000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Burthorpe",
+    "notes": "Low-level tasks with no requirements. Also used later to reset a task you do not want.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Slayer"
+  },
+  {
+    "id": "slayer_chaeldar",
+    "skill": "SLAYER",
+    "name": "Chaeldar tasks",
+    "minLevel": 70,
+    "recommendedUntil": 85,
+    "xpCurve": [
+      {
+        "level": 70,
+        "xpPerHour": 30000
+      },
+      {
+        "level": 85,
+        "xpPerHour": 40000
+      }
+    ],
+    "gpPerHour": 300000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "quests": [
+        "LOST_CITY"
+      ],
+      "notes": [
+        "70 combat"
+      ]
+    },
+    "location": "Zanaris",
+    "notes": "A good balance of task length and points once you can handle them.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Chaeldar"
+  },
+  {
+    "id": "slayer_nieve",
+    "skill": "SLAYER",
+    "name": "Nieve or Steve tasks",
+    "minLevel": 85,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 85,
+        "xpPerHour": 45000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 55000
+      }
+    ],
+    "gpPerHour": 500000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "quests": [
+        "MONKEY_MADNESS_II"
+      ],
+      "notes": [
+        "85 combat"
+      ]
+    },
+    "location": "Tree Gnome Stronghold",
+    "notes": "Longer tasks and better drops. The standard mid-to-late Slayer master.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Nieve"
+  },
+  {
+    "id": "slayer_duradel",
+    "skill": "SLAYER",
+    "name": "Duradel tasks",
+    "minLevel": 50,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 50,
+        "xpPerHour": 50000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 70000
+      }
+    ],
+    "gpPerHour": 900000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "SLAYER": 50
+      },
+      "notes": [
+        "100 combat",
+        "Shilo Village"
+      ]
+    },
+    "location": "Shilo Village",
+    "notes": "The fastest Slayer experience and the best drop table, if your combat stats can keep up.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Duradel"
+  },
+  {
+    "id": "farming_tree_runs",
+    "skill": "FARMING",
+    "name": "Tree and fruit tree runs",
+    "minLevel": 15,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 15,
+        "xpPerHour": 20000
+      },
+      {
+        "level": 60,
+        "xpPerHour": 60000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 120000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "FARMING": 15
+      }
+    },
+    "location": "Across the map",
+    "notes": "Not an hourly activity: ten minutes of planting every few hours. Measured per hour spent, nothing else in the game comes close.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Farming_training"
+  },
+  {
+    "id": "farming_herb_runs",
+    "skill": "FARMING",
+    "name": "Herb runs",
+    "minLevel": 32,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 32,
+        "xpPerHour": 20000
+      },
+      {
+        "level": 70,
+        "xpPerHour": 60000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 100000
+      }
+    ],
+    "gpPerHour": 400000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "FARMING": 32
+      }
+    },
+    "location": "Ardougne, Catherby, Falador, Hosidius",
+    "notes": "Five minutes of work every eighty minutes, and it funds your Herblore.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Herb_patch"
+  },
+  {
+    "id": "farming_allotments",
+    "skill": "FARMING",
+    "name": "Allotment patches",
+    "minLevel": 1,
+    "recommendedUntil": 30,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 8000
+      },
+      {
+        "level": 30,
+        "xpPerHour": 20000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Any allotment",
+    "notes": "Something to do alongside the early tree runs.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Farming_training"
+  },
+  {
+    "id": "farming_tithe_farm",
+    "skill": "FARMING",
+    "name": "Tithe Farm",
+    "minLevel": 34,
+    "recommendedUntil": 74,
+    "xpCurve": [
+      {
+        "level": 34,
+        "xpPerHour": 55000
+      },
+      {
+        "level": 74,
+        "xpPerHour": 100000
+      }
+    ],
+    "gpPerHour": 0,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "FARMING": 34
+      },
+      "quests": [
+        "CLIENT_OF_KOUREND"
+      ]
+    },
+    "location": "Hosidius",
+    "notes": "Continuous Farming experience rather than run-based, and the points buy the farmer's outfit.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Tithe_Farm"
+  },
+  {
+    "id": "runecraft_air_runes",
+    "skill": "RUNECRAFT",
+    "name": "Craft air runes",
+    "minLevel": 1,
+    "recommendedUntil": 23,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 8000
+      },
+      {
+        "level": 23,
+        "xpPerHour": 12000
+      }
+    ],
+    "gpPerHour": 8000,
+    "effort": "MEDIUM",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Air altar, south-east of Falador",
+    "notes": "Slow, but the alternative is slower.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Runecraft_training"
+  },
+  {
+    "id": "runecraft_lava_runes",
+    "skill": "RUNECRAFT",
+    "name": "Craft lava runes",
+    "minLevel": 23,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 23,
+        "xpPerHour": 30000
+      },
+      {
+        "level": 60,
+        "xpPerHour": 55000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 80000
+      }
+    ],
+    "gpPerHour": 150000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "RUNECRAFT": 23
+      },
+      "notes": [
+        "A binding necklace, and the Karamja gloves help"
+      ]
+    },
+    "location": "Fire altar, Al Kharid",
+    "notes": "Fast for its level, and it makes money. Uses pouches heavily.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Lava_rune"
+  },
+  {
+    "id": "runecraft_guardians_of_the_rift",
+    "skill": "RUNECRAFT",
+    "name": "Guardians of the Rift",
+    "minLevel": 27,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 27,
+        "xpPerHour": 25000
+      },
+      {
+        "level": 60,
+        "xpPerHour": 50000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 75000
+      }
+    ],
+    "gpPerHour": 200000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "RUNECRAFT": 27
+      },
+      "notes": [
+        "Temple of the Eye"
+      ]
+    },
+    "location": "Temple of the Eye",
+    "notes": "Comparable experience to lava runes with far less running, and the rewards include the colossal pouch and the raiments outfit.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Guardians_of_the_Rift"
+  },
+  {
+    "id": "runecraft_blood_runes",
+    "skill": "RUNECRAFT",
+    "name": "Craft blood runes",
+    "minLevel": 77,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 77,
+        "xpPerHour": 40000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 50000
+      }
+    ],
+    "gpPerHour": 900000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "RUNECRAFT": 77
+      },
+      "quests": [
+        "SINS_OF_THE_FATHER"
+      ]
+    },
+    "location": "Blood altar, Darkmeyer",
+    "notes": "Modest experience, but among the best steady money in the game.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Blood_rune"
+  },
+  {
+    "id": "hunter_birds",
+    "skill": "HUNTER",
+    "name": "Bird snaring",
+    "minLevel": 1,
+    "recommendedUntil": 29,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 15000
+      },
+      {
+        "level": 29,
+        "xpPerHour": 30000
+      }
+    ],
+    "gpPerHour": 5000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Feldip Hills",
+    "notes": "Lay several snares at once and work the circuit.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Hunter_training"
+  },
+  {
+    "id": "hunter_chinchompas",
+    "skill": "HUNTER",
+    "name": "Catch chinchompas",
+    "minLevel": 53,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 53,
+        "xpPerHour": 60000
+      },
+      {
+        "level": 80,
+        "xpPerHour": 130000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 160000
+      }
+    ],
+    "gpPerHour": 500000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "HUNTER": 53
+      }
+    },
+    "location": "Feldip Hills or Piscatoris",
+    "notes": "Good experience and very good money, but you are laying and resetting traps constantly.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Chinchompa"
+  },
+  {
+    "id": "hunter_birdhouses",
+    "skill": "HUNTER",
+    "name": "Birdhouse runs",
+    "minLevel": 5,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 5,
+        "xpPerHour": 15000
+      },
+      {
+        "level": 50,
+        "xpPerHour": 40000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 60000
+      }
+    ],
+    "gpPerHour": 100000,
+    "effort": "AFK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "HUNTER": 5
+      },
+      "quests": [
+        "BONE_VOYAGE"
+      ]
+    },
+    "location": "Fossil Island",
+    "notes": "Two minutes of work every fifty. Like tree runs, it is not really an hourly activity.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Birdhouse"
+  },
+  {
+    "id": "hunter_herbiboar",
+    "skill": "HUNTER",
+    "name": "Herbiboar",
+    "minLevel": 80,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 80,
+        "xpPerHour": 100000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 120000
+      }
+    ],
+    "gpPerHour": 400000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "HUNTER": 80,
+        "HERBLORE": 31
+      },
+      "quests": [
+        "BONE_VOYAGE"
+      ]
+    },
+    "location": "Fossil Island",
+    "notes": "Fast, profitable in herbs, and no traps to reset.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Herbiboar"
+  },
+  {
+    "id": "construction_planks",
+    "skill": "CONSTRUCTION",
+    "name": "Build and remove oak larders",
+    "minLevel": 33,
+    "recommendedUntil": 52,
+    "xpCurve": [
+      {
+        "level": 33,
+        "xpPerHour": 190000
+      },
+      {
+        "level": 52,
+        "xpPerHour": 240000
+      }
+    ],
+    "gpPerHour": -450000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {
+        "CONSTRUCTION": 33
+      },
+      "notes": [
+        "A house with a kitchen, and a butler"
+      ]
+    },
+    "location": "Your player-owned house",
+    "notes": "Construction is bought, not earned. The only question is which plank you can afford.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Construction_training"
+  },
+  {
+    "id": "construction_oak_dungeon_doors",
+    "skill": "CONSTRUCTION",
+    "name": "Build oak dungeon doors",
+    "minLevel": 74,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 74,
+        "xpPerHour": 400000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 500000
+      }
+    ],
+    "gpPerHour": -900000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {
+        "CONSTRUCTION": 74
+      },
+      "notes": [
+        "A dungeon in your house, and a demon butler"
+      ]
+    },
+    "location": "Your player-owned house",
+    "notes": "The best experience per plank, and the fastest route to 99.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Construction_training"
+  },
+  {
+    "id": "construction_mahogany_tables",
+    "skill": "CONSTRUCTION",
+    "name": "Build mahogany tables",
+    "minLevel": 52,
+    "recommendedUntil": 99,
+    "xpCurve": [
+      {
+        "level": 52,
+        "xpPerHour": 700000
+      },
+      {
+        "level": 99,
+        "xpPerHour": 900000
+      }
+    ],
+    "gpPerHour": -3500000,
+    "effort": "HIGH",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {
+        "CONSTRUCTION": 52
+      },
+      "notes": [
+        "A demon butler to fetch the planks"
+      ]
+    },
+    "location": "Your player-owned house",
+    "notes": "The fastest Construction there is, and the most expensive thing in this plugin by some distance.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Construction_training"
+  },
+  {
+    "id": "construction_crafting_planks",
+    "skill": "CONSTRUCTION",
+    "name": "Make your own planks first",
+    "minLevel": 1,
+    "recommendedUntil": 40,
+    "xpCurve": [
+      {
+        "level": 1,
+        "xpPerHour": 60000
+      },
+      {
+        "level": 40,
+        "xpPerHour": 120000
+      }
+    ],
+    "gpPerHour": -80000,
+    "effort": "MEDIUM",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "location": "Sawmill, north-east of Varrock",
+    "notes": "For an ironman, the sawmill run is the real cost of Construction, not the building.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Plank"
+  }
+]

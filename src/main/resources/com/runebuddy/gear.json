@@ -1,0 +1,2194 @@
+[
+  {
+    "itemId": 1323,
+    "name": "Iron scimitar",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 1,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "ATTACK": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1325,
+    "name": "Steel scimitar",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 5,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "ATTACK": 5
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1327,
+    "name": "Black scimitar",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 10,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "ATTACK": 10
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1329,
+    "name": "Mithril scimitar",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 20,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "ATTACK": 20
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1331,
+    "name": "Adamant scimitar",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 30,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "ATTACK": 30
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1333,
+    "name": "Rune scimitar",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 40,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "ATTACK": 40
+      }
+    },
+    "notes": "The free-to-play ceiling, and good enough to carry you well past it."
+  },
+  {
+    "itemId": 4587,
+    "name": "Dragon scimitar",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 60,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "ATTACK": 60
+      },
+      "quests": [
+        "MONKEY_MADNESS_I"
+      ]
+    },
+    "notes": "The fastest attack speed at this tier, which is what matters for training."
+  },
+  {
+    "itemId": 4151,
+    "name": "Abyssal whip",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 70,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "ATTACK": 70
+      }
+    },
+    "notes": "The standard melee training weapon, and cheap for what it does."
+  },
+  {
+    "itemId": 22324,
+    "name": "Ghrazi rapier",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 75,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "ATTACK": 75
+      }
+    },
+    "notes": "A stab upgrade over the whip. Expensive; the whip is fine for a long time."
+  },
+  {
+    "itemId": 1153,
+    "name": "Iron full helm",
+    "slot": "HEAD",
+    "category": "MELEE",
+    "tier": 1,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1157,
+    "name": "Steel full helm",
+    "slot": "HEAD",
+    "category": "MELEE",
+    "tier": 5,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 5
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1159,
+    "name": "Mithril full helm",
+    "slot": "HEAD",
+    "category": "MELEE",
+    "tier": 20,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 20
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1161,
+    "name": "Adamant full helm",
+    "slot": "HEAD",
+    "category": "MELEE",
+    "tier": 30,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 30
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1163,
+    "name": "Rune full helm",
+    "slot": "HEAD",
+    "category": "MELEE",
+    "tier": 40,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 40
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 10828,
+    "name": "Helm of neitiznot",
+    "slot": "HEAD",
+    "category": "MELEE",
+    "tier": 55,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 55
+      },
+      "quests": [
+        "THE_FREMENNIK_ISLES"
+      ]
+    },
+    "notes": "Cheap, gives a strength bonus, and lasts until you are doing serious content."
+  },
+  {
+    "itemId": 24271,
+    "name": "Neitiznot faceguard",
+    "slot": "HEAD",
+    "category": "MELEE",
+    "tier": 70,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 70
+      },
+      "quests": [
+        "THE_FREMENNIK_EXILES"
+      ]
+    },
+    "notes": "A straight upgrade to the helm of neitiznot."
+  },
+  {
+    "itemId": 1115,
+    "name": "Iron platebody",
+    "slot": "BODY",
+    "category": "MELEE",
+    "tier": 1,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1119,
+    "name": "Steel platebody",
+    "slot": "BODY",
+    "category": "MELEE",
+    "tier": 5,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 5
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1121,
+    "name": "Mithril platebody",
+    "slot": "BODY",
+    "category": "MELEE",
+    "tier": 20,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 20
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1123,
+    "name": "Adamant platebody",
+    "slot": "BODY",
+    "category": "MELEE",
+    "tier": 30,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 30
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1127,
+    "name": "Rune platebody",
+    "slot": "BODY",
+    "category": "MELEE",
+    "tier": 40,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 40
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 10551,
+    "name": "Fighter torso",
+    "slot": "BODY",
+    "category": "MELEE",
+    "tier": 45,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 40
+      },
+      "notes": [
+        "Earned with points from Barbarian Assault"
+      ]
+    },
+    "notes": "The best strength bonus in the slot for a very long time. Worth the grind."
+  },
+  {
+    "itemId": 11832,
+    "name": "Bandos chestplate",
+    "slot": "BODY",
+    "category": "MELEE",
+    "tier": 65,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 65
+      }
+    },
+    "notes": "Only worth it once you are doing content where the defence matters."
+  },
+  {
+    "itemId": 1067,
+    "name": "Iron platelegs",
+    "slot": "LEGS",
+    "category": "MELEE",
+    "tier": 1,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1069,
+    "name": "Steel platelegs",
+    "slot": "LEGS",
+    "category": "MELEE",
+    "tier": 5,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 5
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1071,
+    "name": "Mithril platelegs",
+    "slot": "LEGS",
+    "category": "MELEE",
+    "tier": 20,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 20
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1073,
+    "name": "Adamant platelegs",
+    "slot": "LEGS",
+    "category": "MELEE",
+    "tier": 30,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 30
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1079,
+    "name": "Rune platelegs",
+    "slot": "LEGS",
+    "category": "MELEE",
+    "tier": 40,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 40
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 11834,
+    "name": "Bandos tassets",
+    "slot": "LEGS",
+    "category": "MELEE",
+    "tier": 65,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 65
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1191,
+    "name": "Iron kiteshield",
+    "slot": "SHIELD",
+    "category": "MELEE",
+    "tier": 1,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1193,
+    "name": "Steel kiteshield",
+    "slot": "SHIELD",
+    "category": "MELEE",
+    "tier": 5,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 5
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1197,
+    "name": "Mithril kiteshield",
+    "slot": "SHIELD",
+    "category": "MELEE",
+    "tier": 20,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 20
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1199,
+    "name": "Adamant kiteshield",
+    "slot": "SHIELD",
+    "category": "MELEE",
+    "tier": 30,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 30
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1201,
+    "name": "Rune kiteshield",
+    "slot": "SHIELD",
+    "category": "MELEE",
+    "tier": 40,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 40
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 12954,
+    "name": "Dragon defender",
+    "slot": "SHIELD",
+    "category": "MELEE",
+    "tier": 60,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "ATTACK": 60,
+        "DEFENCE": 60
+      },
+      "notes": [
+        "Won from cyclopes in the Warriors' Guild"
+      ]
+    },
+    "notes": "Free, and a large accuracy and strength gain over a shield."
+  },
+  {
+    "itemId": 22322,
+    "name": "Avernic defender",
+    "slot": "SHIELD",
+    "category": "MELEE",
+    "tier": 70,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "ATTACK": 70,
+        "DEFENCE": 70
+      },
+      "notes": [
+        "A dragon defender plus a hilt from the Theatre of Blood"
+      ]
+    },
+    "notes": "Needs a dragon defender and a hilt from the Theatre of Blood."
+  },
+  {
+    "itemId": 1059,
+    "name": "Leather gloves",
+    "slot": "HANDS",
+    "category": "MELEE",
+    "tier": 1,
+    "members": false,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 7462,
+    "name": "Barrows gloves",
+    "slot": "HANDS",
+    "category": "MELEE",
+    "tier": 40,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 40
+      },
+      "quests": [
+        "RECIPE_FOR_DISASTER"
+      ]
+    },
+    "notes": "The best gloves for almost everything. Do the quest as early as you can."
+  },
+  {
+    "itemId": 22981,
+    "name": "Ferocious gloves",
+    "slot": "HANDS",
+    "category": "MELEE",
+    "tier": 80,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 80
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1061,
+    "name": "Leather boots",
+    "slot": "FEET",
+    "category": "MELEE",
+    "tier": 1,
+    "members": false,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 3105,
+    "name": "Climbing boots",
+    "slot": "FEET",
+    "category": "MELEE",
+    "tier": 10,
+    "members": true,
+    "requirements": {
+      "quests": [
+        "DEATH_PLATEAU"
+      ]
+    },
+    "notes": "Cheap, and better than anything else until dragon boots."
+  },
+  {
+    "itemId": 11840,
+    "name": "Dragon boots",
+    "slot": "FEET",
+    "category": "MELEE",
+    "tier": 60,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 60
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 13239,
+    "name": "Primordial boots",
+    "slot": "FEET",
+    "category": "MELEE",
+    "tier": 75,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 75
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1731,
+    "name": "Amulet of power",
+    "slot": "NECK",
+    "category": "MELEE",
+    "tier": 1,
+    "members": false,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 1712,
+    "name": "Amulet of glory",
+    "slot": "NECK",
+    "category": "MELEE",
+    "tier": 20,
+    "members": true,
+    "requirements": {
+      "notes": [
+        "Heroes' Quest to recharge it at the Fountain of Heroes"
+      ]
+    },
+    "notes": "Also four teleports a charge, which is most of why you want one."
+  },
+  {
+    "itemId": 6585,
+    "name": "Amulet of fury",
+    "slot": "NECK",
+    "category": "MELEE",
+    "tier": 60,
+    "members": true,
+    "requirements": {},
+    "notes": "The long-term neck slot for melee."
+  },
+  {
+    "itemId": 19553,
+    "name": "Amulet of torture",
+    "slot": "NECK",
+    "category": "MELEE",
+    "tier": 75,
+    "members": true,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 6568,
+    "name": "Obsidian cape",
+    "slot": "CAPE",
+    "category": "MELEE",
+    "tier": 10,
+    "members": true,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 6570,
+    "name": "Fire cape",
+    "slot": "CAPE",
+    "category": "MELEE",
+    "tier": 60,
+    "members": true,
+    "requirements": {
+      "notes": [
+        "Earned by beating the Fight Caves"
+      ],
+      "skills": {
+        "RANGED": 70,
+        "DEFENCE": 60,
+        "HITPOINTS": 70
+      }
+    },
+    "notes": "A milestone worth chasing: best-in-slot for melee training for years."
+  },
+  {
+    "itemId": 21295,
+    "name": "Infernal cape",
+    "slot": "CAPE",
+    "category": "MELEE",
+    "tier": 80,
+    "members": true,
+    "requirements": {
+      "notes": [
+        "Earned by beating the Inferno"
+      ],
+      "skills": {
+        "RANGED": 90,
+        "DEFENCE": 80,
+        "MAGIC": 75,
+        "HITPOINTS": 90
+      }
+    },
+    "notes": "The hardest solo content in the game. Treat it as a long-term goal."
+  },
+  {
+    "itemId": 2552,
+    "name": "Ring of dueling",
+    "slot": "RING",
+    "category": "MELEE",
+    "tier": 1,
+    "members": true,
+    "requirements": {},
+    "notes": "Not a combat bonus, but the teleports save a lot of walking."
+  },
+  {
+    "itemId": 6737,
+    "name": "Berserker ring",
+    "slot": "RING",
+    "category": "MELEE",
+    "tier": 40,
+    "members": true,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 22975,
+    "name": "Brimstone ring",
+    "slot": "RING",
+    "category": "MELEE",
+    "tier": 70,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "SLAYER": 90
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 841,
+    "name": "Shortbow",
+    "slot": "WEAPON",
+    "category": "RANGED",
+    "tier": 1,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "RANGED": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 849,
+    "name": "Willow shortbow",
+    "slot": "WEAPON",
+    "category": "RANGED",
+    "tier": 20,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "RANGED": 20
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 851,
+    "name": "Maple longbow",
+    "slot": "WEAPON",
+    "category": "RANGED",
+    "tier": 30,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "RANGED": 30
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 9185,
+    "name": "Rune crossbow",
+    "slot": "WEAPON",
+    "category": "RANGED",
+    "tier": 61,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 61
+      }
+    },
+    "notes": "The workhorse ranged weapon. Cheap, and strong with the right bolts."
+  },
+  {
+    "itemId": 861,
+    "name": "Magic shortbow",
+    "slot": "WEAPON",
+    "category": "RANGED",
+    "tier": 50,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "RANGED": 50
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 12788,
+    "name": "Magic shortbow (i)",
+    "slot": "WEAPON",
+    "category": "RANGED",
+    "tier": 55,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 50
+      }
+    },
+    "notes": "Imbued at Nightmare Zone or the PvP arena."
+  },
+  {
+    "itemId": 12924,
+    "name": "Toxic blowpipe",
+    "slot": "WEAPON",
+    "category": "RANGED",
+    "tier": 75,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 75
+      }
+    },
+    "notes": "The fastest ranged training weapon by a wide margin."
+  },
+  {
+    "itemId": 11785,
+    "name": "Armadyl crossbow",
+    "slot": "WEAPON",
+    "category": "RANGED",
+    "tier": 70,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 70
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 21012,
+    "name": "Dragon hunter crossbow",
+    "slot": "WEAPON",
+    "category": "RANGED",
+    "tier": 80,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 65
+      }
+    },
+    "notes": "Only for dragons, but enormous there."
+  },
+  {
+    "itemId": 20997,
+    "name": "Twisted bow",
+    "slot": "WEAPON",
+    "category": "RANGED",
+    "tier": 85,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 85
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1169,
+    "name": "Coif",
+    "slot": "HEAD",
+    "category": "RANGED",
+    "tier": 1,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "RANGED": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 3749,
+    "name": "Archer helm",
+    "slot": "HEAD",
+    "category": "RANGED",
+    "tier": 45,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 45
+      },
+      "quests": [
+        "THE_FREMENNIK_TRIALS"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 2581,
+    "name": "Robin hood hat",
+    "slot": "HEAD",
+    "category": "RANGED",
+    "tier": 40,
+    "members": true,
+    "requirements": {
+      "notes": [
+        "Bought with marks from the Temple Trekking minigame"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1129,
+    "name": "Leather body",
+    "slot": "BODY",
+    "category": "RANGED",
+    "tier": 1,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "RANGED": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1133,
+    "name": "Studded body",
+    "slot": "BODY",
+    "category": "RANGED",
+    "tier": 20,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "RANGED": 20
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1135,
+    "name": "Green d'hide body",
+    "slot": "BODY",
+    "category": "RANGED",
+    "tier": 40,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 40,
+        "DEFENCE": 40
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 2499,
+    "name": "Blue d'hide body",
+    "slot": "BODY",
+    "category": "RANGED",
+    "tier": 50,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 50,
+        "DEFENCE": 40
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 2501,
+    "name": "Red d'hide body",
+    "slot": "BODY",
+    "category": "RANGED",
+    "tier": 60,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 60,
+        "DEFENCE": 40
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 2503,
+    "name": "Black d'hide body",
+    "slot": "BODY",
+    "category": "RANGED",
+    "tier": 70,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 70,
+        "DEFENCE": 40
+      }
+    },
+    "notes": "Cheap and near best-in-slot for a very long time."
+  },
+  {
+    "itemId": 1095,
+    "name": "Leather chaps",
+    "slot": "LEGS",
+    "category": "RANGED",
+    "tier": 1,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "RANGED": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1097,
+    "name": "Studded chaps",
+    "slot": "LEGS",
+    "category": "RANGED",
+    "tier": 20,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "RANGED": 20
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1099,
+    "name": "Green d'hide chaps",
+    "slot": "LEGS",
+    "category": "RANGED",
+    "tier": 40,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 40
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 2493,
+    "name": "Blue d'hide chaps",
+    "slot": "LEGS",
+    "category": "RANGED",
+    "tier": 50,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 50
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 2495,
+    "name": "Red d'hide chaps",
+    "slot": "LEGS",
+    "category": "RANGED",
+    "tier": 60,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 60
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 2497,
+    "name": "Black d'hide chaps",
+    "slot": "LEGS",
+    "category": "RANGED",
+    "tier": 70,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 70
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1059,
+    "name": "Leather gloves",
+    "slot": "HANDS",
+    "category": "RANGED",
+    "tier": 1,
+    "members": false,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 7462,
+    "name": "Barrows gloves",
+    "slot": "HANDS",
+    "category": "RANGED",
+    "tier": 40,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 40
+      },
+      "quests": [
+        "RECIPE_FOR_DISASTER"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1061,
+    "name": "Leather boots",
+    "slot": "FEET",
+    "category": "RANGED",
+    "tier": 1,
+    "members": false,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 6328,
+    "name": "Snakeskin boots",
+    "slot": "FEET",
+    "category": "RANGED",
+    "tier": 30,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 30,
+        "DEFENCE": 30
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 2577,
+    "name": "Ranger boots",
+    "slot": "FEET",
+    "category": "RANGED",
+    "tier": 40,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 40
+      }
+    },
+    "notes": "A rare reward from medium clue scrolls, so priced accordingly."
+  },
+  {
+    "itemId": 1731,
+    "name": "Amulet of power",
+    "slot": "NECK",
+    "category": "RANGED",
+    "tier": 1,
+    "members": false,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 1712,
+    "name": "Amulet of glory",
+    "slot": "NECK",
+    "category": "RANGED",
+    "tier": 20,
+    "members": true,
+    "requirements": {
+      "notes": [
+        "Heroes' Quest to recharge it at the Fountain of Heroes"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 6585,
+    "name": "Amulet of fury",
+    "slot": "NECK",
+    "category": "RANGED",
+    "tier": 60,
+    "members": true,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 19547,
+    "name": "Necklace of anguish",
+    "slot": "NECK",
+    "category": "RANGED",
+    "tier": 75,
+    "members": true,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 10498,
+    "name": "Ava's attractor",
+    "slot": "CAPE",
+    "category": "RANGED",
+    "tier": 30,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 30
+      },
+      "quests": [
+        "ANIMAL_MAGNETISM"
+      ]
+    },
+    "notes": "Picks your ammunition back up, which pays for itself immediately."
+  },
+  {
+    "itemId": 10499,
+    "name": "Ava's accumulator",
+    "slot": "CAPE",
+    "category": "RANGED",
+    "tier": 50,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 50
+      },
+      "quests": [
+        "ANIMAL_MAGNETISM"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 22109,
+    "name": "Ava's assembler",
+    "slot": "CAPE",
+    "category": "RANGED",
+    "tier": 70,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 70
+      },
+      "quests": [
+        "DRAGON_SLAYER_II"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 2552,
+    "name": "Ring of dueling",
+    "slot": "RING",
+    "category": "RANGED",
+    "tier": 1,
+    "members": true,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 6733,
+    "name": "Archers ring",
+    "slot": "RING",
+    "category": "RANGED",
+    "tier": 40,
+    "members": true,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 22975,
+    "name": "Brimstone ring",
+    "slot": "RING",
+    "category": "RANGED",
+    "tier": 70,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "SLAYER": 90
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1381,
+    "name": "Staff of air",
+    "slot": "WEAPON",
+    "category": "MAGIC",
+    "tier": 1,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "MAGIC": 1
+      }
+    },
+    "notes": "An elemental staff means never carrying that rune again."
+  },
+  {
+    "itemId": 1387,
+    "name": "Staff of fire",
+    "slot": "WEAPON",
+    "category": "MAGIC",
+    "tier": 5,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "MAGIC": 5
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1401,
+    "name": "Mystic fire staff",
+    "slot": "WEAPON",
+    "category": "MAGIC",
+    "tier": 40,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 40
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 11907,
+    "name": "Trident of the seas",
+    "slot": "WEAPON",
+    "category": "MAGIC",
+    "tier": 75,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 75
+      }
+    },
+    "notes": "Self-contained spell, no runes to buy. The standard magic training weapon."
+  },
+  {
+    "itemId": 12899,
+    "name": "Trident of the swamp",
+    "slot": "WEAPON",
+    "category": "MAGIC",
+    "tier": 78,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 78
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 21006,
+    "name": "Kodai wand",
+    "slot": "WEAPON",
+    "category": "MAGIC",
+    "tier": 85,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 80
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 579,
+    "name": "Wizard hat",
+    "slot": "HEAD",
+    "category": "MAGIC",
+    "tier": 1,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "MAGIC": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 4089,
+    "name": "Mystic hat",
+    "slot": "HEAD",
+    "category": "MAGIC",
+    "tier": 40,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 40,
+        "DEFENCE": 20
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 4708,
+    "name": "Ahrim's hood",
+    "slot": "HEAD",
+    "category": "MAGIC",
+    "tier": 70,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 70,
+        "DEFENCE": 70
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 577,
+    "name": "Wizard robe",
+    "slot": "BODY",
+    "category": "MAGIC",
+    "tier": 1,
+    "members": false,
+    "requirements": {
+      "skills": {
+        "MAGIC": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 4091,
+    "name": "Mystic robe top",
+    "slot": "BODY",
+    "category": "MAGIC",
+    "tier": 40,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 40,
+        "DEFENCE": 20
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 4712,
+    "name": "Ahrim's robetop",
+    "slot": "BODY",
+    "category": "MAGIC",
+    "tier": 70,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 70,
+        "DEFENCE": 70
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 4093,
+    "name": "Mystic robe bottom",
+    "slot": "LEGS",
+    "category": "MAGIC",
+    "tier": 40,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 40,
+        "DEFENCE": 20
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 4714,
+    "name": "Ahrim's robeskirt",
+    "slot": "LEGS",
+    "category": "MAGIC",
+    "tier": 70,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 70,
+        "DEFENCE": 70
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1059,
+    "name": "Leather gloves",
+    "slot": "HANDS",
+    "category": "MAGIC",
+    "tier": 1,
+    "members": false,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 7462,
+    "name": "Barrows gloves",
+    "slot": "HANDS",
+    "category": "MAGIC",
+    "tier": 40,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 40
+      },
+      "quests": [
+        "RECIPE_FOR_DISASTER"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 2579,
+    "name": "Wizard boots",
+    "slot": "FEET",
+    "category": "MAGIC",
+    "tier": 1,
+    "members": true,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 6920,
+    "name": "Infinity boots",
+    "slot": "FEET",
+    "category": "MAGIC",
+    "tier": 50,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 50,
+        "DEFENCE": 25
+      },
+      "notes": [
+        "Bought with points from the Mage Training Arena"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 13235,
+    "name": "Eternal boots",
+    "slot": "FEET",
+    "category": "MAGIC",
+    "tier": 75,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 75,
+        "DEFENCE": 75
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1712,
+    "name": "Amulet of glory",
+    "slot": "NECK",
+    "category": "MAGIC",
+    "tier": 20,
+    "members": true,
+    "requirements": {
+      "notes": [
+        "Heroes' Quest to recharge it at the Fountain of Heroes"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 6585,
+    "name": "Amulet of fury",
+    "slot": "NECK",
+    "category": "MAGIC",
+    "tier": 60,
+    "members": true,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 12002,
+    "name": "Occult necklace",
+    "slot": "NECK",
+    "category": "MAGIC",
+    "tier": 70,
+    "members": true,
+    "requirements": {},
+    "notes": "A big magic damage boost for the price. Get one early."
+  },
+  {
+    "itemId": 1019,
+    "name": "Black cape",
+    "slot": "CAPE",
+    "category": "MAGIC",
+    "tier": 1,
+    "members": false,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 21791,
+    "name": "Imbued saradomin cape",
+    "slot": "CAPE",
+    "category": "MAGIC",
+    "tier": 60,
+    "members": true,
+    "requirements": {
+      "notes": [
+        "Won in the Mage Arena, then imbued"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 20714,
+    "name": "Tome of fire",
+    "slot": "SHIELD",
+    "category": "MAGIC",
+    "tier": 50,
+    "members": true,
+    "requirements": {},
+    "notes": "Boosts every fire spell and saves the runes. Pairs with a fire staff."
+  },
+  {
+    "itemId": 2552,
+    "name": "Ring of dueling",
+    "slot": "RING",
+    "category": "MAGIC",
+    "tier": 1,
+    "members": true,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 6731,
+    "name": "Seers ring",
+    "slot": "RING",
+    "category": "MAGIC",
+    "tier": 40,
+    "members": true,
+    "requirements": {},
+    "notes": null
+  },
+  {
+    "itemId": 22975,
+    "name": "Brimstone ring",
+    "slot": "RING",
+    "category": "MAGIC",
+    "tier": 70,
+    "members": true,
+    "requirements": {
+      "skills": {
+        "SLAYER": 90
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1265,
+    "name": "Bronze pickaxe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 1,
+    "members": false,
+    "toolFor": "MINING",
+    "requirements": {
+      "skills": {
+        "MINING": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1267,
+    "name": "Iron pickaxe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 6,
+    "members": false,
+    "toolFor": "MINING",
+    "requirements": {
+      "skills": {
+        "MINING": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1269,
+    "name": "Steel pickaxe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 11,
+    "members": false,
+    "toolFor": "MINING",
+    "requirements": {
+      "skills": {
+        "MINING": 6,
+        "ATTACK": 5
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 12297,
+    "name": "Black pickaxe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 16,
+    "members": false,
+    "toolFor": "MINING",
+    "requirements": {
+      "skills": {
+        "MINING": 11,
+        "ATTACK": 10
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1273,
+    "name": "Mithril pickaxe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 21,
+    "members": false,
+    "toolFor": "MINING",
+    "requirements": {
+      "skills": {
+        "MINING": 21,
+        "ATTACK": 20
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1271,
+    "name": "Adamant pickaxe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 31,
+    "members": false,
+    "toolFor": "MINING",
+    "requirements": {
+      "skills": {
+        "MINING": 31,
+        "ATTACK": 30
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1275,
+    "name": "Rune pickaxe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 41,
+    "members": false,
+    "toolFor": "MINING",
+    "requirements": {
+      "skills": {
+        "MINING": 41,
+        "ATTACK": 40
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 11920,
+    "name": "Dragon pickaxe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 61,
+    "members": true,
+    "toolFor": "MINING",
+    "requirements": {
+      "skills": {
+        "MINING": 61,
+        "ATTACK": 60
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 23680,
+    "name": "Crystal pickaxe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 71,
+    "members": true,
+    "toolFor": "MINING",
+    "requirements": {
+      "skills": {
+        "MINING": 71,
+        "ATTACK": 70
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 13243,
+    "name": "Infernal pickaxe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 81,
+    "members": true,
+    "toolFor": "MINING",
+    "requirements": {
+      "skills": {
+        "MINING": 61,
+        "ATTACK": 60
+      },
+      "notes": [
+        "Made from a dragon pickaxe and a smouldering stone"
+      ]
+    },
+    "notes": "Same requirements as the dragon pickaxe, and it smelts the ore as you mine."
+  },
+  {
+    "itemId": 1351,
+    "name": "Bronze axe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 1,
+    "members": false,
+    "toolFor": "WOODCUTTING",
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1349,
+    "name": "Iron axe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 6,
+    "members": false,
+    "toolFor": "WOODCUTTING",
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1353,
+    "name": "Steel axe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 11,
+    "members": false,
+    "toolFor": "WOODCUTTING",
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 6,
+        "ATTACK": 5
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1361,
+    "name": "Black axe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 16,
+    "members": false,
+    "toolFor": "WOODCUTTING",
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 11,
+        "ATTACK": 10
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1355,
+    "name": "Mithril axe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 21,
+    "members": false,
+    "toolFor": "WOODCUTTING",
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 21,
+        "ATTACK": 20
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1357,
+    "name": "Adamant axe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 31,
+    "members": false,
+    "toolFor": "WOODCUTTING",
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 31,
+        "ATTACK": 30
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 1359,
+    "name": "Rune axe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 41,
+    "members": false,
+    "toolFor": "WOODCUTTING",
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 41,
+        "ATTACK": 40
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 6739,
+    "name": "Dragon axe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 61,
+    "members": true,
+    "toolFor": "WOODCUTTING",
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 61,
+        "ATTACK": 60
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 23673,
+    "name": "Crystal axe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 71,
+    "members": true,
+    "toolFor": "WOODCUTTING",
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 71,
+        "ATTACK": 70
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 13241,
+    "name": "Infernal axe",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 81,
+    "members": true,
+    "toolFor": "WOODCUTTING",
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 61,
+        "ATTACK": 60
+      },
+      "notes": [
+        "Made from a dragon axe and a smouldering stone"
+      ]
+    },
+    "notes": "Same requirements as the dragon axe, and it burns the logs as you cut."
+  },
+  {
+    "itemId": 311,
+    "name": "Harpoon",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 1,
+    "members": false,
+    "toolFor": "FISHING",
+    "requirements": {
+      "skills": {
+        "FISHING": 35
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 10129,
+    "name": "Barb-tail harpoon",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 30,
+    "members": true,
+    "toolFor": "FISHING",
+    "requirements": {
+      "skills": {
+        "FISHING": 35
+      }
+    },
+    "notes": "Slightly faster than a plain harpoon and cheap."
+  },
+  {
+    "itemId": 21028,
+    "name": "Dragon harpoon",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 61,
+    "members": true,
+    "toolFor": "FISHING",
+    "requirements": {
+      "skills": {
+        "FISHING": 61,
+        "ATTACK": 60
+      }
+    },
+    "notes": "About 20% faster than a plain harpoon."
+  },
+  {
+    "itemId": 21031,
+    "name": "Infernal harpoon",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 75,
+    "members": true,
+    "toolFor": "FISHING",
+    "requirements": {
+      "skills": {
+        "FISHING": 75,
+        "ATTACK": 60
+      },
+      "notes": [
+        "Made from a dragon harpoon and a smouldering stone"
+      ]
+    },
+    "notes": "Cooks the fish as you catch them."
+  },
+  {
+    "itemId": 5341,
+    "name": "Rake",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 1,
+    "members": false,
+    "toolFor": "FARMING",
+    "requirements": {
+      "skills": {
+        "FARMING": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 7409,
+    "name": "Magic secateurs",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 20,
+    "members": true,
+    "toolFor": "FARMING",
+    "requirements": {
+      "skills": {
+        "FARMING": 1
+      }
+    },
+    "notes": "A 10% herb yield boost, which is most of your herb profit."
+  },
+  {
+    "itemId": 5509,
+    "name": "Small pouch",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 1,
+    "members": true,
+    "toolFor": "RUNECRAFT",
+    "requirements": {
+      "skills": {
+        "RUNECRAFT": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 5510,
+    "name": "Medium pouch",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 25,
+    "members": true,
+    "toolFor": "RUNECRAFT",
+    "requirements": {
+      "skills": {
+        "RUNECRAFT": 25
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 5512,
+    "name": "Large pouch",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 50,
+    "members": true,
+    "toolFor": "RUNECRAFT",
+    "requirements": {
+      "skills": {
+        "RUNECRAFT": 50
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 5514,
+    "name": "Giant pouch",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 75,
+    "members": true,
+    "toolFor": "RUNECRAFT",
+    "requirements": {
+      "skills": {
+        "RUNECRAFT": 75
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 26784,
+    "name": "Colossal pouch",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 85,
+    "members": true,
+    "toolFor": "RUNECRAFT",
+    "requirements": {
+      "skills": {
+        "RUNECRAFT": 85
+      }
+    },
+    "notes": "Replaces all four pouches. Crafted after the Guardians of the Rift."
+  },
+  {
+    "itemId": 8794,
+    "name": "Saw",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 1,
+    "members": true,
+    "toolFor": "CONSTRUCTION",
+    "requirements": {
+      "skills": {
+        "CONSTRUCTION": 1
+      }
+    },
+    "notes": null
+  },
+  {
+    "itemId": 9625,
+    "name": "Crystal saw",
+    "slot": "TOOL",
+    "category": "SKILLING",
+    "tier": 20,
+    "members": true,
+    "toolFor": "CONSTRUCTION",
+    "requirements": {
+      "skills": {
+        "CONSTRUCTION": 1
+      }
+    },
+    "notes": "A permanent +3 Construction boost, which unlocks builds three levels early."
+  }
+]
