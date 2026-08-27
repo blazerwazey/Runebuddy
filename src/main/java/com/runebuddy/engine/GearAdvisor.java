@@ -135,6 +135,13 @@ public class GearAdvisor
 		List<GearItem> reachable = new ArrayList<>();
 		for (GearItem item : ladder)
 		{
+			// Situational gear is deliberately not part of the progression: it is not
+			// "better", it is better against one thing.
+			if (item.isSituational())
+			{
+				continue;
+			}
+
 			if (!item.isMembers() || profile.isMembers())
 			{
 				reachable.add(item);

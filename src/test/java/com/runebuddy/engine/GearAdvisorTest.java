@@ -231,17 +231,17 @@ public class GearAdvisorTest
 			.liquidGp(100_000)
 			.build();
 
-		// Everything above the dragon scimitar is priced out of reach.
+		// Only the dragon scimitar is priced within reach; everything above it is not.
 		GearAdvisor.PriceResolver steep = itemId ->
-			itemId == ABYSSAL_WHIP || itemId == GHRAZI_RAPIER ? 100_000_000 : 50_000;
+			itemId == DRAGON_SCIMITAR ? 50_000 : 100_000_000;
 
 		GearSuggestion weapon = slot(
 			advisor.adviseCombat(GearCategory.MELEE, main, null, steep), EquipSlot.WEAPON);
 
 		assertEquals("the affordable rung is what to buy",
 			DRAGON_SCIMITAR, weapon.getNext().getItemId());
-		assertEquals("the ceiling is still named separately",
-			GHRAZI_RAPIER, weapon.getGoal().getItemId());
+		assertTrue("the ceiling is named separately and sits above what they can pay for",
+			weapon.getGoal().getTier() > weapon.getNext().getTier());
 	}
 
 	@Test

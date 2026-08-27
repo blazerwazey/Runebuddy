@@ -195,11 +195,23 @@ entries use `"slot": "TOOL"` and must name the skill they serve with `"toolFor"`
 - `ironmanRequirements` — extra requirements that apply **only** to ironman accounts,
   using the same shape as `requirements`. This is where the real cost of self-obtaining
   goes.
+- `situational` — set `true` for gear that is only strong against particular targets: the
+  demonbane weapons, the dragon hunter crossbow. A ladder means "generally better as you
+  go up", and these break that, so they stay in the data but out of the ranking.
+  Without it the panel tells a level 70 account to aim for a demonbane sword as its
+  everyday weapon.
 
 That last field is the one to get right. Without it, anything gated behind a boss rather
 than a level reads as freely available to an ironman, which floats raid drops above an
 abyssal whip. Where the gate is a boss, use the stats you would realistically need to go
 and kill it, and put the boss itself in `notes`.
+
+### Item variants
+
+Players hold whichever charge or condition they happen to have, so ids are folded onto
+one per family before anything is compared — an amulet of glory(6) counts as the glory
+the data names, and a degraded or broken armour piece counts as the pristine one. This
+uses RuneLite's own variation table, so a data entry only ever needs the one id.
 
 ## Ironman accounts
 
