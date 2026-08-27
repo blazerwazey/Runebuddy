@@ -13,3 +13,6 @@ bin/
 .settings/
 
 .DS_Store
+
+# Written by --insecure-write-credentials; grants account access without a password.
+credentials.properties
