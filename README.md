@@ -72,12 +72,27 @@ A development client is not launched by the Jagex Launcher, so it has no session
 in with. RuneLite supports this directly: the launcher can write its credentials out for
 a development client to pick up.
 
-1. Run **RuneLite (configure)** — on Mac or Linux, launch the launcher with `--configure`.
-   You need launcher 2.6.3 or newer.
+1. Open the RuneLite launcher's configuration window. On Windows that is the
+   **RuneLite (configure)** Start Menu entry; on Mac or Linux, pass `--configure` to the
+   launcher. You need launcher 2.6.3 or newer.
 2. Add `--insecure-write-credentials` to the **Client arguments** field, and save.
 3. Launch RuneLite through the Jagex Launcher once. It writes your credentials to
    `.runelite/credentials.properties`.
 4. Run `./gradlew run`. The development client finds that file and logs in with it.
+
+This works when RuneLite was installed *through* the Jagex Launcher too — the launcher
+configuration is deliberately stored so that it still applies when the Jagex Launcher
+starts RuneLite. If the Start Menu entry is missing, run the configuration window
+straight off the executable instead:
+
+```powershell
+# find it
+Get-ChildItem $env:LOCALAPPDATA, "C:\Program Files" -Filter RuneLite.exe -Recurse -ErrorAction SilentlyContinue |
+  Select-Object -ExpandProperty FullName
+
+# then
+& "<path>\RuneLite.exe" --configure
+```
 
 **That file grants access to your account without a password.** Do not share it, do not
 commit it. Delete it when you have finished testing, and remove the client argument
