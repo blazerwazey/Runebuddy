@@ -33,6 +33,13 @@ public interface RunebuddyConfig extends Config
 	)
 	String gearSection = "gear";
 
+	@ConfigSection(
+		name = "Content",
+		description = "Which kinds of activity the Content tab lists",
+		position = 3
+	)
+	String contentSection = "content";
+
 	// --- Recommendations -----------------------------------------------------
 
 	@Range(max = 10)
@@ -173,6 +180,90 @@ public interface RunebuddyConfig extends Config
 		section = gearSection
 	)
 	default boolean useLivePrices()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+		keyName = "showBosses",
+		name = "Bosses",
+		description = "List bosses on the Content tab.",
+		position = 0,
+		section = contentSection
+	)
+	default boolean showBosses()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+		keyName = "showRaids",
+		name = "Raids",
+		description = "List raids on the Content tab.",
+		position = 1,
+		section = contentSection
+	)
+	default boolean showRaids()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+		keyName = "showMinigames",
+		name = "Minigames",
+		description = "List minigames on the Content tab.",
+		position = 2,
+		section = contentSection
+	)
+	default boolean showMinigames()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+		keyName = "showSkillingContent",
+		name = "Skilling activities",
+		description = "List skilling activities on the Content tab.",
+		position = 3,
+		section = contentSection
+	)
+	default boolean showSkillingContent()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+		keyName = "showQuests",
+		name = "Quests",
+		description = "List quests on the Content tab.",
+		position = 4,
+		section = contentSection
+	)
+	default boolean showQuests()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+		keyName = "showDiaries",
+		name = "Achievement diaries",
+		description = "List achievement diaries on the Content tab.",
+		position = 5,
+		section = contentSection
+	)
+	default boolean showDiaries()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+		keyName = "showUnlocks",
+		name = "Unlocks",
+		description = "List unlocks on the Content tab.",
+		position = 6,
+		section = contentSection
+	)
+	default boolean showUnlocks()
 	{
 		return true;
 	}

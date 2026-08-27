@@ -25,6 +25,10 @@ unlocks, so you know what the next few levels buy you.
 the best item you qualify for and can afford, and the rung above it with the requirement
 that is blocking it — "needs 70 Attack", "needs Recipe for Disaster".
 
+**Do** — what to actually go and do: bosses, raids, minigames, skilling activities,
+quests, diaries and unlocks, split into what you are ready for now, what is nearly in
+reach, and what to aim at. Each entry leads with the reason to go.
+
 ## How the ranking works
 
 Three things are weighed against each other, and you decide how much each matters with
@@ -206,6 +210,21 @@ than a level reads as freely available to an ironman, which floats raid drops ab
 abyssal whip. Where the gate is a boss, use the stats you would realistically need to go
 and kill it, and put the boss itself in `notes`.
 
+### How gear is judged
+
+There are two halves to this, and they age very differently.
+
+**What you own** is ranked from the client's own live equipment data — RuneLite serves
+stats for every item in the game, so a shield added last week ranks correctly against one
+from 2005. Melee sorts on strength, ranged on ranged strength, magic on magic damage,
+with accuracy and then defence breaking ties for the slots that carry no damage bonus.
+None of this depends on the item appearing in any data file.
+
+**What to aim for** comes from the curated ladders in `gear.json`, because level
+requirements are the one thing the client does not expose. That half can fall behind the
+game, and will; the difference is that it now does so visibly, in a file anyone can edit,
+rather than silently deciding your gear does not exist.
+
 ### Item variants
 
 Players hold whichever charge or condition they happen to have, so ids are folded onto
@@ -227,6 +246,38 @@ On the **Gear** tab, coins buy nothing, so the affordability filter is skipped a
 best item you qualify for is simply the answer. What holds an ironman back is levels, so
 `ironmanRequirements` are applied on top of the ordinary ones, prices are not shown, and
 every row names where the item comes from.
+
+### Adding an activity
+
+Append an object to `content.json`:
+
+```json
+{
+  "id": "fight_caves",
+  "name": "Fight Caves",
+  "category": "MINIGAME",
+  "members": true,
+  "ironmanFriendly": true,
+  "requirements": {"skills": {"RANGED": 61, "DEFENCE": 43, "PRAYER": 43}},
+  "recommendedGear": {"style": "RANGED", "bonus": 70},
+  "rewards": "The fire cape, best in slot for melee training for years",
+  "notes": "A rite of passage. Bring a crossbow and learn the prayer switches.",
+  "wikiUrl": "https://oldschool.runescape.wiki/w/Fight_Caves"
+}
+```
+
+- `category` — `BOSS`, `RAID`, `MINIGAME`, `SKILLING`, `QUEST`, `DIARY` or `UNLOCK`.
+  Each has its own switch in the plugin settings.
+- `rewards` — required, because it is the reason to go and the first thing the card says.
+- `recommendedGear` — a style and an offensive bonus worth having, checked against the
+  player's real equipment. Levels alone are a poor guide: a maxed account in rune meets
+  the stated requirements for a great deal it should not attempt. Omit it when the
+  activity does not care.
+- `ironmanRequirements` works exactly as it does for gear.
+
+Free-to-play entries need `"members": false`, and are worth adding deliberately — nearly
+everything in the file is members-only, so without them a free account opens the tab to
+nothing.
 
 ### Validation
 

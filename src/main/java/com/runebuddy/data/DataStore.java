@@ -35,12 +35,17 @@ public class DataStore
 {
 	private static final String METHODS_RESOURCE = "/com/runebuddy/training_methods.json";
 	private static final String GEAR_RESOURCE = "/com/runebuddy/gear.json";
+	private static final String CONTENT_RESOURCE = "/com/runebuddy/content.json";
 
 	private static final Type METHOD_LIST = new TypeToken<List<TrainingMethod>>()
 	{
 	}.getType();
 
 	private static final Type GEAR_LIST = new TypeToken<List<GearItem>>()
+	{
+	}.getType();
+
+	private static final Type CONTENT_LIST = new TypeToken<List<ContentActivity>>()
 	{
 	}.getType();
 
@@ -56,6 +61,12 @@ public class DataStore
 	@Getter
 	private final List<GearItem> gear;
 
+	/**
+	 * Every activity, in data-file order.
+	 */
+	@Getter
+	private final List<ContentActivity> content;
+
 	private final Map<Skill, List<TrainingMethod>> methodsBySkill;
 	private final Map<GearCategory, Map<EquipSlot, List<GearItem>>> gearByCategory;
 	private final Map<Skill, List<GearItem>> toolsBySkill;
@@ -66,10 +77,12 @@ public class DataStore
 	@Getter
 	private final List<String> warnings;
 
-	private DataStore(List<TrainingMethod> methods, List<GearItem> gear, List<String> warnings)
+	private DataStore(List<TrainingMethod> methods, List<GearItem> gear,
+					  List<ContentActivity> content, List<String> warnings)
 	{
 		this.methods = Collections.unmodifiableList(methods);
 		this.gear = Collections.unmodifiableList(gear);
+		this.content = Collections.unmodifiableList(content);
 		this.warnings = Collections.unmodifiableList(warnings);
 		this.methodsBySkill = indexMethods(methods);
 		this.gearByCategory = indexGear(gear);
@@ -83,15 +96,17 @@ public class DataStore
 	 */
 	public static DataStore load(Gson gson)
 	{
-		return load(gson, METHODS_RESOURCE, GEAR_RESOURCE);
+		return load(gson, METHODS_RESOURCE, GEAR_RESOURCE, CONTENT_RESOURCE);
 	}
 
-	static DataStore load(Gson gson, String methodsResource, String gearResource)
+	static DataStore load(Gson gson, String methodsResource, String gearResource,
+						  String contentResource)
 	{
 		List<String> warnings = new ArrayList<>();
 
 		List<TrainingMethod> methods = read(gson, methodsResource, METHOD_LIST);
 		List<GearItem> gear = read(gson, gearResource, GEAR_LIST);
+		List<ContentActivity> content = read(gson, contentResource, CONTENT_LIST);
 
 		Set<String> methodIds = new HashSet<>();
 		for (TrainingMethod method : methods)
@@ -117,12 +132,22 @@ public class DataStore
 			}
 		}
 
+		Set<String> contentIds = new HashSet<>();
+		for (ContentActivity activity : content)
+		{
+			activity.resolve(warnings::add);
+			if (!contentIds.add(activity.getId()))
+			{
+				throw new IllegalStateException("duplicate content activity id: " + activity.getId());
+			}
+		}
+
 		for (String warning : warnings)
 		{
 			log.warn("Runebuddy data: {}", warning);
 		}
 
-		return new DataStore(methods, gear, warnings);
+		return new DataStore(methods, gear, content, warnings);
 	}
 
 	private static <T> List<T> read(Gson gson, String resource, Type type)
@@ -149,6 +174,23 @@ public class DataStore
 		{
 			throw new IllegalStateException("could not read " + resource, e);
 		}
+	}
+
+	/**
+	 * Activities in a category, in data-file order.
+	 */
+	public List<ContentActivity> contentIn(ContentCategory category)
+	{
+		List<ContentActivity> matching = new ArrayList<>();
+		for (ContentActivity activity : content)
+		{
+			if (activity.getCategory() == category)
+			{
+				matching.add(activity);
+			}
+		}
+
+		return Collections.unmodifiableList(matching);
 	}
 
 	/**

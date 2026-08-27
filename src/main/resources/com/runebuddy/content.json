@@ -1,0 +1,1247 @@
+[
+  {
+    "id": "wintertodt",
+    "name": "Wintertodt",
+    "category": "SKILLING",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "FIREMAKING": 50
+      }
+    },
+    "rewards": "Firemaking experience, supplies, the pyromancer outfit",
+    "notes": "The standard answer for an early account: it pays in supplies you would otherwise buy.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Wintertodt"
+  },
+  {
+    "id": "tempoross",
+    "name": "Tempoross",
+    "category": "SKILLING",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "FISHING": 35
+      }
+    },
+    "rewards": "Fishing experience, the angler outfit, the fish barrel",
+    "notes": "Safe, and the rewards make every later fishing trip better.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Tempoross"
+  },
+  {
+    "id": "guardians_of_the_rift",
+    "name": "Guardians of the Rift",
+    "category": "SKILLING",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "RUNECRAFT": 27
+      },
+      "notes": [
+        "Temple of the Eye"
+      ]
+    },
+    "rewards": "Runecraft experience, the colossal pouch, the raiments of the eye",
+    "notes": "Far less running than traditional runecrafting, and the pouch is a permanent upgrade.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Guardians_of_the_Rift"
+  },
+  {
+    "id": "blast_furnace",
+    "name": "Blast Furnace",
+    "category": "SKILLING",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {
+        "SMITHING": 60
+      }
+    },
+    "rewards": "The fastest Smithing experience in the game",
+    "notes": "Needs a steady supply of ore, which is why it suits an account that can buy.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Blast_Furnace"
+  },
+  {
+    "id": "motherlode_mine",
+    "name": "Motherlode Mine",
+    "category": "SKILLING",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "MINING": 30
+      }
+    },
+    "rewards": "Mining experience, nuggets, the prospector kit",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Motherlode_Mine"
+  },
+  {
+    "id": "hallowed_sepulchre",
+    "name": "Hallowed Sepulchre",
+    "category": "SKILLING",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "AGILITY": 52
+      },
+      "quests": [
+        "SINS_OF_THE_FATHER"
+      ]
+    },
+    "rewards": "Agility experience, and good money",
+    "notes": "Rewards precision rather than patience, unlike the rooftops.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Hallowed_Sepulchre"
+  },
+  {
+    "id": "volcanic_mine",
+    "name": "Volcanic Mine",
+    "category": "SKILLING",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "MINING": 50
+      },
+      "notes": [
+        "150 total kudos"
+      ]
+    },
+    "rewards": "Fast Mining experience at high level",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Volcanic_Mine"
+  },
+  {
+    "id": "mahogany_homes",
+    "name": "Mahogany Homes",
+    "category": "SKILLING",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "CONSTRUCTION": 20
+      }
+    },
+    "rewards": "Construction experience without a house",
+    "notes": "Cheaper per level than building and removing furniture, and it suits an ironman.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Mahogany_Homes"
+  },
+  {
+    "id": "tithe_farm",
+    "name": "Tithe Farm",
+    "category": "SKILLING",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "FARMING": 34
+      },
+      "quests": [
+        "CLIENT_OF_KOUREND"
+      ]
+    },
+    "rewards": "Farming experience and the farmer's outfit",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Tithe_Farm"
+  },
+  {
+    "id": "birdhouse_runs",
+    "name": "Birdhouse runs",
+    "category": "SKILLING",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "HUNTER": 5
+      },
+      "quests": [
+        "BONE_VOYAGE"
+      ]
+    },
+    "rewards": "Hunter experience and nests, for two minutes of work",
+    "notes": "Not an hourly activity: set them, go and do something else, come back.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Birdhouse"
+  },
+  {
+    "id": "herb_runs",
+    "name": "Herb runs",
+    "category": "SKILLING",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "FARMING": 32
+      }
+    },
+    "rewards": "Farming experience and the herbs that fund Herblore",
+    "notes": "Five minutes every eighty. The single best return on time in the game.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Herb_patch"
+  },
+  {
+    "id": "barbarian_assault",
+    "name": "Barbarian Assault",
+    "category": "MINIGAME",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "notes": [
+        "A team of five"
+      ]
+    },
+    "rewards": "The fighter torso, and Hitpoints experience",
+    "notes": "The torso is a strength bonus you will wear for years.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Barbarian_Assault"
+  },
+  {
+    "id": "pest_control",
+    "name": "Pest Control",
+    "category": "MINIGAME",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "notes": [
+        "40 combat"
+      ]
+    },
+    "rewards": "Void knight equipment and combat experience",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Pest_Control"
+  },
+  {
+    "id": "fight_caves",
+    "name": "Fight Caves",
+    "category": "MINIGAME",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 61,
+        "DEFENCE": 43,
+        "PRAYER": 43,
+        "HITPOINTS": 70
+      }
+    },
+    "recommendedGear": {
+      "style": "RANGED",
+      "bonus": 70
+    },
+    "rewards": "The fire cape, best in slot for melee training for years",
+    "notes": "A rite of passage. Bring a crossbow and learn the prayer switches.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Fight_Caves"
+  },
+  {
+    "id": "inferno",
+    "name": "The Inferno",
+    "category": "MINIGAME",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 90,
+        "DEFENCE": 80,
+        "MAGIC": 75,
+        "HITPOINTS": 90,
+        "PRAYER": 77
+      }
+    },
+    "recommendedGear": {
+      "style": "RANGED",
+      "bonus": 140
+    },
+    "rewards": "The infernal cape",
+    "notes": "The hardest solo content in the game. Treat it as a long-term goal.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Inferno"
+  },
+  {
+    "id": "fortis_colosseum",
+    "name": "Fortis Colosseum",
+    "category": "MINIGAME",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 75,
+        "DEFENCE": 70,
+        "HITPOINTS": 80,
+        "PRAYER": 74
+      }
+    },
+    "recommendedGear": {
+      "style": "RANGED",
+      "bonus": 100
+    },
+    "rewards": "Echo boots and Dizana's quiver",
+    "notes": "A gentler Inferno, and the quiver is worth the trip on its own.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Fortis_Colosseum"
+  },
+  {
+    "id": "nightmare_zone",
+    "name": "Nightmare Zone",
+    "category": "MINIGAME",
+    "members": true,
+    "ironmanFriendly": false,
+    "requirements": {
+      "skills": {
+        "ATTACK": 70,
+        "STRENGTH": 70
+      },
+      "quests": [
+        "DREAM_MENTOR"
+      ]
+    },
+    "rewards": "Combat experience and imbues",
+    "notes": "Near-idle combat training, funded by absorption potions you have to buy.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Nightmare_Zone"
+  },
+  {
+    "id": "chambers_prep_warriors_guild",
+    "name": "Warriors' Guild",
+    "category": "MINIGAME",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "ATTACK": 60,
+        "STRENGTH": 60
+      }
+    },
+    "rewards": "The dragon defender",
+    "notes": "Free, and a large accuracy and strength gain over any shield.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Warriors%27_Guild"
+  },
+  {
+    "id": "mage_training_arena",
+    "name": "Mage Training Arena",
+    "category": "MINIGAME",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 50
+      }
+    },
+    "rewards": "Infinity boots and the mage's book",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Mage_Training_Arena"
+  },
+  {
+    "id": "castle_wars",
+    "name": "Castle Wars",
+    "category": "MINIGAME",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "rewards": "Decorative armour and a way to pass the time",
+    "notes": "No requirements at all, which makes it a reasonable first minigame.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Castle_Wars"
+  },
+  {
+    "id": "soul_wars",
+    "name": "Soul Wars",
+    "category": "MINIGAME",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "notes": [
+        "40 combat"
+      ]
+    },
+    "rewards": "Imbues and fast combat experience",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Soul_Wars"
+  },
+  {
+    "id": "barrows",
+    "name": "Barrows",
+    "category": "BOSS",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 70,
+        "HITPOINTS": 70
+      },
+      "quests": [
+        "PRIEST_IN_PERIL"
+      ]
+    },
+    "recommendedGear": {
+      "style": "MELEE",
+      "bonus": 60
+    },
+    "rewards": "Barrows equipment, and steady money",
+    "notes": "A good first boss: no prayer switching, and it teaches gear management.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Barrows"
+  },
+  {
+    "id": "giant_mole",
+    "name": "Giant Mole",
+    "category": "BOSS",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "ATTACK": 60,
+        "STRENGTH": 60,
+        "HITPOINTS": 60
+      }
+    },
+    "recommendedGear": {
+      "style": "MELEE",
+      "bonus": 50
+    },
+    "rewards": "Mole skin and claws, and an easy first kill",
+    "notes": "Forgiving, close to a bank, and a sensible place to learn.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Giant_Mole"
+  },
+  {
+    "id": "obor",
+    "name": "Obor",
+    "category": "BOSS",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "ATTACK": 50,
+        "HITPOINTS": 50
+      }
+    },
+    "recommendedGear": {
+      "style": "MELEE",
+      "bonus": 40
+    },
+    "rewards": "The hill giant club",
+    "notes": "One of the two bosses a free account can fight, and a fair first one.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Obor"
+  },
+  {
+    "id": "dagannoth_kings",
+    "name": "Dagannoth Kings",
+    "category": "BOSS",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 70,
+        "HITPOINTS": 75
+      },
+      "quests": [
+        "THE_FREMENNIK_TRIALS"
+      ]
+    },
+    "recommendedGear": {
+      "style": "MELEE",
+      "bonus": 70
+    },
+    "rewards": "The berserker, archers and seers rings, and dragon axe",
+    "notes": "Three bosses in one room, each wanting a different style.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Dagannoth_Kings"
+  },
+  {
+    "id": "zulrah",
+    "name": "Zulrah",
+    "category": "BOSS",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 75,
+        "MAGIC": 75,
+        "DEFENCE": 70,
+        "HITPOINTS": 80,
+        "PRAYER": 74
+      },
+      "quests": [
+        "REGICIDE"
+      ]
+    },
+    "recommendedGear": {
+      "style": "RANGED",
+      "bonus": 90
+    },
+    "rewards": "The toxic blowpipe, trident of the swamp, and serious money",
+    "notes": "Pattern-based rather than reactive. Worth learning properly before going.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Zulrah"
+  },
+  {
+    "id": "vorkath",
+    "name": "Vorkath",
+    "category": "BOSS",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 80,
+        "DEFENCE": 70,
+        "HITPOINTS": 85,
+        "PRAYER": 74
+      },
+      "quests": [
+        "DRAGON_SLAYER_II"
+      ]
+    },
+    "recommendedGear": {
+      "style": "RANGED",
+      "bonus": 100
+    },
+    "rewards": "The dragonbone necklace, assembler kit, and reliable money",
+    "notes": "The standard money boss once your gear can hold up.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Vorkath"
+  },
+  {
+    "id": "god_wars_general_graardor",
+    "name": "General Graardor",
+    "category": "BOSS",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "ATTACK": 70,
+        "STRENGTH": 70,
+        "DEFENCE": 70,
+        "HITPOINTS": 80,
+        "PRAYER": 70
+      },
+      "notes": [
+        "God Wars Dungeon killcount"
+      ]
+    },
+    "recommendedGear": {
+      "style": "MELEE",
+      "bonus": 80
+    },
+    "rewards": "Bandos armour and the Bandos hilt",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/General_Graardor"
+  },
+  {
+    "id": "god_wars_kree",
+    "name": "Kree'arra",
+    "category": "BOSS",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 75,
+        "DEFENCE": 70,
+        "HITPOINTS": 80,
+        "PRAYER": 70
+      },
+      "notes": [
+        "God Wars Dungeon killcount",
+        "70 Ranged to enter"
+      ]
+    },
+    "recommendedGear": {
+      "style": "RANGED",
+      "bonus": 90
+    },
+    "rewards": "Armadyl armour and the crossbow",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Kree%27arra"
+  },
+  {
+    "id": "cerberus",
+    "name": "Cerberus",
+    "category": "BOSS",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "SLAYER": 91,
+        "DEFENCE": 80,
+        "HITPOINTS": 85,
+        "PRAYER": 74
+      }
+    },
+    "recommendedGear": {
+      "style": "MELEE",
+      "bonus": 90
+    },
+    "rewards": "Primordial, pegasian and eternal crystals",
+    "notes": "Slayer-locked, and the boots are the reason to go.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Cerberus"
+  },
+  {
+    "id": "alchemical_hydra",
+    "name": "Alchemical Hydra",
+    "category": "BOSS",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "SLAYER": 95,
+        "RANGED": 80,
+        "DEFENCE": 75,
+        "HITPOINTS": 85,
+        "PRAYER": 74
+      }
+    },
+    "recommendedGear": {
+      "style": "RANGED",
+      "bonus": 100
+    },
+    "rewards": "The hydra ring, tail and leather",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Alchemical_Hydra"
+  },
+  {
+    "id": "araxxor",
+    "name": "Araxxor",
+    "category": "BOSS",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "SLAYER": 92,
+        "ATTACK": 80,
+        "DEFENCE": 80,
+        "HITPOINTS": 90,
+        "PRAYER": 74
+      }
+    },
+    "recommendedGear": {
+      "style": "MELEE",
+      "bonus": 100
+    },
+    "rewards": "The amulet of rancour and araxyte pieces",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Araxxor"
+  },
+  {
+    "id": "the_hueycoatl",
+    "name": "The Hueycoatl",
+    "category": "BOSS",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 75,
+        "DEFENCE": 70,
+        "HITPOINTS": 80,
+        "PRAYER": 74
+      }
+    },
+    "recommendedGear": {
+      "style": "RANGED",
+      "bonus": 90
+    },
+    "rewards": "Tonalztics of ralos and the hueycoatl hide",
+    "notes": "A team boss in Varlamore, and reasonable money for the requirements.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/The_Hueycoatl"
+  },
+  {
+    "id": "perilous_moons",
+    "name": "Perilous Moons",
+    "category": "BOSS",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "HITPOINTS": 75,
+        "SLAYER": 48
+      },
+      "notes": [
+        "Perilous Moons"
+      ]
+    },
+    "recommendedGear": {
+      "style": "MELEE",
+      "bonus": 60
+    },
+    "rewards": "The three moons sets and the dual macuahuitl",
+    "notes": "Mid-game gear you will actually wear, from three learnable fights.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Perilous_Moons"
+  },
+  {
+    "id": "nex",
+    "name": "Nex",
+    "category": "BOSS",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "ATTACK": 80,
+        "DEFENCE": 80,
+        "HITPOINTS": 90,
+        "PRAYER": 74
+      },
+      "notes": [
+        "A team",
+        "God Wars Dungeon access"
+      ]
+    },
+    "recommendedGear": {
+      "style": "MELEE",
+      "bonus": 110
+    },
+    "rewards": "Torva and the zaryte pieces",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Nex"
+  },
+  {
+    "id": "phantom_muspah",
+    "name": "Phantom Muspah",
+    "category": "BOSS",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 75,
+        "MAGIC": 75,
+        "DEFENCE": 70,
+        "HITPOINTS": 85,
+        "PRAYER": 74
+      },
+      "notes": [
+        "Secrets of the North"
+      ]
+    },
+    "recommendedGear": {
+      "style": "RANGED",
+      "bonus": 90
+    },
+    "rewards": "The venator shard and good money",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Phantom_Muspah"
+  },
+  {
+    "id": "chambers_of_xeric",
+    "name": "Chambers of Xeric",
+    "category": "RAID",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "ATTACK": 80,
+        "DEFENCE": 75,
+        "HITPOINTS": 85,
+        "PRAYER": 74,
+        "HERBLORE": 78
+      }
+    },
+    "recommendedGear": {
+      "style": "MELEE",
+      "bonus": 90
+    },
+    "rewards": "Ancestral, the twisted bow, the kodai insignia",
+    "notes": "The most forgiving of the three raids, and the one to learn first.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Chambers_of_Xeric"
+  },
+  {
+    "id": "theatre_of_blood",
+    "name": "Theatre of Blood",
+    "category": "RAID",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "ATTACK": 80,
+        "DEFENCE": 80,
+        "HITPOINTS": 90,
+        "PRAYER": 77
+      }
+    },
+    "recommendedGear": {
+      "style": "MELEE",
+      "bonus": 110
+    },
+    "rewards": "The scythe, rapier, avernic hilt and justiciar armour",
+    "notes": "Unforgiving and team-dependent. Learn it with people who know it.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Theatre_of_Blood"
+  },
+  {
+    "id": "tombs_of_amascut",
+    "name": "Tombs of Amascut",
+    "category": "RAID",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 75,
+        "DEFENCE": 70,
+        "HITPOINTS": 85,
+        "PRAYER": 74
+      },
+      "notes": [
+        "Beneath Cursed Sands"
+      ]
+    },
+    "recommendedGear": {
+      "style": "RANGED",
+      "bonus": 90
+    },
+    "rewards": "Masori, the shadow, the fang and Elidinis' ward",
+    "notes": "Difficulty is adjustable, so it is approachable long before the other two.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Tombs_of_Amascut"
+  },
+  {
+    "id": "quest_dragon_slayer_i",
+    "name": "Dragon Slayer I",
+    "category": "QUEST",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {
+      "questPoints": 32
+    },
+    "rewards": "Rune platebody, and the anti-dragon shield",
+    "notes": "The free-to-play milestone quest.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Dragon_Slayer_I"
+  },
+  {
+    "id": "quest_monkey_madness_i",
+    "name": "Monkey Madness I",
+    "category": "QUEST",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "quests": [
+        "THE_GRAND_TREE",
+        "TREE_GNOME_VILLAGE"
+      ]
+    },
+    "rewards": "The dragon scimitar and a large Attack lamp",
+    "notes": "Unlocks the best training weapon of its tier. Do it early.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Monkey_Madness_I"
+  },
+  {
+    "id": "quest_recipe_for_disaster",
+    "name": "Recipe for Disaster",
+    "category": "QUEST",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "questPoints": 175
+    },
+    "rewards": "Barrows gloves, the best gloves for almost everything",
+    "notes": "Long, but the gloves are worn for the rest of the account's life.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster"
+  },
+  {
+    "id": "quest_dragon_slayer_ii",
+    "name": "Dragon Slayer II",
+    "category": "QUEST",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 75,
+        "SMITHING": 70,
+        "MINING": 68,
+        "CRAFTING": 62,
+        "AGILITY": 60,
+        "THIEVING": 60,
+        "HITPOINTS": 50
+      },
+      "quests": [
+        "DRAGON_SLAYER_I",
+        "LEGENDS_QUEST",
+        "DREAM_MENTOR"
+      ]
+    },
+    "rewards": "Vorkath, Ava's assembler, and a lot of experience",
+    "notes": "The gateway to the most reliable money boss in the game.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Dragon_Slayer_II"
+  },
+  {
+    "id": "quest_desert_treasure_ii",
+    "name": "Desert Treasure II",
+    "category": "QUEST",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "MAGIC": 75,
+        "FIREMAKING": 75,
+        "THIEVING": 70,
+        "HERBLORE": 62,
+        "RUNECRAFT": 60,
+        "CONSTRUCTION": 60
+      },
+      "quests": [
+        "DESERT_TREASURE_I"
+      ]
+    },
+    "rewards": "The four new bosses, and ancient rings",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Desert_Treasure_II_-_The_Fallen_Empire"
+  },
+  {
+    "id": "quest_song_of_the_elves",
+    "name": "Song of the Elves",
+    "category": "QUEST",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "AGILITY": 70,
+        "CONSTRUCTION": 70,
+        "FARMING": 70,
+        "HERBLORE": 70,
+        "HUNTER": 70,
+        "MINING": 70,
+        "SMITHING": 70,
+        "WOODCUTTING": 70
+      },
+      "quests": [
+        "MOURNINGS_END_PART_II"
+      ]
+    },
+    "rewards": "Prifddinas, crystal gear, and the best agility course",
+    "notes": "A wall of 70s, and worth every one of them.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Song_of_the_Elves"
+  },
+  {
+    "id": "quest_sins_of_the_father",
+    "name": "Sins of the Father",
+    "category": "QUEST",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "WOODCUTTING": 62,
+        "FLETCHING": 60,
+        "CRAFTING": 56,
+        "AGILITY": 52,
+        "ATTACK": 50,
+        "SLAYER": 50,
+        "MAGIC": 49
+      },
+      "notes": [
+        "A Taste of Hope"
+      ]
+    },
+    "rewards": "Darkmeyer, vyres, and the blood altar",
+    "notes": "Unlocks the best Thieving and one of the best Runecraft methods at once.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Sins_of_the_Father"
+  },
+  {
+    "id": "diary_varrock_easy",
+    "name": "Varrock easy diary",
+    "category": "DIARY",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "MINING": 15
+      }
+    },
+    "rewards": "A fourth ore from the Varrock mines while mining",
+    "notes": "One of the cheapest useful diaries on a new account.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Varrock_Diary"
+  },
+  {
+    "id": "diary_ardougne_medium",
+    "name": "Ardougne medium diary",
+    "category": "DIARY",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "THIEVING": 38,
+        "AGILITY": 39
+      }
+    },
+    "rewards": "A better pickpocket chance on Ardougne knights",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Ardougne_Diary"
+  },
+  {
+    "id": "diary_ardougne_hard",
+    "name": "Ardougne hard diary",
+    "category": "DIARY",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "THIEVING": 72,
+        "AGILITY": 70,
+        "MAGIC": 66
+      }
+    },
+    "rewards": "The best teleport for Thieving, and dragon scimitar shortcuts",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Ardougne_Diary"
+  },
+  {
+    "id": "diary_karamja_medium",
+    "name": "Karamja medium diary",
+    "category": "DIARY",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "MINING": 40,
+        "AGILITY": 30,
+        "FISHING": 30
+      }
+    },
+    "rewards": "Karamja gloves, which help lava runes and gem mining",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Karamja_Diary"
+  },
+  {
+    "id": "diary_fremennik_hard",
+    "name": "Fremennik hard diary",
+    "category": "DIARY",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "AGILITY": 65,
+        "SLAYER": 69,
+        "CRAFTING": 60
+      }
+    },
+    "rewards": "A free daily supply of pure essence and better bank access",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Fremennik_Diary"
+  },
+  {
+    "id": "diary_morytania_hard",
+    "name": "Morytania hard diary",
+    "category": "DIARY",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "SLAYER": 71,
+        "AGILITY": 71,
+        "MAGIC": 66,
+        "STRENGTH": 70
+      }
+    },
+    "rewards": "A better barrows chance and the morytania legs",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Morytania_Diary"
+  },
+  {
+    "id": "unlock_graceful",
+    "name": "The graceful outfit",
+    "category": "UNLOCK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "AGILITY": 30
+      }
+    },
+    "rewards": "Reduced weight and faster run recovery, everywhere",
+    "notes": "Bought with marks of grace from rooftop courses. Get it early and forget about it.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Graceful_outfit"
+  },
+  {
+    "id": "unlock_house_teleport_tabs",
+    "name": "A player-owned house",
+    "category": "UNLOCK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "CONSTRUCTION": 1
+      }
+    },
+    "rewards": "Teleports, an altar, and a jewellery box",
+    "notes": "Cheap to start, and it saves time on almost every trip afterwards.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Player-owned_house"
+  },
+  {
+    "id": "unlock_rune_pouch",
+    "name": "The rune pouch",
+    "category": "UNLOCK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "SLAYER": 1
+      },
+      "notes": [
+        "Slayer points, or Last Man Standing"
+      ]
+    },
+    "rewards": "Three rune types carried in one inventory slot",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Rune_pouch"
+  },
+  {
+    "id": "unlock_ardougne_cloak",
+    "name": "The Ardougne cloak",
+    "category": "UNLOCK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "THIEVING": 38,
+        "AGILITY": 39
+      }
+    },
+    "rewards": "Unlimited farm teleports and better thieving",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Ardougne_cloak"
+  },
+  {
+    "id": "unlock_slayer_helmet",
+    "name": "The slayer helmet",
+    "category": "UNLOCK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "SLAYER": 55,
+        "CRAFTING": 55,
+        "DEFENCE": 10
+      }
+    },
+    "rewards": "A large accuracy and damage bonus on every task",
+    "notes": "Probably the best value Slayer points ever buy.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Slayer_helmet"
+  },
+  {
+    "id": "unlock_fire_cape",
+    "name": "The fire cape",
+    "category": "UNLOCK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "RANGED": 61,
+        "DEFENCE": 43,
+        "PRAYER": 43,
+        "HITPOINTS": 70
+      }
+    },
+    "recommendedGear": {
+      "style": "RANGED",
+      "bonus": 70
+    },
+    "rewards": "Best in slot for melee training for a very long time",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Fire_cape"
+  },
+  {
+    "id": "unlock_barrows_gloves",
+    "name": "Barrows gloves",
+    "category": "UNLOCK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "questPoints": 175
+    },
+    "rewards": "The best gloves in the game for almost every purpose",
+    "notes": "The reason to finish Recipe for Disaster.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Barrows_gloves"
+  },
+  {
+    "id": "unlock_quest_cape",
+    "name": "The quest cape",
+    "category": "UNLOCK",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "questPoints": 300
+    },
+    "rewards": "Every quest reward, and a cape that says so",
+    "notes": "Not a grind so much as a consequence of doing the quests worth doing.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Quest_point_cape"
+  },
+  {
+    "id": "bryophyta",
+    "name": "Bryophyta",
+    "category": "BOSS",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "ATTACK": 50,
+        "HITPOINTS": 50
+      },
+      "notes": [
+        "A mossy key"
+      ]
+    },
+    "recommendedGear": {
+      "style": "MELEE",
+      "bonus": 40
+    },
+    "rewards": "Bryophyta's essence, for a staff that saves runes",
+    "notes": "The other boss a free account can reach.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Bryophyta"
+  },
+  {
+    "id": "f2p_quest_cape_prep",
+    "name": "The free quests",
+    "category": "QUEST",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {},
+    "rewards": "Quest points toward Dragon Slayer, and a lot of early experience",
+    "notes": "Worth clearing before members: several are requirements for the quests that follow.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Quests/Free-to-play"
+  },
+  {
+    "id": "champions_guild",
+    "name": "The Champions' Guild",
+    "category": "UNLOCK",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {
+      "questPoints": 32
+    },
+    "rewards": "Access to Dragon Slayer I and a decent shop",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Champions%27_Guild"
+  },
+  {
+    "id": "crafting_guild",
+    "name": "The Crafting Guild",
+    "category": "UNLOCK",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "CRAFTING": 40
+      }
+    },
+    "rewards": "Close mining and a bank for gold and clay",
+    "notes": "A brown apron and 40 Crafting; one of the better free unlocks.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Crafting_Guild"
+  },
+  {
+    "id": "mining_guild",
+    "name": "The Mining Guild",
+    "category": "UNLOCK",
+    "members": false,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "MINING": 60
+      }
+    },
+    "rewards": "Dense coal, a bank close by, and a mining bonus",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Mining_Guild"
+  },
+  {
+    "id": "barbarian_fishing_unlock",
+    "name": "Barbarian Fishing",
+    "category": "SKILLING",
+    "members": true,
+    "ironmanFriendly": true,
+    "requirements": {
+      "skills": {
+        "FISHING": 48,
+        "AGILITY": 15,
+        "STRENGTH": 15
+      },
+      "quests": [
+        "BARBARIAN_TRAINING"
+      ]
+    },
+    "rewards": "Fishing, Agility and Strength experience at the same time",
+    "notes": "The only way to train three skills at once for hours at a time.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Barbarian_Fishing"
+  }
+]
