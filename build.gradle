@@ -16,18 +16,23 @@ repositories {
 def runeLiteVersion = '1.12.36'
 def pluginMainClass = 'com.runebuddy.RunebuddyPluginTest'
 
+// Lombok hooks into compiler internals, so it has to know about whatever JDK is doing
+// the compiling. Too old for the local JDK and the compiler dies with an
+// ExceptionInInitializerError before it reports anything useful. Keep this current.
+def lombokVersion = '1.18.46'
+
 dependencies {
 	compileOnly group: 'net.runelite', name: 'client', version: runeLiteVersion
 
-	compileOnly 'org.projectlombok:lombok:1.18.30'
-	annotationProcessor 'org.projectlombok:lombok:1.18.30'
+	compileOnly "org.projectlombok:lombok:${lombokVersion}"
+	annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 
 	testImplementation 'junit:junit:4.13.2'
 	testImplementation group: 'net.runelite', name: 'client', version: runeLiteVersion
 	testImplementation group: 'net.runelite', name: 'jshell', version: runeLiteVersion
 
-	testCompileOnly 'org.projectlombok:lombok:1.18.30'
-	testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+	testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+	testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 }
 
 group = 'com.runebuddy'
