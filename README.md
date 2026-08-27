@@ -65,6 +65,19 @@ Requires a JDK 11 or newer.
 
 `./gradlew run` starts a real client, so you will need a display and a Jagex account.
 
+### If the build fails
+
+**`ExceptionInInitializerError` during `:compileJava`** means Lombok does not understand
+your JDK. Lombok reaches into compiler internals, so it has to be new enough for
+whatever Java you are compiling with, and it fails this way rather than saying so. Check
+your version with `java -version` and, if it is newer than the `lombokVersion` in
+`build.gradle` supports, raise that version — the
+[Lombok changelog](https://projectlombok.org/changelog) lists which release added support
+for each JDK.
+
+The plugin itself always targets Java 11 bytecode via `options.release.set(11)`,
+regardless of which JDK builds it, so a newer JDK is fine as long as Lombok agrees.
+
 ## The data files
 
 Everything Runebuddy recommends comes from two JSON files in
