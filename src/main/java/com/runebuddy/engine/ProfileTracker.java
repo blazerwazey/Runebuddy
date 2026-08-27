@@ -12,6 +12,7 @@ import com.runebuddy.data.Requirements;
 import com.runebuddy.data.Skills;
 import com.runebuddy.data.TrainingMethod;
 import java.lang.reflect.Type;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -35,7 +36,9 @@ import net.runelite.api.gameval.ItemID;
 import net.runelite.api.gameval.VarPlayerID;
 import net.runelite.api.gameval.VarbitID;
 import net.runelite.client.config.ConfigManager;
+import net.runelite.client.game.ItemEquipmentStats;
 import net.runelite.client.game.ItemManager;
+import net.runelite.client.game.ItemStats;
 
 /**
  * Builds {@link PlayerProfile} snapshots from live client state.
@@ -129,6 +132,72 @@ public class ProfileTracker
 	}
 
 	/**
+	 * Whether the client considers this item wearable. Must run on the client thread.
+	 */
+	private boolean isEquipable(int itemId)
+	{
+		try
+		{
+			ItemStats stats = itemManager.getItemStats(itemId);
+			return stats != null && stats.isEquipable() && stats.getEquipment() != null;
+		}
+		catch (RuntimeException e)
+		{
+			return false;
+		}
+	}
+
+	/**
+	 * Reads the client's live equipment data for everything the player owns.
+	 *
+	 * <p>This is the half of the gear picture that does not depend on anyone having heard
+	 * of the item: RuneLite serves stats for every item in the game, so a shield added in
+	 * the last update ranks correctly against one from 2005.
+	 */
+	private void resolveEquipmentStats(PlayerProfile.PlayerProfileBuilder builder,
+									   Collection<Integer> ownedIds)
+	{
+		for (int itemId : ownedIds)
+		{
+			try
+			{
+				ItemStats stats = itemManager.getItemStats(itemId);
+				if (stats == null || !stats.isEquipable())
+				{
+					continue;
+				}
+
+				ItemEquipmentStats equipment = stats.getEquipment();
+				if (equipment == null)
+				{
+					continue;
+				}
+
+				builder.itemStats(itemId, new EquipmentStats(
+					equipment.getSlot(),
+					equipment.getAstab(), equipment.getAslash(), equipment.getAcrush(),
+					equipment.getAmagic(), equipment.getArange(),
+					equipment.getDstab(), equipment.getDslash(), equipment.getDcrush(),
+					equipment.getDmagic(), equipment.getDrange(),
+					equipment.getStr(), equipment.getRstr(),
+					equipment.getMdmg(), equipment.getPrayer()));
+
+				// The panel has to be able to name an item no data file mentions. Resolving
+				// it again for one already covered is harmless: the later entry wins.
+				ItemComposition composition = itemManager.getItemComposition(itemId);
+				if (composition != null && composition.getName() != null)
+				{
+					builder.itemName(itemId, composition.getName());
+				}
+			}
+			catch (RuntimeException e)
+			{
+				log.debug("Runebuddy: could not read equipment stats for {}", itemId, e);
+			}
+		}
+	}
+
+	/**
 	 * Reads the current state of the account.
 	 *
 	 * <p>Must be called on the client thread.
@@ -183,6 +252,13 @@ public class ProfileTracker
 		builder.liquidGp(owned.getOrDefault(canonical(ItemID.COINS), 0));
 
 		resolveItemDetails(builder);
+
+		// Stats are needed for what the player owns, so it can be ranked, and for what
+		// the ladders suggest, so the two can be compared. Without the second half we
+		// could never tell that owned gear already beats the thing being suggested.
+		Set<Integer> statsNeeded = new LinkedHashSet<>(owned.keySet());
+		statsNeeded.addAll(itemsOfInterest);
+		resolveEquipmentStats(builder, statsNeeded);
 
 		return builder.build();
 	}
@@ -243,7 +319,12 @@ public class ProfileTracker
 			// Bank an amulet of glory(6) and we still want it recognised against the
 			// glory(4) the data file names, so both sides are collapsed to one id.
 			int id = canonical(item.getId());
-			if (itemsOfInterest.contains(id))
+
+			// Keep anything the data files name, and anything wearable at all. That
+			// second half matters: a piece of gear released after this plugin was
+			// written is in no data file, and dropping it here is what made it
+			// invisible no matter how good the ranking was.
+			if (itemsOfInterest.contains(id) || isEquipable(id))
 			{
 				bankCache.merge(id, item.getQuantity(), Integer::sum);
 			}

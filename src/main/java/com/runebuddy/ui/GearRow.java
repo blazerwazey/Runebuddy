@@ -29,10 +29,12 @@ class GearRow extends JPanel
 			BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
 			UiUtils.padding(6, 6, 6, 6)));
 
-		// The icon shows what to aim for, since that is the thing the row is about.
+		// The icon shows what to aim for, since that is the thing the row is about, and
+		// falls back to whatever they are actually wearing.
 		GearItem illustrate = firstNonNull(suggestion.getNext(), suggestion.getLocked(),
 			suggestion.getGoal(), suggestion.getOwned());
-		add(icon(illustrate, context), BorderLayout.WEST);
+		Integer iconId = illustrate != null ? illustrate.getItemId() : suggestion.getBestOwnedItemId();
+		add(icon(iconId, context), BorderLayout.WEST);
 
 		JPanel body = new JPanel();
 		body.setLayout(new BoxLayout(body, BoxLayout.Y_AXIS));
@@ -55,7 +57,7 @@ class GearRow extends JPanel
 				body.add(upgradeLine("Best for your level", goal, context, profile, ColorScheme.BRAND_ORANGE, ironman));
 			}
 		}
-		else if (suggestion.isSatisfied())
+		else if (suggestion.isSatisfied() || suggestion.getBestOwnedName() != null)
 		{
 			body.add(UiUtils.body("Best you can use"));
 		}
@@ -80,6 +82,13 @@ class GearRow extends JPanel
 	 */
 	private static JLabel currentLine(GearSuggestion suggestion)
 	{
+		// The stat-derived answer comes first: it knows about items the ladder does not,
+		// which is the whole point of reading the client's own equipment data.
+		if (suggestion.getBestOwnedName() != null)
+		{
+			return UiUtils.body("Own: " + UiUtils.ellipsise(suggestion.getBestOwnedName(), 28));
+		}
+
 		if (suggestion.getEquipped() != null)
 		{
 			return UiUtils.body("Wearing: " + UiUtils.ellipsise(suggestion.getEquipped().getName(), 26));
@@ -131,14 +140,14 @@ class GearRow extends JPanel
 		return label;
 	}
 
-	private static JLabel icon(@Nullable GearItem item, PanelContext context)
+	private static JLabel icon(@Nullable Integer itemId, PanelContext context)
 	{
 		JLabel label = new JLabel();
 		label.setPreferredSize(new Dimension(ICON_SIZE, ICON_SIZE));
 
-		if (item != null)
+		if (itemId != null)
 		{
-			AsyncBufferedImage image = context.itemImage(item.getItemId());
+			AsyncBufferedImage image = context.itemImage(itemId);
 			if (image != null)
 			{
 				// Paints itself in once the sprite has been loaded from the cache.

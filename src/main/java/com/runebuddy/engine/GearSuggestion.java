@@ -62,6 +62,20 @@ public class GearSuggestion
 	RequirementReport lockedReport;
 
 	/**
+	 * Name of the best thing the player owns for this slot, scored on the client's live
+	 * equipment stats. This is what fills the slot in practice, and unlike everything
+	 * above it does not depend on the item appearing in any data file.
+	 */
+	@Nullable
+	String bestOwnedName;
+
+	/**
+	 * Item id behind {@link #bestOwnedName}, or null when they own nothing for the slot.
+	 */
+	@Nullable
+	Integer bestOwnedItemId;
+
+	/**
 	 * What to call this row in the panel: the skill for a tool ladder, otherwise the
 	 * slot name.
 	 */
@@ -83,6 +97,7 @@ public class GearSuggestion
 	 */
 	public boolean isEmpty()
 	{
-		return equipped == null && owned == null && next == null && goal == null && locked == null;
+		return equipped == null && owned == null && next == null && goal == null
+			&& locked == null && bestOwnedName == null;
 	}
 }

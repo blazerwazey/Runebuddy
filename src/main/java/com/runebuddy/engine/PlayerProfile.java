@@ -97,6 +97,13 @@ public class PlayerProfile
 	private final Map<Integer, Integer> itemPrices;
 
 	/**
+	 * Equipment stats for every wearable item the player owns, resolved from the client's
+	 * own live data. This is what lets the gear tab rank an item nobody hand-listed.
+	 */
+	@Singular("itemStats")
+	private final Map<Integer, EquipmentStats> itemStats;
+
+	/**
 	 * Real level in a skill, defaulting to whatever that skill starts at.
 	 */
 	public int level(Skill skill)
@@ -151,6 +158,15 @@ public class PlayerProfile
 	public String nameOf(int itemId)
 	{
 		return itemNames.get(itemId);
+	}
+
+	/**
+	 * Equipment stats for an owned item, or null if it is not wearable or was not seen.
+	 */
+	@Nullable
+	public EquipmentStats statsOf(int itemId)
+	{
+		return itemStats.get(canonicalItem(itemId));
 	}
 
 	/**
