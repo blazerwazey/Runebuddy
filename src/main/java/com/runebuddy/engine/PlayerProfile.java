@@ -11,6 +11,7 @@ import lombok.Singular;
 import net.runelite.api.Experience;
 import net.runelite.api.Quest;
 import net.runelite.api.Skill;
+import net.runelite.client.game.ItemVariationMapping;
 
 /**
  * An immutable snapshot of everything the advice depends on.
@@ -105,11 +106,36 @@ public class PlayerProfile
 	}
 
 	/**
-	 * True if the player has at least one of the item anywhere we can see.
+	 * Collapses an item id onto the one that stands for its whole family, so a glory(6)
+	 * and a glory(4) are the same amulet, and a degraded moons piece is the same armour
+	 * as a pristine one.
+	 *
+	 * <p>Backed by RuneLite's own variation table, which is static data and needs no
+	 * client thread. It deliberately does not merge genuinely different items: a rune
+	 * scimitar never becomes a dragon scimitar.
+	 */
+	public static int canonicalItem(int itemId)
+	{
+		return ItemVariationMapping.map(itemId);
+	}
+
+	/**
+	 * True if the player has at least one of the item anywhere we can see, in any charge
+	 * or condition.
 	 */
 	public boolean owns(int itemId)
 	{
-		return ownedItems.getOrDefault(itemId, 0) > 0;
+		return ownedItems.getOrDefault(canonicalItem(itemId), 0) > 0;
+	}
+
+	/**
+	 * True when the given ladder item is the one worn in that equipment slot, comparing
+	 * across charges and conditions.
+	 */
+	public boolean isWearing(int slotIdx, int itemId)
+	{
+		Integer worn = equippedItems.get(slotIdx);
+		return worn != null && worn == canonicalItem(itemId);
 	}
 
 	public boolean hasCompleted(Quest quest)
