@@ -3,6 +3,7 @@ package com.runebuddy.ui;
 import com.runebuddy.RunebuddyConfig;
 import com.runebuddy.engine.EngineSettings;
 import com.runebuddy.engine.GearAdvisor;
+import com.runebuddy.engine.PlayerProfile;
 import com.runebuddy.engine.RecommendationEngine;
 import com.runebuddy.engine.RequirementReport;
 import java.awt.image.BufferedImage;
@@ -62,22 +63,12 @@ class PanelContext
 	}
 
 	/**
-	 * Resolves item ids to names for requirement labels.
+	 * Resolves item ids to names for requirement labels, from the snapshot rather than
+	 * the client.
 	 */
-	RequirementReport.ItemNameResolver itemNames()
+	RequirementReport.ItemNameResolver itemNames(PlayerProfile profile)
 	{
-		return itemId ->
-		{
-			try
-			{
-				return itemManager.getItemComposition(itemId).getName();
-			}
-			catch (RuntimeException e)
-			{
-				// An id the cache does not know about should not take the panel down.
-				return null;
-			}
-		};
+		return profile.itemNameResolver();
 	}
 
 	/**
@@ -86,29 +77,17 @@ class PanelContext
 	 * advisor fall back to judging on requirements alone.
 	 */
 	@Nullable
-	GearAdvisor.PriceResolver prices()
+	GearAdvisor.PriceResolver prices(PlayerProfile profile)
 	{
-		return config.useLivePrices() ? this::priceOf : null;
+		return config.useLivePrices() ? profile.priceResolver() : null;
 	}
 
 	/**
 	 * Current Grand Exchange price, or 0 when prices are switched off or unknown.
 	 */
-	int priceOf(int itemId)
+	int priceOf(PlayerProfile profile, int itemId)
 	{
-		if (!config.useLivePrices())
-		{
-			return 0;
-		}
-
-		try
-		{
-			return itemManager.getItemPrice(itemId);
-		}
-		catch (RuntimeException e)
-		{
-			return 0;
-		}
+		return config.useLivePrices() ? profile.priceOf(itemId) : 0;
 	}
 
 	@Nullable

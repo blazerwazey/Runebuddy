@@ -24,6 +24,7 @@ import net.runelite.api.Client;
 import net.runelite.api.EquipmentInventorySlot;
 import net.runelite.api.GameState;
 import net.runelite.api.Item;
+import net.runelite.api.ItemComposition;
 import net.runelite.api.ItemContainer;
 import net.runelite.api.Quest;
 import net.runelite.api.QuestState;
@@ -34,6 +35,7 @@ import net.runelite.api.gameval.ItemID;
 import net.runelite.api.gameval.VarPlayerID;
 import net.runelite.api.gameval.VarbitID;
 import net.runelite.client.config.ConfigManager;
+import net.runelite.client.game.ItemManager;
 
 /**
  * Builds {@link PlayerProfile} snapshots from live client state.
@@ -78,6 +80,9 @@ public class ProfileTracker
 
 	@Inject
 	private Gson gson;
+
+	@Inject
+	private ItemManager itemManager;
 
 	private boolean bankKnown;
 	private String loadedProfileKey;
@@ -165,7 +170,44 @@ public class ProfileTracker
 
 		builder.liquidGp(owned.getOrDefault(ItemID.COINS, 0));
 
+		resolveItemDetails(builder);
+
 		return builder.build();
+	}
+
+	/**
+	 * Resolves the name and price of every item the data files mention.
+	 *
+	 * <p>Both readings go through the client's item definitions, so they have to happen
+	 * here on the client thread rather than lazily from the panel. Doing it there was a
+	 * real bug: it trips the client's own thread assertions and takes the whole repaint
+	 * down with it.
+	 */
+	private void resolveItemDetails(PlayerProfile.PlayerProfileBuilder builder)
+	{
+		for (int itemId : itemsOfInterest)
+		{
+			try
+			{
+				ItemComposition composition = itemManager.getItemComposition(itemId);
+				if (composition != null && composition.getName() != null)
+				{
+					builder.itemName(itemId, composition.getName());
+				}
+
+				int price = itemManager.getItemPrice(itemId);
+				if (price > 0)
+				{
+					builder.itemPrice(itemId, price);
+				}
+			}
+			catch (RuntimeException e)
+			{
+				// An id the cache does not know about is not worth losing the snapshot
+				// over; the panel copes with a missing name or price.
+				log.debug("Runebuddy: could not resolve item {}", itemId, e);
+			}
+		}
 	}
 
 	/**

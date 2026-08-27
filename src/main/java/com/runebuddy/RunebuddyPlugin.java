@@ -41,6 +41,11 @@ import net.runelite.client.util.ImageUtil;
 )
 public class RunebuddyPlugin extends Plugin
 {
+	/**
+	 * How long to keep re-reading the account after logging in, in game ticks.
+	 */
+	private static final int SETTLE_TICKS = 10;
+
 	@Inject
 	private Client client;
 
@@ -70,6 +75,15 @@ public class RunebuddyPlugin extends Plugin
 	 * tick rather than once per event, since a single bank visit fires a great many.
 	 */
 	private boolean dirty = true;
+
+	/**
+	 * Ticks left in which to keep re-reading the account after a login.
+	 *
+	 * <p>The first tick after logging in can land before every stat has arrived, and
+	 * nothing marks the profile dirty again while the player stands still, so a single
+	 * early read leaves the panel showing half an account indefinitely.
+	 */
+	private int settleTicks;
 
 	@Override
 	protected void startUp()
@@ -108,6 +122,12 @@ public class RunebuddyPlugin extends Plugin
 	@Subscribe
 	public void onGameTick(GameTick tick)
 	{
+		if (settleTicks > 0)
+		{
+			settleTicks--;
+			dirty = true;
+		}
+
 		if (!dirty || panel == null)
 		{
 			return;
@@ -124,6 +144,11 @@ public class RunebuddyPlugin extends Plugin
 	public void onGameStateChanged(GameStateChanged event)
 	{
 		GameState state = event.getGameState();
+
+		if (state == GameState.LOGGED_IN)
+		{
+			settleTicks = SETTLE_TICKS;
+		}
 
 		if (state == GameState.LOGIN_SCREEN || state == GameState.HOPPING)
 		{

@@ -2,6 +2,7 @@ package com.runebuddy.ui;
 
 import com.runebuddy.data.GearItem;
 import com.runebuddy.engine.GearSuggestion;
+import com.runebuddy.engine.PlayerProfile;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.annotation.Nullable;
@@ -19,8 +20,9 @@ class GearRow extends JPanel
 {
 	private static final int ICON_SIZE = 32;
 
-	GearRow(GearSuggestion suggestion, PanelContext context, boolean ironman)
+	GearRow(GearSuggestion suggestion, PanelContext context, PlayerProfile profile)
 	{
+		boolean ironman = profile.isIronman();
 		setLayout(new BorderLayout(6, 0));
 		setBackground(ColorScheme.DARKER_GRAY_COLOR);
 		setBorder(BorderFactory.createCompoundBorder(
@@ -41,7 +43,7 @@ class GearRow extends JPanel
 
 		if (suggestion.getNext() != null)
 		{
-			body.add(upgradeLine("Next upgrade", suggestion.getNext(), context, UiUtils.MET, ironman));
+			body.add(upgradeLine("Next upgrade", suggestion.getNext(), context, profile, UiUtils.MET, ironman));
 			addSourceLine(body, suggestion.getNext(), ironman);
 
 			// When price held us back from the ceiling, name the ceiling too so the
@@ -50,7 +52,7 @@ class GearRow extends JPanel
 			GearItem goal = suggestion.getGoal();
 			if (goal != null && goal.getItemId() != suggestion.getNext().getItemId())
 			{
-				body.add(upgradeLine("Best for your level", goal, context, ColorScheme.BRAND_ORANGE, ironman));
+				body.add(upgradeLine("Best for your level", goal, context, profile, ColorScheme.BRAND_ORANGE, ironman));
 			}
 		}
 		else if (suggestion.isSatisfied())
@@ -60,7 +62,7 @@ class GearRow extends JPanel
 
 		if (suggestion.getLocked() != null && suggestion.getLockedReport() != null)
 		{
-			body.add(upgradeLine("Aim for", suggestion.getLocked(), context, UiUtils.PENDING, ironman));
+			body.add(upgradeLine("Aim for", suggestion.getLocked(), context, profile, UiUtils.PENDING, ironman));
 
 			JLabel blocking = UiUtils.muted(
 				UiUtils.ellipsise(suggestion.getLockedReport().blockingSummary(), 36));
@@ -108,7 +110,7 @@ class GearRow extends JPanel
 	}
 
 	private static JLabel upgradeLine(String prefix, GearItem item, PanelContext context,
-									  java.awt.Color color, boolean ironman)
+									  PlayerProfile profile, java.awt.Color color, boolean ironman)
 	{
 		String text = prefix + ": " + UiUtils.ellipsise(item.getName(), 22);
 
@@ -116,7 +118,7 @@ class GearRow extends JPanel
 		// buyable, and the account has to be one that can buy.
 		if (item.isTradeable() && !ironman)
 		{
-			int price = context.priceOf(item.getItemId());
+			int price = context.priceOf(profile, item.getItemId());
 			if (price > 0)
 			{
 				text += "  " + UiUtils.price(price);

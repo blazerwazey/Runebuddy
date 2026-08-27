@@ -127,7 +127,7 @@ class SkillsTab extends JPanel
 		}
 
 		SkillAdvice advice = context.engine()
-			.adviceFor(selected, profile, context.settings(), context.itemNames());
+			.adviceFor(selected, profile, context.settings(), context.itemNames(profile));
 
 		detail.add(heading(Skills.displayName(selected) + " — level " + advice.getLevel()));
 

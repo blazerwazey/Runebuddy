@@ -165,8 +165,8 @@ class GearTab extends JPanel
 		}
 
 		List<GearSuggestion> suggestions = chosen == TOOLS
-			? context.gear().adviseTools(profile, context.itemNames(), context.prices())
-			: context.gear().adviseCombat(chosen, profile, context.itemNames(), context.prices());
+			? context.gear().adviseTools(profile, context.itemNames(profile), context.prices(profile))
+			: context.gear().adviseCombat(chosen, profile, context.itemNames(profile), context.prices(profile));
 
 		if (suggestions.isEmpty())
 		{
@@ -187,7 +187,7 @@ class GearTab extends JPanel
 
 			for (GearSuggestion suggestion : suggestions)
 			{
-				rows.add(new GearRow(suggestion, context, profile.isIronman()));
+				rows.add(new GearRow(suggestion, context, profile));
 			}
 		}
 

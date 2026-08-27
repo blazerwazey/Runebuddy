@@ -209,9 +209,14 @@ public class GearAdvisor
 					}
 
 					// Untradeables have no price to weigh, so they are judged on their
-					// requirements alone rather than being treated as free.
-					boolean withinBudget = !item.isTradeable()
-						|| prices.priceOf(item.getItemId()) <= profile.getLiquidGp();
+					// requirements alone. For everything else a price of zero means we
+					// could not look it up, which is not the same as free: without a
+					// figure we cannot claim the player can afford it, so it does not
+					// get promoted over something we can price.
+					int price = prices.priceOf(item.getItemId());
+					boolean withinBudget = item.isTradeable()
+						? price > 0 && price <= profile.getLiquidGp()
+						: true;
 
 					if (withinBudget && (affordable == null || item.getTier() > affordable.getTier()))
 					{

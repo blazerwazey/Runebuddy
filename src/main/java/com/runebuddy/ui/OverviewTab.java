@@ -52,7 +52,7 @@ class OverviewTab extends JPanel
 		content.add(header(profile));
 
 		List<MethodScore> suggestions = context.engine()
-			.topOverall(profile, context.settings(), context.itemNames(), SUGGESTIONS);
+			.topOverall(profile, context.settings(), context.itemNames(profile), SUGGESTIONS);
 
 		if (suggestions.isEmpty())
 		{
