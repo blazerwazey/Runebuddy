@@ -7,6 +7,7 @@ import com.runebuddy.data.GearItem;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Nullable;
 import net.runelite.api.EquipmentInventorySlot;
 import net.runelite.api.Skill;
@@ -57,7 +58,7 @@ public class GearAdvisor
 				continue;
 			}
 
-			GearSuggestion suggestion = advise(slot, null, ladder, profile, itemNames, prices);
+			GearSuggestion suggestion = advise(category, slot, null, ladder, profile, itemNames, prices);
 			if (!suggestion.isEmpty())
 			{
 				suggestions.add(suggestion);
@@ -94,7 +95,7 @@ public class GearAdvisor
 				continue;
 			}
 
-			GearSuggestion suggestion = advise(EquipSlot.TOOL, skill, ladder, profile, itemNames, prices);
+			GearSuggestion suggestion = advise(null, EquipSlot.TOOL, skill, ladder, profile, itemNames, prices);
 			if (!suggestion.isEmpty())
 			{
 				suggestions.add(suggestion);
@@ -127,7 +128,8 @@ public class GearAdvisor
 		return GearCategory.MELEE;
 	}
 
-	private GearSuggestion advise(EquipSlot slot, @Nullable Skill toolFor, List<GearItem> ladder,
+	private GearSuggestion advise(@Nullable GearCategory category, EquipSlot slot,
+								  @Nullable Skill toolFor, List<GearItem> ladder,
 								  PlayerProfile profile,
 								  @Nullable RequirementReport.ItemNameResolver itemNames,
 								  @Nullable PriceResolver prices)
@@ -164,6 +166,12 @@ public class GearAdvisor
 				goal = item;
 			}
 		}
+
+		// What the player actually has in this slot, decided by the client's own stats
+		// rather than by whether anyone thought to list the item. An item released after
+		// this plugin was written has no ladder entry at all, and would otherwise read as
+		// "nothing here yet" however good it is.
+		OwnedItem best = category == null ? null : bestOwnedIn(category, slot, profile);
 
 		// What to aim for is the cheapest rung above the goal that is still out of
 		// reach, not merely the first entry whose requirements happen to fail: an item
@@ -238,8 +246,76 @@ public class GearAdvisor
 			}
 		}
 
+		// Never talk someone out of gear that is already better than the target. If what
+		// they own outscores the ladder's goal, there is nothing useful to suggest.
+		if (best != null && next != null && outranks(best, next, category, profile))
+		{
+			next = null;
+		}
+
 		return new GearSuggestion(slot, toolFor, equippedIn(slot, reachable, profile),
-			owned, next, goal, locked, lockedReport);
+			owned, next, goal, locked, lockedReport,
+			best == null ? null : best.name, best == null ? null : best.itemId);
+	}
+
+	/**
+	 * The best thing the player owns for this style and slot, scored on live equipment
+	 * stats. Returns null when they own nothing that fits the slot.
+	 */
+	@Nullable
+	private static OwnedItem bestOwnedIn(GearCategory category, EquipSlot slot, PlayerProfile profile)
+	{
+		OwnedItem best = null;
+
+		for (Map.Entry<Integer, EquipmentStats> entry : profile.getItemStats().entrySet())
+		{
+			EquipmentStats stats = entry.getValue();
+			if (stats.slot() != slot)
+			{
+				continue;
+			}
+
+			int score = stats.scoreFor(category);
+			if (best == null || score > best.score)
+			{
+				best = new OwnedItem(entry.getKey(), profile.nameOf(entry.getKey()), score);
+			}
+		}
+
+		return best;
+	}
+
+	/**
+	 * True when what the player owns scores higher than the suggested item. Items with no
+	 * stats to compare against are never treated as outranked.
+	 */
+	private static boolean outranks(OwnedItem owned, GearItem suggested,
+									@Nullable GearCategory category, PlayerProfile profile)
+	{
+		if (category == null)
+		{
+			return false;
+		}
+
+		EquipmentStats suggestedStats = profile.statsOf(suggested.getItemId());
+		return suggestedStats != null && owned.score > suggestedStats.scoreFor(category);
+	}
+
+	/**
+	 * A wearable item the player owns, with the score that put it top of its slot.
+	 */
+	private static final class OwnedItem
+	{
+		private final int itemId;
+		private final String name;
+		private final int score;
+
+		private OwnedItem(int itemId, @Nullable String name, int score)
+		{
+			this.itemId = itemId;
+			this.name = name;
+			this.score = score;
+		}
 	}
 
 	/**
