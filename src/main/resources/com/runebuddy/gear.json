@@ -1172,6 +1172,7 @@
         "Chambers of Xeric"
       ]
     },
+    "situational": true,
     "notes": "Only for dragons, but enormous there."
   },
   {
@@ -2989,5 +2990,1220 @@
       }
     },
     "notes": "A permanent +3 Construction boost, which unlocks builds three levels early."
+  },
+  {
+    "itemId": 29028,
+    "name": "Blood moon helm",
+    "slot": "HEAD",
+    "category": "MELEE",
+    "tier": 76,
+    "members": true,
+    "tradeable": true,
+    "source": "Perilous Moons, in Varlamore",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "HITPOINTS": 75
+      },
+      "notes": [
+        "Perilous Moons"
+      ]
+    },
+    "notes": "Mid-game melee armour with a set effect. A big step up from rune."
+  },
+  {
+    "itemId": 29022,
+    "name": "Blood moon chestplate",
+    "slot": "BODY",
+    "category": "MELEE",
+    "tier": 76,
+    "members": true,
+    "tradeable": true,
+    "source": "Perilous Moons, in Varlamore",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "HITPOINTS": 75
+      },
+      "notes": [
+        "Perilous Moons"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 29025,
+    "name": "Blood moon tassets",
+    "slot": "LEGS",
+    "category": "MELEE",
+    "tier": 76,
+    "members": true,
+    "tradeable": true,
+    "source": "Perilous Moons, in Varlamore",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "HITPOINTS": 75
+      },
+      "notes": [
+        "Perilous Moons"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 28997,
+    "name": "Dual macuahuitl",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 78,
+    "members": true,
+    "tradeable": true,
+    "source": "Perilous Moons, in Varlamore",
+    "requirements": {
+      "skills": {
+        "ATTACK": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "ATTACK": 75,
+        "HITPOINTS": 75
+      },
+      "notes": [
+        "Perilous Moons"
+      ]
+    },
+    "notes": "Pairs with the blood moon set for its healing effect."
+  },
+  {
+    "itemId": 29589,
+    "name": "Emberlight",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 79,
+    "members": true,
+    "tradeable": true,
+    "source": "Demonbane weapon, from a smouldering gland",
+    "requirements": {
+      "skills": {
+        "ATTACK": 70
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 75,
+        "ATTACK": 70
+      },
+      "notes": [
+        "Demonic drops"
+      ]
+    },
+    "situational": true,
+    "notes": "Enormous against demons, ordinary against everything else."
+  },
+  {
+    "itemId": 28945,
+    "name": "Echo boots",
+    "slot": "FEET",
+    "category": "MELEE",
+    "tier": 80,
+    "members": true,
+    "tradeable": true,
+    "source": "Fortis Colosseum, in Varlamore",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "HITPOINTS": 80
+      },
+      "notes": [
+        "Fortis Colosseum"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 26219,
+    "name": "Osmumten's fang",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 82,
+    "members": true,
+    "tradeable": true,
+    "source": "Tombs of Amascut",
+    "requirements": {
+      "skills": {
+        "ATTACK": 82
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "ATTACK": 82,
+        "DEFENCE": 75,
+        "HITPOINTS": 85
+      },
+      "notes": [
+        "Tombs of Amascut"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 27690,
+    "name": "Voidwaker",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 80,
+    "members": true,
+    "tradeable": true,
+    "source": "Wilderness bosses, from three pieces",
+    "requirements": {
+      "skills": {
+        "ATTACK": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "ATTACK": 75,
+        "DEFENCE": 70,
+        "HITPOINTS": 80
+      },
+      "notes": [
+        "Wilderness bosses"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 28338,
+    "name": "Soulreaper axe",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 85,
+    "members": true,
+    "tradeable": true,
+    "source": "Desert Treasure II bosses",
+    "requirements": {
+      "skills": {
+        "ATTACK": 80,
+        "STRENGTH": 80
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "ATTACK": 80,
+        "STRENGTH": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Desert Treasure II bosses"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 22325,
+    "name": "Scythe of vitur",
+    "slot": "WEAPON",
+    "category": "MELEE",
+    "tier": 90,
+    "members": true,
+    "tradeable": true,
+    "source": "Theatre of Blood",
+    "requirements": {
+      "skills": {
+        "ATTACK": 80,
+        "STRENGTH": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "ATTACK": 80,
+        "STRENGTH": 75,
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Theatre of Blood"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 26382,
+    "name": "Torva full helm",
+    "slot": "HEAD",
+    "category": "MELEE",
+    "tier": 85,
+    "members": true,
+    "tradeable": true,
+    "source": "Nex",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 80
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Nex, which wants a team"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 26384,
+    "name": "Torva platebody",
+    "slot": "BODY",
+    "category": "MELEE",
+    "tier": 85,
+    "members": true,
+    "tradeable": true,
+    "source": "Nex",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 80
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Nex, which wants a team"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 26386,
+    "name": "Torva platelegs",
+    "slot": "LEGS",
+    "category": "MELEE",
+    "tier": 85,
+    "members": true,
+    "tradeable": true,
+    "source": "Nex",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 80
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Nex, which wants a team"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 30750,
+    "name": "Oathplate helm",
+    "slot": "HEAD",
+    "category": "MELEE",
+    "tier": 90,
+    "members": true,
+    "tradeable": true,
+    "source": "Doom of Mokhaiotl",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 80
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Doom of Mokhaiotl"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 30753,
+    "name": "Oathplate chest",
+    "slot": "BODY",
+    "category": "MELEE",
+    "tier": 90,
+    "members": true,
+    "tradeable": true,
+    "source": "Doom of Mokhaiotl",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 80
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Doom of Mokhaiotl"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 30756,
+    "name": "Oathplate legs",
+    "slot": "LEGS",
+    "category": "MELEE",
+    "tier": 90,
+    "members": true,
+    "tradeable": true,
+    "source": "Doom of Mokhaiotl",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 80
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Doom of Mokhaiotl"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 29801,
+    "name": "Amulet of rancour",
+    "slot": "NECK",
+    "category": "MELEE",
+    "tier": 85,
+    "members": true,
+    "tradeable": true,
+    "source": "Araxxor, from a venom sack",
+    "requirements": {
+      "skills": {
+        "HITPOINTS": 80
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 92,
+        "HITPOINTS": 85
+      },
+      "notes": [
+        "Araxxor"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 29010,
+    "name": "Eclipse moon helm",
+    "slot": "HEAD",
+    "category": "RANGED",
+    "tier": 76,
+    "members": true,
+    "tradeable": true,
+    "source": "Perilous Moons, in Varlamore",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "RANGED": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "HITPOINTS": 75
+      },
+      "notes": [
+        "Perilous Moons"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 29004,
+    "name": "Eclipse moon chestplate",
+    "slot": "BODY",
+    "category": "RANGED",
+    "tier": 76,
+    "members": true,
+    "tradeable": true,
+    "source": "Perilous Moons, in Varlamore",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "RANGED": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "HITPOINTS": 75
+      },
+      "notes": [
+        "Perilous Moons"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 29007,
+    "name": "Eclipse moon tassets",
+    "slot": "LEGS",
+    "category": "RANGED",
+    "tier": 76,
+    "members": true,
+    "tradeable": true,
+    "source": "Perilous Moons, in Varlamore",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "RANGED": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "HITPOINTS": 75
+      },
+      "notes": [
+        "Perilous Moons"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 29000,
+    "name": "Eclipse atlatl",
+    "slot": "WEAPON",
+    "category": "RANGED",
+    "tier": 76,
+    "members": true,
+    "tradeable": true,
+    "source": "Perilous Moons, in Varlamore",
+    "requirements": {
+      "skills": {
+        "RANGED": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 75,
+        "HITPOINTS": 75
+      },
+      "notes": [
+        "Perilous Moons"
+      ]
+    },
+    "notes": "Throws darts and scales with Strength, so it pairs with melee gear."
+  },
+  {
+    "itemId": 28922,
+    "name": "Tonalztics of ralos",
+    "slot": "WEAPON",
+    "category": "RANGED",
+    "tier": 78,
+    "members": true,
+    "tradeable": true,
+    "source": "Hueycoatl, in Varlamore",
+    "requirements": {
+      "skills": {
+        "RANGED": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 75,
+        "HITPOINTS": 80
+      },
+      "notes": [
+        "The Hueycoatl"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 27610,
+    "name": "Venator bow",
+    "slot": "WEAPON",
+    "category": "RANGED",
+    "tier": 81,
+    "members": true,
+    "tradeable": true,
+    "source": "Desert Treasure II bosses",
+    "requirements": {
+      "skills": {
+        "RANGED": 80
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 80,
+        "HITPOINTS": 85
+      },
+      "notes": [
+        "Desert Treasure II bosses"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 29591,
+    "name": "Scorching bow",
+    "slot": "WEAPON",
+    "category": "RANGED",
+    "tier": 79,
+    "members": true,
+    "tradeable": true,
+    "source": "Demonbane weapon, from a smouldering gland",
+    "requirements": {
+      "skills": {
+        "RANGED": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 75,
+        "RANGED": 75
+      },
+      "notes": [
+        "Demonic drops"
+      ]
+    },
+    "situational": true,
+    "notes": "A demonbane bow: excellent on demons, unremarkable elsewhere."
+  },
+  {
+    "itemId": 27226,
+    "name": "Masori mask",
+    "slot": "HEAD",
+    "category": "RANGED",
+    "tier": 80,
+    "members": true,
+    "tradeable": true,
+    "source": "Tombs of Amascut",
+    "requirements": {
+      "skills": {
+        "RANGED": 80
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 80,
+        "DEFENCE": 75,
+        "HITPOINTS": 85
+      },
+      "notes": [
+        "Tombs of Amascut"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 27229,
+    "name": "Masori body",
+    "slot": "BODY",
+    "category": "RANGED",
+    "tier": 80,
+    "members": true,
+    "tradeable": true,
+    "source": "Tombs of Amascut",
+    "requirements": {
+      "skills": {
+        "RANGED": 80
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 80,
+        "DEFENCE": 75,
+        "HITPOINTS": 85
+      },
+      "notes": [
+        "Tombs of Amascut"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 27232,
+    "name": "Masori chaps",
+    "slot": "LEGS",
+    "category": "RANGED",
+    "tier": 80,
+    "members": true,
+    "tradeable": true,
+    "source": "Tombs of Amascut",
+    "requirements": {
+      "skills": {
+        "RANGED": 80
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 80,
+        "DEFENCE": 75,
+        "HITPOINTS": 85
+      },
+      "notes": [
+        "Tombs of Amascut"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 27235,
+    "name": "Masori mask (f)",
+    "slot": "HEAD",
+    "category": "RANGED",
+    "tier": 85,
+    "members": true,
+    "tradeable": true,
+    "source": "Tombs of Amascut, then fortified",
+    "requirements": {
+      "skills": {
+        "RANGED": 80
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 80,
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Tombs of Amascut"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 27238,
+    "name": "Masori body (f)",
+    "slot": "BODY",
+    "category": "RANGED",
+    "tier": 85,
+    "members": true,
+    "tradeable": true,
+    "source": "Tombs of Amascut, then fortified",
+    "requirements": {
+      "skills": {
+        "RANGED": 80
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 80,
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Tombs of Amascut"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 27241,
+    "name": "Masori chaps (f)",
+    "slot": "LEGS",
+    "category": "RANGED",
+    "tier": 85,
+    "members": true,
+    "tradeable": true,
+    "source": "Tombs of Amascut, then fortified",
+    "requirements": {
+      "skills": {
+        "RANGED": 80
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 80,
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Tombs of Amascut"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 28951,
+    "name": "Dizana's quiver",
+    "slot": "CAPE",
+    "category": "RANGED",
+    "tier": 80,
+    "members": true,
+    "tradeable": false,
+    "source": "Fortis Colosseum, in Varlamore",
+    "requirements": {
+      "skills": {
+        "RANGED": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 75,
+        "DEFENCE": 75,
+        "HITPOINTS": 80
+      },
+      "notes": [
+        "Fortis Colosseum"
+      ]
+    },
+    "notes": "Best-in-slot ranged cape, and it holds your ammunition."
+  },
+  {
+    "itemId": 29019,
+    "name": "Frost moon helm",
+    "slot": "HEAD",
+    "category": "MAGIC",
+    "tier": 76,
+    "members": true,
+    "tradeable": true,
+    "source": "Perilous Moons, in Varlamore",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "MAGIC": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "HITPOINTS": 75
+      },
+      "notes": [
+        "Perilous Moons"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 29013,
+    "name": "Frost moon chestplate",
+    "slot": "BODY",
+    "category": "MAGIC",
+    "tier": 76,
+    "members": true,
+    "tradeable": true,
+    "source": "Perilous Moons, in Varlamore",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "MAGIC": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "HITPOINTS": 75
+      },
+      "notes": [
+        "Perilous Moons"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 29016,
+    "name": "Frost moon tassets",
+    "slot": "LEGS",
+    "category": "MAGIC",
+    "tier": 76,
+    "members": true,
+    "tradeable": true,
+    "source": "Perilous Moons, in Varlamore",
+    "requirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "MAGIC": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "DEFENCE": 75,
+        "HITPOINTS": 75
+      },
+      "notes": [
+        "Perilous Moons"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 29594,
+    "name": "Purging staff",
+    "slot": "WEAPON",
+    "category": "MAGIC",
+    "tier": 79,
+    "members": true,
+    "tradeable": true,
+    "source": "Demonbane weapon, from a smouldering gland",
+    "requirements": {
+      "skills": {
+        "MAGIC": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 75,
+        "MAGIC": 75
+      },
+      "notes": [
+        "Demonic drops"
+      ]
+    },
+    "situational": true,
+    "notes": "A demonbane staff. Situational, but dominant where it applies."
+  },
+  {
+    "itemId": 21018,
+    "name": "Ancestral hat",
+    "slot": "HEAD",
+    "category": "MAGIC",
+    "tier": 80,
+    "members": true,
+    "tradeable": true,
+    "source": "Chambers of Xeric",
+    "requirements": {
+      "skills": {
+        "MAGIC": 75,
+        "DEFENCE": 65
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "MAGIC": 75,
+        "DEFENCE": 75,
+        "HITPOINTS": 85
+      },
+      "notes": [
+        "Chambers of Xeric"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 21021,
+    "name": "Ancestral robe top",
+    "slot": "BODY",
+    "category": "MAGIC",
+    "tier": 80,
+    "members": true,
+    "tradeable": true,
+    "source": "Chambers of Xeric",
+    "requirements": {
+      "skills": {
+        "MAGIC": 75,
+        "DEFENCE": 65
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "MAGIC": 75,
+        "DEFENCE": 75,
+        "HITPOINTS": 85
+      },
+      "notes": [
+        "Chambers of Xeric"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 21024,
+    "name": "Ancestral robe bottom",
+    "slot": "LEGS",
+    "category": "MAGIC",
+    "tier": 80,
+    "members": true,
+    "tradeable": true,
+    "source": "Chambers of Xeric",
+    "requirements": {
+      "skills": {
+        "MAGIC": 75,
+        "DEFENCE": 65
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "MAGIC": 75,
+        "DEFENCE": 75,
+        "HITPOINTS": 85
+      },
+      "notes": [
+        "Chambers of Xeric"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 26241,
+    "name": "Virtus mask",
+    "slot": "HEAD",
+    "category": "MAGIC",
+    "tier": 85,
+    "members": true,
+    "tradeable": true,
+    "source": "Desert Treasure II bosses",
+    "requirements": {
+      "skills": {
+        "MAGIC": 78
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "MAGIC": 78,
+        "DEFENCE": 75,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Desert Treasure II bosses"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 26243,
+    "name": "Virtus robe top",
+    "slot": "BODY",
+    "category": "MAGIC",
+    "tier": 85,
+    "members": true,
+    "tradeable": true,
+    "source": "Desert Treasure II bosses",
+    "requirements": {
+      "skills": {
+        "MAGIC": 78
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "MAGIC": 78,
+        "DEFENCE": 75,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Desert Treasure II bosses"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 26245,
+    "name": "Virtus robe legs",
+    "slot": "LEGS",
+    "category": "MAGIC",
+    "tier": 85,
+    "members": true,
+    "tradeable": true,
+    "source": "Desert Treasure II bosses",
+    "requirements": {
+      "skills": {
+        "MAGIC": 78
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "MAGIC": 78,
+        "DEFENCE": 75,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Desert Treasure II bosses"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 27275,
+    "name": "Tumeken's shadow",
+    "slot": "WEAPON",
+    "category": "MAGIC",
+    "tier": 90,
+    "members": true,
+    "tradeable": true,
+    "source": "Tombs of Amascut",
+    "requirements": {
+      "skills": {
+        "MAGIC": 85
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "MAGIC": 85,
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Tombs of Amascut"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 25985,
+    "name": "Elidinis' ward",
+    "slot": "SHIELD",
+    "category": "MAGIC",
+    "tier": 75,
+    "members": true,
+    "tradeable": true,
+    "source": "Tombs of Amascut",
+    "requirements": {
+      "skills": {
+        "MAGIC": 70,
+        "DEFENCE": 70
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "MAGIC": 70,
+        "DEFENCE": 75,
+        "HITPOINTS": 85
+      },
+      "notes": [
+        "Tombs of Amascut"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 27251,
+    "name": "Elidinis' ward (f)",
+    "slot": "SHIELD",
+    "category": "MAGIC",
+    "tier": 85,
+    "members": true,
+    "tradeable": true,
+    "source": "Tombs of Amascut, then fortified",
+    "requirements": {
+      "skills": {
+        "MAGIC": 70,
+        "DEFENCE": 70
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "MAGIC": 70,
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Tombs of Amascut"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 13237,
+    "name": "Pegasian boots",
+    "slot": "FEET",
+    "category": "RANGED",
+    "tier": 75,
+    "members": true,
+    "tradeable": true,
+    "source": "Cerberus, via a pegasian crystal",
+    "requirements": {
+      "skills": {
+        "RANGED": 75,
+        "DEFENCE": 75
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "SLAYER": 91,
+        "DEFENCE": 80,
+        "HITPOINTS": 85
+      },
+      "notes": [
+        "Cerberus"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 26235,
+    "name": "Zaryte vambraces",
+    "slot": "HANDS",
+    "category": "RANGED",
+    "tier": 80,
+    "members": true,
+    "tradeable": true,
+    "source": "Nex",
+    "requirements": {
+      "skills": {
+        "RANGED": 80,
+        "DEFENCE": 45
+      }
+    },
+    "ironmanRequirements": {
+      "skills": {
+        "RANGED": 80,
+        "DEFENCE": 80,
+        "HITPOINTS": 90
+      },
+      "notes": [
+        "Nex, which wants a team"
+      ]
+    },
+    "notes": null
+  },
+  {
+    "itemId": 21295,
+    "name": "Infernal cape",
+    "slot": "CAPE",
+    "category": "MAGIC",
+    "tier": 80,
+    "members": true,
+    "tradeable": false,
+    "source": "The Inferno",
+    "requirements": {
+      "skills": {
+        "RANGED": 90,
+        "DEFENCE": 80,
+        "MAGIC": 75,
+        "HITPOINTS": 90
+      }
+    },
+    "ironmanRequirements": {
+      "notes": [
+        "The Inferno"
+      ]
+    },
+    "notes": "Not magic-specific, but the best cape you can wear while casting."
   }
 ]

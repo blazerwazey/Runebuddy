@@ -37,6 +37,18 @@ public class GearItem
 	private boolean tradeable = true;
 
 	/**
+	 * True for gear that is only strong against particular targets, such as the
+	 * demonbane weapons or the dragon hunter crossbow.
+	 *
+	 * <p>A ladder means "generally better as you go up", and these break that: an
+	 * emberlight beats an abyssal whip on demons and loses to it everywhere else.
+	 * Leaving them in the progression would have the panel tell a level 70 account to
+	 * aim for a demonbane sword as its everyday weapon. They stay in the data, but out
+	 * of the ranking.
+	 */
+	private boolean situational;
+
+	/**
 	 * How you get hold of one: "Grand Exchange", "Abyssal demons", "Fight Caves". The
 	 * only answer that matters on an ironman, and still useful to a main for the
 	 * untradeables.
