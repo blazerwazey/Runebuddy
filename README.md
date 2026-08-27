@@ -63,7 +63,26 @@ Requires a JDK 11 or newer.
 ./gradlew run       # launch a RuneLite client with the plugin side-loaded
 ```
 
-`./gradlew run` starts a real client, so you will need a display and a Jagex account.
+`./gradlew run` starts a real client, so you will need a display and an account to log in
+with.
+
+### Logging in with a Jagex account
+
+A development client is not launched by the Jagex Launcher, so it has no session to log
+in with. RuneLite supports this directly: the launcher can write its credentials out for
+a development client to pick up.
+
+1. Run **RuneLite (configure)** — on Mac or Linux, launch the launcher with `--configure`.
+   You need launcher 2.6.3 or newer.
+2. Add `--insecure-write-credentials` to the **Client arguments** field, and save.
+3. Launch RuneLite through the Jagex Launcher once. It writes your credentials to
+   `.runelite/credentials.properties`.
+4. Run `./gradlew run`. The development client finds that file and logs in with it.
+
+**That file grants access to your account without a password.** Do not share it, do not
+commit it. Delete it when you have finished testing, and remove the client argument
+again. If you think it has been exposed, use **End sessions** in your account settings on
+runescape.com to invalidate it.
 
 ### If the build fails
 
