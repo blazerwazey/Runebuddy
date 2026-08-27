@@ -96,7 +96,7 @@ public class ProfileTracker
 		itemsOfInterest.clear();
 		questsOfInterest.clear();
 
-		itemsOfInterest.add(ItemID.COINS);
+		itemsOfInterest.add(canonical(ItemID.COINS));
 
 		for (TrainingMethod method : data.getMethods())
 		{
@@ -105,15 +105,27 @@ public class ProfileTracker
 
 		for (GearItem item : data.getGear())
 		{
-			itemsOfInterest.add(item.getItemId());
+			itemsOfInterest.add(canonical(item.getItemId()));
 			collect(item.getRequirements());
 		}
 	}
 
 	private void collect(Requirements requirements)
 	{
-		itemsOfInterest.addAll(requirements.getRequiredItems());
+		for (int itemId : requirements.getRequiredItems())
+		{
+			itemsOfInterest.add(canonical(itemId));
+		}
+
 		questsOfInterest.addAll(requirements.getRequiredQuests());
+	}
+
+	/**
+	 * Folds charges, conditions and noted forms onto one id per item family.
+	 */
+	private static int canonical(int itemId)
+	{
+		return PlayerProfile.canonicalItem(itemId);
 	}
 
 	/**
@@ -163,12 +175,12 @@ public class ProfileTracker
 				Item item = equipment.getItem(slot.getSlotIdx());
 				if (item != null && item.getId() > 0)
 				{
-					builder.equipped(slot.getSlotIdx(), item.getId());
+					builder.equipped(slot.getSlotIdx(), canonical(item.getId()));
 				}
 			}
 		}
 
-		builder.liquidGp(owned.getOrDefault(ItemID.COINS, 0));
+		builder.liquidGp(owned.getOrDefault(canonical(ItemID.COINS), 0));
 
 		resolveItemDetails(builder);
 
@@ -223,9 +235,17 @@ public class ProfileTracker
 		bankCache.clear();
 		for (Item item : bank.getItems())
 		{
-			if (item.getId() > 0 && item.getQuantity() > 0 && itemsOfInterest.contains(item.getId()))
+			if (item.getId() <= 0 || item.getQuantity() <= 0)
 			{
-				bankCache.merge(item.getId(), item.getQuantity(), Integer::sum);
+				continue;
+			}
+
+			// Bank an amulet of glory(6) and we still want it recognised against the
+			// glory(4) the data file names, so both sides are collapsed to one id.
+			int id = canonical(item.getId());
+			if (itemsOfInterest.contains(id))
+			{
+				bankCache.merge(id, item.getQuantity(), Integer::sum);
 			}
 		}
 
@@ -256,7 +276,7 @@ public class ProfileTracker
 		{
 			if (item.getId() > 0 && item.getQuantity() > 0)
 			{
-				owned.merge(item.getId(), item.getQuantity(), Integer::sum);
+				owned.merge(canonical(item.getId()), item.getQuantity(), Integer::sum);
 			}
 		}
 	}

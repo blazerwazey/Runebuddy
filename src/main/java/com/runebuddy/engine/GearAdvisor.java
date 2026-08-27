@@ -264,15 +264,9 @@ public class GearAdvisor
 			? clientSlot.getSlotIdx()
 			: EquipmentInventorySlot.WEAPON.getSlotIdx();
 
-		Integer wornId = profile.getEquippedItems().get(slotIdx);
-		if (wornId == null)
-		{
-			return null;
-		}
-
 		for (GearItem item : ladder)
 		{
-			if (item.getItemId() == wornId)
+			if (profile.isWearing(slotIdx, item.getItemId()))
 			{
 				return item;
 			}
