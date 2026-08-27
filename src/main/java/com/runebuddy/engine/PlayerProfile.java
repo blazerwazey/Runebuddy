@@ -3,6 +3,7 @@ package com.runebuddy.engine;
 import com.runebuddy.data.Skills;
 import java.util.EnumMap;
 import java.util.Map;
+import javax.annotation.Nullable;
 import java.util.Set;
 import lombok.Builder;
 import lombok.Getter;
@@ -80,6 +81,21 @@ public class PlayerProfile
 	private final boolean bankKnown;
 
 	/**
+	 * Display name per item id, resolved on the client thread when the snapshot was
+	 * taken. Looking these up lazily from the panel would mean reading item definitions
+	 * off the client thread, which is not allowed.
+	 */
+	@Singular("itemName")
+	private final Map<Integer, String> itemNames;
+
+	/**
+	 * Grand Exchange price per item id, resolved alongside the names and for the same
+	 * reason: the price lookup reads an item definition too.
+	 */
+	@Singular("itemPrice")
+	private final Map<Integer, Integer> itemPrices;
+
+	/**
 	 * Real level in a skill, defaulting to whatever that skill starts at.
 	 */
 	public int level(Skill skill)
@@ -99,6 +115,40 @@ public class PlayerProfile
 	public boolean hasCompleted(Quest quest)
 	{
 		return completedQuests.contains(quest);
+	}
+
+	/**
+	 * Display name for an item, or null if it was not resolved when this snapshot was
+	 * taken.
+	 */
+	@Nullable
+	public String nameOf(int itemId)
+	{
+		return itemNames.get(itemId);
+	}
+
+	/**
+	 * Grand Exchange price for an item, or 0 when unknown or untradeable.
+	 */
+	public int priceOf(int itemId)
+	{
+		return itemPrices.getOrDefault(itemId, 0);
+	}
+
+	/**
+	 * Resolves item names for requirement labels, backed by this snapshot.
+	 */
+	public RequirementReport.ItemNameResolver itemNameResolver()
+	{
+		return this::nameOf;
+	}
+
+	/**
+	 * Resolves prices for the gear advisor, backed by this snapshot.
+	 */
+	public GearAdvisor.PriceResolver priceResolver()
+	{
+		return this::priceOf;
 	}
 
 	/**

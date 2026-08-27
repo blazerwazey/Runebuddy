@@ -337,6 +337,36 @@ public class GearAdvisorTest
 	}
 
 	@Test
+	public void pricesAndNamesComeFromTheSnapshot()
+	{
+		// The panel must never reach into the client for these: both readings go through
+		// item definitions, which are client-thread only. They are resolved when the
+		// snapshot is taken and read back from it here.
+		PlayerProfile profile = PlayerProfile.flat(75).toBuilder()
+			.completedQuest(Quest.MONKEY_MADNESS_I)
+			.bankKnown(true)
+			.liquidGp(100_000)
+			.itemName(ABYSSAL_WHIP, "Abyssal whip")
+			.itemPrice(ABYSSAL_WHIP, 100_000_000)
+			.itemPrice(DRAGON_SCIMITAR, 50_000)
+			.build();
+
+		assertEquals("Abyssal whip", profile.nameOf(ABYSSAL_WHIP));
+		assertEquals(100_000_000, profile.priceOf(ABYSSAL_WHIP));
+		assertEquals("an unresolved price reads as zero, not a crash", 0, profile.priceOf(GHRAZI_RAPIER));
+		assertNull("an unresolved name reads as null", profile.nameOf(GHRAZI_RAPIER));
+
+		// Driving the advisor off those resolvers has to behave the same as a stub.
+		GearSuggestion weapon = slot(
+			advisor.adviseCombat(GearCategory.MELEE, profile, profile.itemNameResolver(),
+				profile.priceResolver()),
+			EquipSlot.WEAPON);
+
+		assertEquals("the whip is out of budget at the snapshot's price",
+			DRAGON_SCIMITAR, weapon.getNext().getItemId());
+	}
+
+	@Test
 	public void styleDetectionFollowsTheHighestInvestedSkill()
 	{
 		assertEquals(GearCategory.MELEE, GearAdvisor.detectStyle(PlayerProfile.flat(50)));

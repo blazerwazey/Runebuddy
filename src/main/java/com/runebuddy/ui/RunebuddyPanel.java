@@ -7,6 +7,7 @@ import com.runebuddy.engine.RecommendationEngine;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import lombok.extern.slf4j.Slf4j;
 import net.runelite.client.game.ItemManager;
 import net.runelite.client.game.SkillIconManager;
 import net.runelite.client.ui.ColorScheme;
@@ -20,6 +21,7 @@ import net.runelite.client.ui.components.materialtabs.MaterialTabGroup;
  * <p>Everything here runs on the Swing event dispatch thread and reads only the
  * immutable {@link PlayerProfile} it is handed, never the client.
  */
+@Slf4j
 public class RunebuddyPanel extends PluginPanel
 {
 	private final OverviewTab overview;
@@ -83,8 +85,23 @@ public class RunebuddyPanel extends PluginPanel
 
 	private void refresh()
 	{
-		overview.update(profile);
-		skills.update(profile);
-		gear.update(profile);
+		// Each tab is updated independently. Letting one failure escape used to leave the
+		// other tabs showing whatever they had last time, which reads as three tabs
+		// disagreeing about whether you are even logged in.
+		update("Plan", () -> overview.update(profile));
+		update("Skills", () -> skills.update(profile));
+		update("Gear", () -> gear.update(profile));
+	}
+
+	private static void update(String tab, Runnable action)
+	{
+		try
+		{
+			action.run();
+		}
+		catch (RuntimeException | Error e)
+		{
+			log.error("Runebuddy: the {} tab failed to render", tab, e);
+		}
 	}
 }
