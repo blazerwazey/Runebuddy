@@ -3,6 +3,7 @@ package com.runebuddy;
 import com.google.gson.Gson;
 import com.google.inject.Provides;
 import com.runebuddy.data.DataStore;
+import com.runebuddy.engine.ContentAdvisor;
 import com.runebuddy.engine.GearAdvisor;
 import com.runebuddy.engine.PlayerProfile;
 import com.runebuddy.engine.ProfileTracker;
@@ -94,6 +95,7 @@ public class RunebuddyPlugin extends Plugin
 		panel = new RunebuddyPanel(
 			new RecommendationEngine(data),
 			new GearAdvisor(data),
+			new ContentAdvisor(data),
 			itemManager,
 			skillIconManager,
 			config);

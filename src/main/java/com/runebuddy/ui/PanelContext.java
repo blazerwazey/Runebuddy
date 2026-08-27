@@ -2,11 +2,15 @@ package com.runebuddy.ui;
 
 import com.runebuddy.RunebuddyConfig;
 import com.runebuddy.engine.EngineSettings;
+import com.runebuddy.data.ContentCategory;
+import com.runebuddy.engine.ContentAdvisor;
 import com.runebuddy.engine.GearAdvisor;
 import com.runebuddy.engine.PlayerProfile;
 import com.runebuddy.engine.RecommendationEngine;
 import com.runebuddy.engine.RequirementReport;
 import java.awt.image.BufferedImage;
+import java.util.EnumSet;
+import java.util.Set;
 import javax.annotation.Nullable;
 import lombok.RequiredArgsConstructor;
 import net.runelite.api.Skill;
@@ -27,6 +31,7 @@ class PanelContext
 {
 	private final RecommendationEngine engine;
 	private final GearAdvisor gearAdvisor;
+	private final ContentAdvisor contentAdvisor;
 	private final ItemManager itemManager;
 	private final SkillIconManager skillIcons;
 	private final RunebuddyConfig config;
@@ -39,6 +44,49 @@ class PanelContext
 	GearAdvisor gear()
 	{
 		return gearAdvisor;
+	}
+
+	ContentAdvisor content()
+	{
+		return contentAdvisor;
+	}
+
+	/**
+	 * Which activity categories the user wants listed.
+	 */
+	Set<ContentCategory> contentCategories()
+	{
+		Set<ContentCategory> categories = EnumSet.noneOf(ContentCategory.class);
+		if (config.showBosses())
+		{
+			categories.add(ContentCategory.BOSS);
+		}
+		if (config.showRaids())
+		{
+			categories.add(ContentCategory.RAID);
+		}
+		if (config.showMinigames())
+		{
+			categories.add(ContentCategory.MINIGAME);
+		}
+		if (config.showSkillingContent())
+		{
+			categories.add(ContentCategory.SKILLING);
+		}
+		if (config.showQuests())
+		{
+			categories.add(ContentCategory.QUEST);
+		}
+		if (config.showDiaries())
+		{
+			categories.add(ContentCategory.DIARY);
+		}
+		if (config.showUnlocks())
+		{
+			categories.add(ContentCategory.UNLOCK);
+		}
+
+		return categories;
 	}
 
 	RunebuddyConfig config()

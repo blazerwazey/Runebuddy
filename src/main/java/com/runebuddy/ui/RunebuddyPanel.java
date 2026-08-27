@@ -1,6 +1,7 @@
 package com.runebuddy.ui;
 
 import com.runebuddy.RunebuddyConfig;
+import com.runebuddy.engine.ContentAdvisor;
 import com.runebuddy.engine.GearAdvisor;
 import com.runebuddy.engine.PlayerProfile;
 import com.runebuddy.engine.RecommendationEngine;
@@ -27,19 +28,23 @@ public class RunebuddyPanel extends PluginPanel
 	private final OverviewTab overview;
 	private final SkillsTab skills;
 	private final GearTab gear;
+	private final ContentTab content;
 
 	private PlayerProfile profile = PlayerProfile.LOGGED_OUT;
 
-	public RunebuddyPanel(RecommendationEngine engine, GearAdvisor gearAdvisor, ItemManager itemManager,
+	public RunebuddyPanel(RecommendationEngine engine, GearAdvisor gearAdvisor,
+						  ContentAdvisor contentAdvisor, ItemManager itemManager,
 						  SkillIconManager skillIcons, RunebuddyConfig config)
 	{
 		super(false);
 
-		PanelContext context = new PanelContext(engine, gearAdvisor, itemManager, skillIcons, config);
+		PanelContext context = new PanelContext(engine, gearAdvisor, contentAdvisor,
+			itemManager, skillIcons, config);
 
 		overview = new OverviewTab(context);
 		skills = new SkillsTab(context);
 		gear = new GearTab(context);
+		content = new ContentTab(context);
 
 		setLayout(new BorderLayout());
 		setBackground(ColorScheme.DARK_GRAY_COLOR);
@@ -54,6 +59,7 @@ public class RunebuddyPanel extends PluginPanel
 		tabs.addTab(overviewTab);
 		tabs.addTab(new MaterialTab("Skills", tabs, skills));
 		tabs.addTab(new MaterialTab("Gear", tabs, gear));
+		tabs.addTab(new MaterialTab("Do", tabs, content));
 		tabs.select(overviewTab);
 
 		add(tabs, BorderLayout.NORTH);
@@ -91,6 +97,7 @@ public class RunebuddyPanel extends PluginPanel
 		update("Plan", () -> overview.update(profile));
 		update("Skills", () -> skills.update(profile));
 		update("Gear", () -> gear.update(profile));
+		update("Do", () -> content.update(profile));
 	}
 
 	private static void update(String tab, Runnable action)
