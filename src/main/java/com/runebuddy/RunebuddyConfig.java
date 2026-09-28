@@ -40,6 +40,15 @@ public interface RunebuddyConfig extends Config
 	)
 	String contentSection = "content";
 
+	@ConfigSection(
+		name = "Data",
+		description = "Where Runebuddy's training, gear, activity and Slayer data comes from",
+		position = 4
+	)
+	String dataSection = "data";
+
+	String UPDATE_DATA_KEY = "updateData";
+
 	// --- Recommendations -----------------------------------------------------
 
 	@Range(max = 10)
@@ -264,6 +273,20 @@ public interface RunebuddyConfig extends Config
 		section = contentSection
 	)
 	default boolean showUnlocks()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+		keyName = UPDATE_DATA_KEY,
+		name = "Fetch data updates",
+		description = "Download corrected and new data from the Runebuddy GitHub repository"
+			+ " (raw.githubusercontent.com) at startup and every 6 hours. Nothing about your"
+			+ " account is sent. Off uses only the data bundled with the plugin.",
+		position = 0,
+		section = dataSection
+	)
+	default boolean updateData()
 	{
 		return true;
 	}

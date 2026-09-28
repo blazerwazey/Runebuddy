@@ -3,12 +3,19 @@ package com.runebuddy;
 import com.google.gson.Gson;
 import com.google.inject.Provides;
 import com.runebuddy.data.DataStore;
+import com.runebuddy.data.DataUpdater;
 import com.runebuddy.engine.Advisors;
 import com.runebuddy.engine.GoalStore;
 import com.runebuddy.engine.PlayerProfile;
 import com.runebuddy.engine.ProfileTracker;
 import com.runebuddy.ui.RunebuddyPanel;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
@@ -18,6 +25,8 @@ import net.runelite.api.events.GameTick;
 import net.runelite.api.events.ItemContainerChanged;
 import net.runelite.api.events.StatChanged;
 import net.runelite.api.gameval.InventoryID;
+import net.runelite.client.RuneLite;
+import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.eventbus.Subscribe;
@@ -28,6 +37,7 @@ import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.ui.ClientToolbar;
 import net.runelite.client.ui.NavigationButton;
 import net.runelite.client.util.ImageUtil;
+import okhttp3.OkHttpClient;
 
 /**
  * Tells a player what to train next and what gear to work toward, based on the account
@@ -70,8 +80,34 @@ public class RunebuddyPlugin extends Plugin
 	@Inject
 	private ConfigManager configManager;
 
+	@Inject
+	private ClientThread clientThread;
+
+	@Inject
+	private ScheduledExecutorService executor;
+
+	@Inject
+	private OkHttpClient okHttpClient;
+
+	/**
+	 * How often to look for newer data while the client runs.
+	 */
+	private static final long UPDATE_INTERVAL_HOURS = 6;
+
 	private RunebuddyPanel panel;
 	private NavigationButton navigationButton;
+
+	/**
+	 * The data shipped in the jar, kept so switching updates off can return to it.
+	 */
+	private DataStore bundled;
+	private ScheduledFuture<?> updateTask;
+
+	/**
+	 * Bumped whenever updates start or stop, so a fetch that finishes after the switch
+	 * was turned off cannot sneak its data back in.
+	 */
+	private final AtomicInteger updateGeneration = new AtomicInteger();
 
 	/**
 	 * Set when something we care about changes; the snapshot is rebuilt at most once per
@@ -91,11 +127,11 @@ public class RunebuddyPlugin extends Plugin
 	@Override
 	protected void startUp()
 	{
-		DataStore data = DataStore.load(gson);
-		profileTracker.prime(data);
+		bundled = DataStore.load(gson);
+		profileTracker.prime(bundled);
 
 		panel = new RunebuddyPanel(
-			new Advisors(data),
+			new Advisors(bundled),
 			new GoalStore(configManager, gson),
 			itemManager,
 			skillIconManager,
@@ -111,15 +147,82 @@ public class RunebuddyPlugin extends Plugin
 
 		clientToolbar.addNavigation(navigationButton);
 		dirty = true;
+
+		if (config.updateData())
+		{
+			startUpdates();
+		}
 	}
 
 	@Override
 	protected void shutDown()
 	{
+		stopUpdates();
 		clientToolbar.removeNavigation(navigationButton);
 		profileTracker.reset();
 		panel = null;
 		navigationButton = null;
+	}
+
+	/**
+	 * Applies the cached copy, then checks for newer data now and every few hours.
+	 *
+	 * <p>Fetching blocks, so it runs on OkHttp's own worker threads; the shared scheduler
+	 * only kicks it off, and the client thread and the EDT never wait on the network.
+	 */
+	private void startUpdates()
+	{
+		stopUpdates();
+
+		int generation = updateGeneration.get();
+		File cache = new File(new File(RuneLite.RUNELITE_DIR, "runebuddy"), "data-cache.json");
+		DataUpdater fresh = new DataUpdater(gson, DataUpdater.http(okHttpClient), cache,
+			DataUpdater.bundledManifest(gson).getVersion(), data ->
+		{
+			if (updateGeneration.get() == generation)
+			{
+				useData(data);
+			}
+		});
+
+		ExecutorService worker = okHttpClient.dispatcher().executorService();
+		worker.submit(() ->
+		{
+			fresh.loadCache();
+			fresh.refresh();
+		});
+		updateTask = executor.scheduleWithFixedDelay(() -> worker.submit(fresh::refresh),
+			UPDATE_INTERVAL_HOURS, UPDATE_INTERVAL_HOURS, TimeUnit.HOURS);
+	}
+
+	private void stopUpdates()
+	{
+		if (updateTask != null)
+		{
+			updateTask.cancel(false);
+			updateTask = null;
+		}
+
+		updateGeneration.incrementAndGet();
+	}
+
+	/**
+	 * Swaps in a new data set. Called from a background thread.
+	 */
+	private void useData(DataStore data)
+	{
+		// The tracker's lists are read on the client thread, so they change there too.
+		clientThread.invokeLater(() ->
+		{
+			profileTracker.prime(data);
+			dirty = true;
+		});
+
+		RunebuddyPanel current = panel;
+		if (current != null)
+		{
+			current.setAdvisors(new Advisors(data));
+		}
 	}
 
 	@Subscribe
@@ -189,6 +292,20 @@ public class RunebuddyPlugin extends Plugin
 	{
 		// The plugin's own saves (the bank snapshot, goals) land in the same group but
 		// are not preferences; goal edits repaint themselves.
+		if (RunebuddyConfig.GROUP.equals(event.getGroup())
+			&& RunebuddyConfig.UPDATE_DATA_KEY.equals(event.getKey()) && panel != null)
+		{
+			if (config.updateData())
+			{
+				startUpdates();
+			}
+			else
+			{
+				stopUpdates();
+				useData(bundled);
+			}
+		}
+
 		if (RunebuddyConfig.GROUP.equals(event.getGroup()) && panel != null
 			&& !ProfileTracker.BANK_SNAPSHOT_KEY.equals(event.getKey())
 			&& !GoalStore.GOALS_KEY.equals(event.getKey()))

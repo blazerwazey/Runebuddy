@@ -38,6 +38,12 @@ public class DataStore
 	private static final String CONTENT_RESOURCE = "/com/runebuddy/content.json";
 	private static final String SLAYER_RESOURCE = "/com/runebuddy/slayer.json";
 
+	/**
+	 * Every link in the data opens in the player's browser on a click, so only the wiki
+	 * is allowed. Fetched data gets no more trust than this.
+	 */
+	public static final String WIKI_PREFIX = "https://oldschool.runescape.wiki/";
+
 	private static final Type METHOD_LIST = new TypeToken<List<TrainingMethod>>()
 	{
 	}.getType();
@@ -165,6 +171,21 @@ public class DataStore
 			}
 		}
 
+		for (TrainingMethod method : methods)
+		{
+			checkLink(method.getId(), method.getWikiUrl());
+		}
+
+		for (ContentActivity activity : content)
+		{
+			checkLink(activity.getId(), activity.getWikiUrl());
+		}
+
+		for (SlayerTaskInfo info : slayer)
+		{
+			checkLink(info.getTask(), info.getWikiUrl());
+		}
+
 		Map<String, SlayerTaskInfo> slayerByTask = new LinkedHashMap<>();
 		for (SlayerTaskInfo info : slayer)
 		{
@@ -183,7 +204,19 @@ public class DataStore
 		return new DataStore(methods, gear, content, slayerByTask, warnings);
 	}
 
-	private static String readResource(String resource)
+	private static void checkLink(String owner, @Nullable String url)
+	{
+		if (url != null && !url.startsWith(WIKI_PREFIX))
+		{
+			throw new IllegalStateException(owner + ": links may only point at " + WIKI_PREFIX);
+		}
+	}
+
+	/**
+	 * Reads a bundled resource as text. Public so the updater can read the bundled
+	 * manifest the same way.
+	 */
+	public static String readResource(String resource)
 	{
 		try (InputStream in = DataStore.class.getResourceAsStream(resource))
 		{

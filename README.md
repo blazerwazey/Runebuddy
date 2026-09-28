@@ -1,22 +1,51 @@
 # Runebuddy
 
-A RuneLite plugin that answers two questions about the account you are logged into:
+A RuneLite plugin that answers one question about the account you are logged into:
+**what should I do next, and what is the best way to do it?** With the alternatives
+laid side by side, so you can see the trade-off rather than take one answer on trust.
 
-- **What should I train, and how?** A ranked list of training methods per skill,
-  filtered to what your account can actually do right now.
-- **What gear should I be aiming for?** Per equipment slot: what you own, what to buy
-  next, and what to work toward.
+- **What next?** One feed: your Slayer task, the next step toward each of your goals,
+  quick wins you can take right now, and the best training for your time.
+- **How, and how long?** Routes to any level, with hours and gold: fastest, cheapest,
+  most AFK and most profitable.
+- **What gear?** Per equipment slot: what you own, what to buy next, and what to work
+  toward.
+- **What content?** Bosses, raids, minigames, quests and unlocks you are ready for, and
+  what stands between you and the rest.
 
 It reads your levels, quests, account type and bank itself, so there is nothing to type
 in and nothing to keep up to date.
 
 ## What it does
 
-**Plan** — your combat and total level, then the best use of your next hour, picked
-across every skill and weighted toward the ones you have neglected. Attack, Strength and
-Defence share their training, so the same activity is not listed three times.
+**Plan** — your combat and total level, then **Next up**: one feed of what to do, in
+priority order.
 
-**Skills** — a grid of skill icons. Pick one to see its methods ranked for your account,
+1. **Your Slayer task**, read straight from the game.
+2. **The next step of each goal.** Two goals needing the same levels share one entry.
+3. **Quick wins**: a gear upgrade you can use and afford now, content whose requirement
+   you crossed in the last couple of levels, a combat achievement tier within reach.
+4. **Training**: the best use of your time across every skill, weighted toward the ones
+   you have neglected, with how soon the next level comes.
+
+These are buckets, not one blended score: no honest number weighs "equip this shield"
+against "train Agility". Click any entry to open the tab with its detail and
+alternatives. Your goals sit underneath, each with progress, hours left and every step.
+
+**Goals** — a level ("85 Slayer"), a piece of gear ("Bandos chestplate") or an activity
+("The fire cape"). Set a level goal from a skill's route panel, or right-click any gear
+row or activity. Runebuddy works each goal backwards: every missing level becomes a
+timed training route, and quests, items and notes are listed but not timed, because
+there is no honest estimate for them. Hitpoints is credited with what the goal's other
+combat training will give it, so the same hours are not counted twice. Ironman
+requirements apply. Goals are saved per RuneScape account.
+
+**Skills** — a grid of skill icons. Pick one and its page opens with **ways to level**:
+routes from your level to a target (ten levels on by default, or your goal), recommended,
+fastest, cheapest, most AFK and most profitable, each with hours and total gold. Routes
+switch method as better ones unlock ("willows to 60, then teaks"), estimates count only
+what is left of your current level, and styles that land on the same route share a row.
+Below that, its methods ranked for your account,
 each showing the experience rate *at your level*, what it costs or earns, what it needs,
 and a link to the wiki guide. Methods just out of reach appear underneath as upcoming
 unlocks, so you know what the next few levels buy you.
@@ -27,7 +56,15 @@ that is blocking it — "needs 70 Attack", "needs Recipe for Disaster".
 
 **Do** — what to actually go and do: bosses, raids, minigames, skilling activities,
 quests, diaries and unlocks, split into what you are ready for now, what is nearly in
-reach, and what to aim at. Each entry leads with the reason to go.
+reach, and what to aim at. Each entry leads with the reason to go. It opens with your
+**combat achievement** points and how far the next reward tier is; the points and the
+tier thresholds both come from the game.
+
+**Slayer** — your current task, read from the game's own tables the way RuneLite's
+Slayer plugin does, so the name is always right, boss tasks and Konar's areas included.
+Advice from `slayer.json` adds where to go, the style it wants, whether a cannon works,
+and whether it is usually done, skipped or blocked. Skipping is only suggested when you
+have the points. A task the file does not cover still shows, without advice.
 
 ## How the ranking works
 
@@ -118,8 +155,50 @@ regardless of which JDK builds it, so a newer JDK is fine as long as Lombok agre
 
 ## The data files
 
-Everything Runebuddy recommends comes from two JSON files in
-`src/main/resources/com/runebuddy/`, not from code. Editing them needs no Java.
+Everything Runebuddy recommends comes from JSON files in
+`src/main/resources/com/runebuddy/`, not from code: `training_methods.json`,
+`gear.json`, `content.json` and `slayer.json`, plus `manifest.json` describing them.
+Editing them needs no Java.
+
+### Data updates
+
+The data can be fixed without a plugin release. At startup and every six hours,
+Runebuddy fetches `manifest.json` from this repository's `main` branch on
+`raw.githubusercontent.com`. If it describes a newer version in the schema this build
+understands, the four data files are fetched and put through exactly the same validation
+as the bundled copy. Only a complete set that passes every check is used; anything else
+keeps the current data. The last good copy is cached in `.runelite/runebuddy/` for
+offline starts.
+
+- **Nothing about you or your account is sent.** It is a plain download of public files.
+- **Links are restricted** to `https://oldschool.runescape.wiki/`, since they open in
+  your browser when clicked.
+- **Switch it off** under *Data* in the plugin settings to use only the bundled data.
+
+To publish a data fix: edit the files, bump `version` in `manifest.json` (a sortable
+date such as `2026-09-28`, or `2026-09-28.2` for a second change that day), run the
+tests, and merge to `main`. Bump `schema` only when a file changes shape; installs
+built for the old schema then ignore the new data until they update.
+
+### Adding Slayer advice
+
+`slayer.json` entries are keyed by the task name the game uses, matched ignoring case:
+
+```json
+{
+  "task": "Abyssal demons",
+  "locations": ["Catacombs of Kourend", "Abyssal Sire (counts as the task)"],
+  "style": "MELEE",
+  "cannonable": false,
+  "verdict": "DO",
+  "why": "Steady XP and whip drops",
+  "notes": "Cannons cannot be used in the Catacombs.",
+  "wikiUrl": "https://oldschool.runescape.wiki/w/Abyssal_demon"
+}
+```
+
+`verdict` is `DO`, `SKIP` or `BLOCK`; `style` is `MELEE`, `RANGED` or `MAGIC`, or left
+out when there is no clear one.
 
 ### Adding a training method
 
@@ -284,8 +363,9 @@ nothing.
 The data is checked when it loads and again by the test suite: ids are unique, every
 skill and slot name resolves, experience curves are non-empty and ordered, tiers do not
 collide, every skill has methods, every gear entry names a source that is not the Grand
-Exchange, and every skill has something an ironman and a free-to-play account can do. A
-structural mistake fails the build rather than quietly producing bad advice.
+Exchange, and every skill has something an ironman and a free-to-play account can do, Slayer tasks
+are unique, and every link points at the wiki. A structural mistake fails the build
+rather than quietly producing bad advice, and fetched updates go through the same checks.
 
 A quest name that this version of the RuneLite API does not know about is the one
 exception: it becomes a text note instead of failing, because the data files are
@@ -298,6 +378,11 @@ expected to outlive any particular client release.
   renders the empty skill with an explanation.
 - **Method costs are static.** `gpPerHour` is a number in the data file, not a live
   calculation. Live Grand Exchange prices are used for gear only.
+- **Time estimates are only as good as the rates.** Hours come from the experience
+  rates in the data, which are typical figures; yours will differ.
+- **Quests and item hunts inside a goal are listed, not timed.**
+- **Combat achievements show tier progress only**, not individual tasks.
+- **Slayer advice** covers the common tasks. The task itself is always read correctly.
 - Runebuddy only reads state and renders advice. It does not automate anything.
 
 ## Licence
