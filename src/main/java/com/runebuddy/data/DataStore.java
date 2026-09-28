@@ -102,11 +102,25 @@ public class DataStore
 	static DataStore load(Gson gson, String methodsResource, String gearResource,
 						  String contentResource)
 	{
-		List<String> warnings = new ArrayList<>();
+		return fromJson(gson,
+			readResource(methodsResource),
+			readResource(gearResource),
+			readResource(contentResource));
+	}
 
-		List<TrainingMethod> methods = read(gson, methodsResource, METHOD_LIST);
-		List<GearItem> gear = read(gson, gearResource, GEAR_LIST);
-		List<ContentActivity> content = read(gson, contentResource, CONTENT_LIST);
+	/**
+	 * Parses and validates a complete data set from JSON text. Used for the bundled files
+	 * and for anything fetched later, so both go through exactly the same checks.
+	 *
+	 * @throws IllegalStateException if any file cannot be parsed or does not validate
+	 */
+	public static DataStore fromJson(Gson gson, String methodsJson, String gearJson, String contentJson)
+	{
+		List<TrainingMethod> methods = parse(gson, methodsJson, METHOD_LIST, "training methods");
+		List<GearItem> gear = parse(gson, gearJson, GEAR_LIST, "gear");
+		List<ContentActivity> content = parse(gson, contentJson, CONTENT_LIST, "content");
+
+		List<String> warnings = new ArrayList<>();
 
 		Set<String> methodIds = new HashSet<>();
 		for (TrainingMethod method : methods)
@@ -150,7 +164,7 @@ public class DataStore
 		return new DataStore(methods, gear, content, warnings);
 	}
 
-	private static <T> List<T> read(Gson gson, String resource, Type type)
+	private static String readResource(String resource)
 	{
 		try (InputStream in = DataStore.class.getResourceAsStream(resource))
 		{
@@ -161,18 +175,46 @@ public class DataStore
 
 			try (Reader reader = new InputStreamReader(in, StandardCharsets.UTF_8))
 			{
-				List<T> parsed = gson.fromJson(reader, type);
-				if (parsed == null)
+				StringBuilder text = new StringBuilder();
+				char[] buffer = new char[8192];
+				int read;
+				while ((read = reader.read(buffer)) != -1)
 				{
-					throw new IllegalStateException("empty data file: " + resource);
+					text.append(buffer, 0, read);
 				}
 
-				return parsed;
+				return text.toString();
 			}
 		}
-		catch (IOException | JsonParseException e)
+		catch (IOException e)
 		{
 			throw new IllegalStateException("could not read " + resource, e);
+		}
+	}
+
+	private static <T> List<T> parse(Gson gson, String json, Type type, String what)
+	{
+		try
+		{
+			List<T> parsed = gson.fromJson(json, type);
+			if (parsed == null)
+			{
+				throw new IllegalStateException("empty " + what + " data");
+			}
+
+			for (T entry : parsed)
+			{
+				if (entry == null)
+				{
+					throw new IllegalStateException("null entry in " + what + " data");
+				}
+			}
+
+			return parsed;
+		}
+		catch (JsonParseException e)
+		{
+			throw new IllegalStateException("could not parse " + what + " data", e);
 		}
 	}
 

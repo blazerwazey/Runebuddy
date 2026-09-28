@@ -221,6 +221,7 @@ public class ProfileTracker
 		for (Skill skill : Skills.trainable())
 		{
 			builder.level(skill, client.getRealSkillLevel(skill));
+			builder.xp(skill, client.getSkillExperience(skill));
 		}
 
 		for (Quest quest : questsOfInterest)

@@ -39,6 +39,13 @@ public class PlayerProfile
 	private final Map<Skill, Integer> levels;
 
 	/**
+	 * Current experience per skill. Needed for honest time estimates: a player 90% of the
+	 * way through a level has a tenth of it left to train, not all of it.
+	 */
+	@Singular("xp")
+	private final Map<Skill, Integer> xpBySkill;
+
+	/**
 	 * Quests known to be finished. Only quests the data files reference are checked.
 	 */
 	@Singular("completedQuest")
@@ -110,6 +117,17 @@ public class PlayerProfile
 	{
 		Integer level = levels.get(skill);
 		return level == null ? Skills.startingLevel(skill) : level;
+	}
+
+	/**
+	 * Current experience in a skill. When the snapshot did not record it, which is the
+	 * case for test profiles, this falls back to the start of the current level, the most
+	 * conservative assumption.
+	 */
+	public int xp(Skill skill)
+	{
+		Integer xp = xpBySkill.get(skill);
+		return xp != null ? xp : Experience.getXpForLevel(level(skill));
 	}
 
 	/**

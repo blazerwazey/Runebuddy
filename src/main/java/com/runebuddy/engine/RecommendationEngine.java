@@ -172,6 +172,28 @@ public class RecommendationEngine
 	}
 
 	/**
+	 * Every method the account could do right now in one skill, unranked. The time
+	 * estimator calls this with hypothetical levels to see what unlocks along a route.
+	 */
+	List<TrainingMethod> availableNow(Skill skill, PlayerProfile profile,
+									  @Nullable RequirementReport.ItemNameResolver itemNames)
+	{
+		int level = profile.level(skill);
+		List<TrainingMethod> available = new ArrayList<>();
+		for (TrainingMethod method : data.methodsFor(skill))
+		{
+			if (isPossible(method, profile)
+				&& level >= method.getMinLevel()
+				&& RequirementReport.check(method.getRequirements(), profile, itemNames).isSatisfied())
+			{
+				available.add(method);
+			}
+		}
+
+		return available;
+	}
+
+	/**
 	 * Whether the account can do this method at all, regardless of level. Methods it can
 	 * never do are dropped rather than shown as locked, since no amount of training
 	 * unlocks them.
