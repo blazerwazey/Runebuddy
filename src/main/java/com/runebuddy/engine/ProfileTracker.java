@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import com.runebuddy.AccountTypeOverride;
 import com.runebuddy.MembershipOverride;
 import com.runebuddy.RunebuddyConfig;
+import com.runebuddy.data.ContentActivity;
 import com.runebuddy.data.DataStore;
 import com.runebuddy.data.GearItem;
 import com.runebuddy.data.Requirements;
@@ -99,8 +100,8 @@ public class ProfileTracker
 	private String loadedProfileKey;
 
 	/**
-	 * Works out which items and quests are worth tracking. Called once when the plugin
-	 * starts, after the data files have loaded.
+	 * Works out which items and quests are worth tracking. Called on the client thread,
+	 * when the plugin starts and whenever the data set is replaced.
 	 */
 	public void prime(DataStore data)
 	{
@@ -108,27 +109,48 @@ public class ProfileTracker
 		questsOfInterest.clear();
 
 		itemsOfInterest.add(canonical(ItemID.COINS));
+		for (GearItem item : data.getGear())
+		{
+			itemsOfInterest.add(canonical(item.getItemId()));
+		}
 
+		for (Requirements requirements : allRequirements(data))
+		{
+			for (int itemId : requirements.getRequiredItems())
+			{
+				itemsOfInterest.add(canonical(itemId));
+			}
+
+			questsOfInterest.addAll(requirements.getRequiredQuests());
+		}
+	}
+
+	/**
+	 * Every requirement set anywhere in the data, ironman extras included. Anything left
+	 * out here is never read from the client, so a quest missing from this list would
+	 * look unfinished forever.
+	 */
+	static List<Requirements> allRequirements(DataStore data)
+	{
+		List<Requirements> all = new java.util.ArrayList<>();
 		for (TrainingMethod method : data.getMethods())
 		{
-			collect(method.getRequirements());
+			all.add(method.getRequirements());
 		}
 
 		for (GearItem item : data.getGear())
 		{
-			itemsOfInterest.add(canonical(item.getItemId()));
-			collect(item.getRequirements());
+			all.add(item.getRequirements());
+			all.add(item.getIronmanRequirements());
 		}
-	}
 
-	private void collect(Requirements requirements)
-	{
-		for (int itemId : requirements.getRequiredItems())
+		for (ContentActivity activity : data.getContent())
 		{
-			itemsOfInterest.add(canonical(itemId));
+			all.add(activity.getRequirements());
+			all.add(activity.getIronmanRequirements());
 		}
 
-		questsOfInterest.addAll(requirements.getRequiredQuests());
+		return all;
 	}
 
 	/**
