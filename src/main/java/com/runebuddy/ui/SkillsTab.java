@@ -3,7 +3,9 @@ package com.runebuddy.ui;
 import com.runebuddy.data.Skills;
 import com.runebuddy.engine.MethodScore;
 import com.runebuddy.engine.PlayerProfile;
+import com.runebuddy.engine.RouteOption;
 import com.runebuddy.engine.SkillAdvice;
+import com.runebuddy.engine.TimeEstimator;
 import java.awt.BorderLayout;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -11,7 +13,9 @@ import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
+import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -33,6 +37,17 @@ class SkillsTab extends JPanel
 	private final PanelContext context;
 	private final JPanel grid = new JPanel(new GridLayout(0, COLUMNS, 2, 2));
 	private final JPanel detail = new JPanel();
+
+	/**
+	 * How far ahead to plan routes when the player has not said. Ten levels is far
+	 * enough for a route to switch methods, and near enough to feel reachable.
+	 */
+	private static final int DEFAULT_LOOKAHEAD = 10;
+
+	/**
+	 * Target level per skill as picked on the route spinner, for this session.
+	 */
+	private final Map<Skill, Integer> targets = new EnumMap<>(Skill.class);
 
 	private Skill selected = Skill.ATTACK;
 	private PlayerProfile profile = PlayerProfile.LOGGED_OUT;
@@ -131,6 +146,11 @@ class SkillsTab extends JPanel
 
 		detail.add(heading(Skills.displayName(selected) + " — level " + advice.getLevel()));
 
+		if (advice.getLevel() < TimeEstimator.MAX_LEVEL)
+		{
+			detail.add(routes(advice.getLevel()));
+		}
+
 		if (advice.isEmpty())
 		{
 			PluginErrorPanel error = new PluginErrorPanel();
@@ -159,6 +179,30 @@ class SkillsTab extends JPanel
 
 		detail.revalidate();
 		detail.repaint();
+	}
+
+	private RouteComparison routes(int level)
+	{
+		int target = targetFor(selected, level);
+		List<RouteOption> options = context.estimator().alternatives(
+			selected, profile, target, context.settings(), context.itemNames(profile));
+
+		return new RouteComparison(options, level, target, chosen ->
+		{
+			targets.put(selected, chosen);
+			buildDetail();
+		});
+	}
+
+	private int targetFor(Skill skill, int level)
+	{
+		Integer chosen = targets.get(skill);
+		if (chosen != null && chosen > level)
+		{
+			return chosen;
+		}
+
+		return Math.min(level + DEFAULT_LOOKAHEAD, TimeEstimator.MAX_LEVEL);
 	}
 
 	private static JLabel heading(String text)

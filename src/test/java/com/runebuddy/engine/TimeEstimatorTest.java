@@ -3,6 +3,8 @@ package com.runebuddy.engine;
 import com.google.gson.Gson;
 import com.runebuddy.data.DataStore;
 import com.runebuddy.data.TrainingMethod;
+import java.util.Arrays;
+import java.util.List;
 import net.runelite.api.Experience;
 import net.runelite.api.Skill;
 import org.junit.Test;
@@ -224,6 +226,38 @@ public class TimeEstimatorTest
 		assertTrue("1-99 woodcutting should take tens to hundreds of hours, got " + route.getHours(),
 			route.getHours() > 50 && route.getHours() < 400);
 		assertTrue("the route should switch methods as better trees unlock", route.getLegs().size() >= 3);
+	}
+
+	@Test
+	public void alternativesMergeStylesThatAgree()
+	{
+		DataStore data = data(method("only", 1, flat(30_000), 0, "AFK"));
+
+		List<RouteOption> options = estimator(data).alternatives(Skill.FISHING, fishingAt(50), 60,
+			EngineSettings.defaults(), null);
+
+		assertEquals("one method means one route, whatever the style", 1, options.size());
+		assertEquals(Arrays.asList(RouteStyle.values()), options.get(0).getStyles());
+	}
+
+	@Test
+	public void alternativesKeepDistinctRoutesApart()
+	{
+		DataStore data = data(
+			method("burner", 1, flat(100_000), -200_000, "HIGH"),
+			method("chill", 1, flat(30_000), 0, "AFK"),
+			method("earner", 1, flat(20_000), 300_000, "MEDIUM"));
+
+		List<RouteOption> options = estimator(data).alternatives(Skill.FISHING, fishingAt(50), 60,
+			EngineSettings.defaults(), null);
+
+		assertEquals(3, options.size());
+		int styles = 0;
+		for (RouteOption option : options)
+		{
+			styles += option.getStyles().size();
+		}
+		assertEquals("every style is accounted for exactly once", RouteStyle.values().length, styles);
 	}
 
 	private static String firstMethod(TimeEstimator estimator, PlayerProfile profile, RouteStyle style)

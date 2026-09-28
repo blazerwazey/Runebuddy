@@ -8,6 +8,7 @@ import com.runebuddy.engine.GearAdvisor;
 import com.runebuddy.engine.PlayerProfile;
 import com.runebuddy.engine.RecommendationEngine;
 import com.runebuddy.engine.RequirementReport;
+import com.runebuddy.engine.TimeEstimator;
 import java.awt.image.BufferedImage;
 import java.util.EnumSet;
 import java.util.Set;
@@ -36,9 +37,24 @@ class PanelContext
 	private final SkillIconManager skillIcons;
 	private final RunebuddyConfig config;
 
+	private TimeEstimator estimator;
+
 	RecommendationEngine engine()
 	{
 		return engine;
+	}
+
+	/**
+	 * Only ever called on the EDT, so the lazy creation needs no locking.
+	 */
+	TimeEstimator estimator()
+	{
+		if (estimator == null)
+		{
+			estimator = new TimeEstimator(engine);
+		}
+
+		return estimator;
 	}
 
 	GearAdvisor gear()

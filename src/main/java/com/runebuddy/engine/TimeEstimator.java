@@ -4,7 +4,9 @@ import com.runebuddy.data.TrainingMethod;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Nullable;
 import net.runelite.api.Experience;
 import net.runelite.api.Skill;
@@ -115,6 +117,50 @@ public class TimeEstimator
 
 		return new Route(skill, style, from, target, Collections.unmodifiableList(legs),
 			totalHours, Math.round(totalGold), blockedAt);
+	}
+
+	/**
+	 * Routes to the target in every style, with identical routes merged, in the order
+	 * the styles are declared.
+	 */
+	public List<RouteOption> alternatives(Skill skill, PlayerProfile profile, int targetLevel,
+										  EngineSettings settings,
+										  @Nullable RequirementReport.ItemNameResolver itemNames)
+	{
+		Map<List<String>, List<RouteStyle>> stylesByPath = new LinkedHashMap<>();
+		Map<List<String>, Route> routeByPath = new LinkedHashMap<>();
+
+		for (RouteStyle style : RouteStyle.values())
+		{
+			Route route = route(skill, profile, targetLevel, style, settings, itemNames);
+			List<String> path = path(route);
+			stylesByPath.computeIfAbsent(path, k -> new ArrayList<>()).add(style);
+			routeByPath.putIfAbsent(path, route);
+		}
+
+		List<RouteOption> options = new ArrayList<>();
+		for (Map.Entry<List<String>, Route> entry : routeByPath.entrySet())
+		{
+			options.add(new RouteOption(
+				Collections.unmodifiableList(stylesByPath.get(entry.getKey())), entry.getValue()));
+		}
+
+		return options;
+	}
+
+	/**
+	 * What makes two routes the same: the same methods over the same levels.
+	 */
+	private static List<String> path(Route route)
+	{
+		List<String> path = new ArrayList<>();
+		for (RouteLeg leg : route.getLegs())
+		{
+			path.add(leg.getMethod().getId() + "@" + leg.getFromLevel() + "-" + leg.getToLevel());
+		}
+
+		path.add("blocked@" + route.getBlockedAtLevel());
+		return path;
 	}
 
 	/**

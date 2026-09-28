@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.util.Locale;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
@@ -95,14 +96,79 @@ final class UiUtils
 		return (gpPerHour > 0 ? "+" : "-") + amount + "/hr";
 	}
 
-	static Color goldColor(int gpPerHour)
+	/**
+	 * "40 min", "4.5h" or "120h": precise where it helps, rounded where false precision
+	 * would mislead, since every figure is an estimate.
+	 */
+	static String hours(double hours)
 	{
-		if (gpPerHour == 0)
+		if (Double.isInfinite(hours) || Double.isNaN(hours))
+		{
+			return "?";
+		}
+
+		if (hours < 1)
+		{
+			return Math.max(1, Math.round(hours * 60)) + " min";
+		}
+
+		if (hours < 10)
+		{
+			return String.format(Locale.ROOT, "%.1fh", hours);
+		}
+
+		return Math.round(hours) + "h";
+	}
+
+	/**
+	 * "+28.4m" for profit, "-6.4m" for a cost, "free" for neither.
+	 */
+	static String goldTotal(long gold)
+	{
+		if (gold == 0)
+		{
+			return "free";
+		}
+
+		return (gold > 0 ? "+" : "-") + shortAmount(Math.abs(gold));
+	}
+
+	static Color goldColor(long gold)
+	{
+		if (gold == 0)
 		{
 			return ColorScheme.LIGHT_GRAY_COLOR;
 		}
 
-		return gpPerHour > 0 ? MET : UNMET;
+		return gold > 0 ? MET : UNMET;
+	}
+
+	/**
+	 * "950", "12.5k", "3.2m", "1.1b".
+	 */
+	static String shortAmount(long amount)
+	{
+		if (amount < 1_000)
+		{
+			return String.valueOf(amount);
+		}
+
+		if (amount < 1_000_000)
+		{
+			return trimmed(amount / 1_000d) + "k";
+		}
+
+		if (amount < 1_000_000_000)
+		{
+			return trimmed(amount / 1_000_000d) + "m";
+		}
+
+		return trimmed(amount / 1_000_000_000d) + "b";
+	}
+
+	private static String trimmed(double value)
+	{
+		return value >= 100 ? String.valueOf(Math.round(value)) : String.format(Locale.ROOT, "%.1f", value).replace(".0", "");
 	}
 
 	/**
