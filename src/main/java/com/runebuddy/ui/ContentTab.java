@@ -1,6 +1,7 @@
 package com.runebuddy.ui;
 
 import com.runebuddy.data.ContentCategory;
+import com.runebuddy.engine.CombatAchievementProgress;
 import com.runebuddy.engine.ContentAdvice;
 import com.runebuddy.engine.ContentSuggestion;
 import com.runebuddy.engine.PlayerProfile;
@@ -54,6 +55,12 @@ class ContentTab extends JPanel
 			revalidate();
 			repaint();
 			return;
+		}
+
+		CombatAchievementProgress combatAchievements = profile.combatAchievements();
+		if (combatAchievements != null)
+		{
+			content.add(new CombatAchievementCard(combatAchievements));
 		}
 
 		Set<ContentCategory> categories = context.contentCategories();

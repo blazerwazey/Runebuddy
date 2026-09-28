@@ -232,6 +232,15 @@ public class ProfileTracker
 			builder.xp(skill, client.getSkillExperience(skill));
 		}
 
+		builder.combatAchievementPoints(client.getVarbitValue(VarbitID.CA_POINTS));
+		builder.combatAchievementThreshold(CombatAchievementTier.EASY, client.getVarbitValue(VarbitID.CA_THRESHOLD_EASY));
+		builder.combatAchievementThreshold(CombatAchievementTier.MEDIUM, client.getVarbitValue(VarbitID.CA_THRESHOLD_MEDIUM));
+		builder.combatAchievementThreshold(CombatAchievementTier.HARD, client.getVarbitValue(VarbitID.CA_THRESHOLD_HARD));
+		builder.combatAchievementThreshold(CombatAchievementTier.ELITE, client.getVarbitValue(VarbitID.CA_THRESHOLD_ELITE));
+		builder.combatAchievementThreshold(CombatAchievementTier.MASTER, client.getVarbitValue(VarbitID.CA_THRESHOLD_MASTER));
+		builder.combatAchievementThreshold(CombatAchievementTier.GRANDMASTER,
+			client.getVarbitValue(VarbitID.CA_THRESHOLD_GRANDMASTER));
+
 		builder.slayerTask(readSlayerTask());
 		builder.slayerPoints(client.getVarbitValue(VarbitID.SLAYER_POINTS));
 

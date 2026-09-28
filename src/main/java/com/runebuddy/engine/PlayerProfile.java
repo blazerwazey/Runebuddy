@@ -122,6 +122,27 @@ public class PlayerProfile
 	private final int slayerPoints;
 
 	/**
+	 * Combat achievement points.
+	 */
+	private final int combatAchievementPoints;
+
+	/**
+	 * Points each combat achievement tier needs, as the game reports them. Empty until
+	 * the server has sent them.
+	 */
+	@Singular("combatAchievementThreshold")
+	private final Map<CombatAchievementTier, Integer> combatAchievementThresholds;
+
+	/**
+	 * Progress through the combat achievement tiers, or null when it is not known yet.
+	 */
+	@Nullable
+	public CombatAchievementProgress combatAchievements()
+	{
+		return CombatAchievementProgress.of(combatAchievementPoints, combatAchievementThresholds);
+	}
+
+	/**
 	 * Real level in a skill, defaulting to whatever that skill starts at.
 	 */
 	public int level(Skill skill)
