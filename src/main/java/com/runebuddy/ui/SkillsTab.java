@@ -76,6 +76,16 @@ class SkillsTab extends JPanel
 		buildGrid();
 	}
 
+	/**
+	 * Opens a skill's page, as if its icon had been clicked.
+	 */
+	void select(Skill skill)
+	{
+		selected = skill;
+		buildGrid();
+		buildDetail();
+	}
+
 	void update(PlayerProfile profile)
 	{
 		this.profile = profile;

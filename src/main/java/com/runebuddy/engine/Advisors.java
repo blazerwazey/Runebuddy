@@ -17,6 +17,7 @@ public class Advisors
 	private final TimeEstimator estimator;
 	private final GoalPlanner goals;
 	private final SlayerAdvisor slayer;
+	private final NextActions next;
 
 	public Advisors(DataStore data)
 	{
@@ -27,5 +28,6 @@ public class Advisors
 		this.estimator = new TimeEstimator(engine);
 		this.goals = new GoalPlanner(data, estimator, content);
 		this.slayer = new SlayerAdvisor(data);
+		this.next = new NextActions(this);
 	}
 }

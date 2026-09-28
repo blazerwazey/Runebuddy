@@ -1,8 +1,6 @@
 package com.runebuddy.ui;
 
-import com.runebuddy.StylePreference;
 import com.runebuddy.data.GearCategory;
-import com.runebuddy.engine.GearAdvisor;
 import com.runebuddy.engine.GearSuggestion;
 import com.runebuddy.engine.PlayerProfile;
 import java.awt.BorderLayout;
@@ -89,13 +87,7 @@ class GearTab extends JPanel
 	 */
 	private GearCategory defaultCategory(PlayerProfile profile)
 	{
-		StylePreference preference = context.config().preferredStyle();
-		if (preference.getCategory() != null)
-		{
-			return preference.getCategory();
-		}
-
-		return profile.isLoggedIn() ? GearAdvisor.detectStyle(profile) : GearCategory.MELEE;
+		return context.combatStyle(profile);
 	}
 
 	private void buildSelector()

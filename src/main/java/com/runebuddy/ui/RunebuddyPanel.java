@@ -55,11 +55,36 @@ public class RunebuddyPanel extends PluginPanel
 		tabs.setBorder(UiUtils.padding(6, 6, 0, 6));
 
 		MaterialTab overviewTab = new MaterialTab("Plan", tabs, overview);
+		MaterialTab skillsTab = new MaterialTab("Skills", tabs, skills);
+		MaterialTab gearTab = new MaterialTab("Gear", tabs, gear);
+		MaterialTab doTab = new MaterialTab("Do", tabs, content);
 		tabs.addTab(overviewTab);
-		tabs.addTab(new MaterialTab("Skills", tabs, skills));
-		tabs.addTab(new MaterialTab("Gear", tabs, gear));
-		tabs.addTab(new MaterialTab("Do", tabs, content));
+		tabs.addTab(skillsTab);
+		tabs.addTab(gearTab);
+		tabs.addTab(doTab);
 		tabs.select(overviewTab);
+
+		context.setNavigator(action ->
+		{
+			switch (action.getDestination())
+			{
+				case SKILLS:
+					if (action.getSkill() != null)
+					{
+						skills.select(action.getSkill());
+					}
+					tabs.select(skillsTab);
+					break;
+				case GEAR:
+					tabs.select(gearTab);
+					break;
+				case DO:
+					tabs.select(doTab);
+					break;
+				default:
+					tabs.select(overviewTab);
+			}
+		});
 
 		add(tabs, BorderLayout.NORTH);
 		add(display, BorderLayout.CENTER);

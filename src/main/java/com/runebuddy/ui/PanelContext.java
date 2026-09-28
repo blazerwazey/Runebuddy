@@ -1,6 +1,8 @@
 package com.runebuddy.ui;
 
 import com.runebuddy.RunebuddyConfig;
+import com.runebuddy.StylePreference;
+import com.runebuddy.data.GearCategory;
 import com.runebuddy.engine.EngineSettings;
 import com.runebuddy.data.ContentCategory;
 import com.runebuddy.engine.ContentAdvisor;
@@ -13,10 +15,13 @@ import com.runebuddy.engine.Advisors;
 import com.runebuddy.engine.Goal;
 import com.runebuddy.engine.GoalPlanner;
 import com.runebuddy.engine.GoalStore;
+import com.runebuddy.engine.NextAction;
+import com.runebuddy.engine.NextActions;
 import com.runebuddy.engine.SlayerAdvisor;
 import java.awt.image.BufferedImage;
 import java.util.EnumSet;
 import java.util.Set;
+import java.util.function.Consumer;
 import javax.annotation.Nullable;
 import net.runelite.api.Skill;
 import net.runelite.client.game.ItemManager;
@@ -48,6 +53,13 @@ class PanelContext
 	 */
 	private final Runnable onGoalsChanged;
 
+	/**
+	 * Opens the tab behind a feed entry. Set once the panel has built its tabs.
+	 */
+	private Consumer<NextAction> navigator = action ->
+	{
+	};
+
 	PanelContext(Advisors advisors, GoalStore goalStore, ItemManager itemManager,
 				 SkillIconManager skillIcons, RunebuddyConfig config, Runnable onGoalsChanged)
 	{
@@ -57,6 +69,35 @@ class PanelContext
 		this.skillIcons = skillIcons;
 		this.config = config;
 		this.onGoalsChanged = onGoalsChanged;
+	}
+
+	void setNavigator(Consumer<NextAction> navigator)
+	{
+		this.navigator = navigator;
+	}
+
+	void navigate(NextAction action)
+	{
+		navigator.accept(action);
+	}
+
+	NextActions next()
+	{
+		return advisors.getNext();
+	}
+
+	/**
+	 * The combat style to advise on: pinned in the config, or read from the account.
+	 */
+	GearCategory combatStyle(PlayerProfile profile)
+	{
+		StylePreference preference = config.preferredStyle();
+		if (preference.getCategory() != null)
+		{
+			return preference.getCategory();
+		}
+
+		return profile.isLoggedIn() ? GearAdvisor.detectStyle(profile) : GearCategory.MELEE;
 	}
 
 	void setAdvisors(Advisors advisors)

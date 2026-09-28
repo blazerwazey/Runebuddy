@@ -2,9 +2,9 @@ package com.runebuddy.ui;
 
 import com.runebuddy.engine.Goal;
 import com.runebuddy.engine.GoalPlan;
-import com.runebuddy.engine.MethodScore;
+import com.runebuddy.engine.NextAction;
+import com.runebuddy.engine.NextActions;
 import com.runebuddy.engine.PlayerProfile;
-import com.runebuddy.engine.SlayerAdvice;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.util.List;
@@ -16,13 +16,11 @@ import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.components.PluginErrorPanel;
 
 /**
- * The "just tell me what to do" view: a snapshot of the account, then the strongest
- * suggestion from each of a handful of skills.
+ * The "just tell me what to do" view: a snapshot of the account, one feed of what to do
+ * next, and the player's goals.
  */
 class OverviewTab extends JPanel
 {
-	private static final int SUGGESTIONS = 6;
-
 	private final PanelContext context;
 	private final JPanel content = new JPanel();
 
@@ -54,40 +52,39 @@ class OverviewTab extends JPanel
 
 		content.add(header(profile));
 
-		SlayerAdvice slayer = context.slayer().advise(profile);
-		if (slayer != null)
-		{
-			content.add(new SlayerTaskCard(slayer));
-		}
+		List<Goal> goals = context.goals().goals();
+		List<NextAction> feed = context.next().build(profile, NextActions.Inputs.builder()
+			.goals(goals)
+			.style(context.combatStyle(profile))
+			.settings(context.settings())
+			.contentCategories(context.contentCategories())
+			.itemNames(context.itemNames(profile))
+			.prices(context.prices(profile))
+			.build());
 
-		addGoals(profile);
-
-		List<MethodScore> suggestions = context.engine()
-			.topOverall(profile, context.settings(), context.itemNames(profile), SUGGESTIONS);
-
-		if (suggestions.isEmpty())
+		content.add(sectionHeading("Next up"));
+		if (feed.isEmpty())
 		{
 			PluginErrorPanel error = new PluginErrorPanel();
-			error.setContent("Nothing to suggest",
-				"No training method in the data set fits this account yet.");
+			error.setContent("Nothing to suggest", "Nothing in the data set fits this account yet.");
 			content.add(error);
 		}
 		else
 		{
-			content.add(sectionHeading("Best use of your next hour"));
-			for (MethodScore score : suggestions)
+			for (NextAction action : feed)
 			{
-				content.add(new MethodCard(score, true));
+				content.add(new NextActionRow(action, () -> context.navigate(action)));
 			}
 		}
+
+		addGoals(profile, goals);
 
 		revalidate();
 		repaint();
 	}
 
-	private void addGoals(PlayerProfile profile)
+	private void addGoals(PlayerProfile profile, List<Goal> goals)
 	{
-		List<Goal> goals = context.goals().goals();
 		content.add(sectionHeading("Your goals"));
 
 		if (goals.isEmpty())
