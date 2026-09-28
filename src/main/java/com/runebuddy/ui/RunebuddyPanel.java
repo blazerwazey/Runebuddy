@@ -1,10 +1,9 @@
 package com.runebuddy.ui;
 
 import com.runebuddy.RunebuddyConfig;
-import com.runebuddy.engine.ContentAdvisor;
-import com.runebuddy.engine.GearAdvisor;
+import com.runebuddy.engine.Advisors;
+import com.runebuddy.engine.GoalStore;
 import com.runebuddy.engine.PlayerProfile;
-import com.runebuddy.engine.RecommendationEngine;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -30,16 +29,16 @@ public class RunebuddyPanel extends PluginPanel
 	private final GearTab gear;
 	private final ContentTab content;
 
+	private final PanelContext context;
+
 	private PlayerProfile profile = PlayerProfile.LOGGED_OUT;
 
-	public RunebuddyPanel(RecommendationEngine engine, GearAdvisor gearAdvisor,
-						  ContentAdvisor contentAdvisor, ItemManager itemManager,
+	public RunebuddyPanel(Advisors advisors, GoalStore goalStore, ItemManager itemManager,
 						  SkillIconManager skillIcons, RunebuddyConfig config)
 	{
 		super(false);
 
-		PanelContext context = new PanelContext(engine, gearAdvisor, contentAdvisor,
-			itemManager, skillIcons, config);
+		context = new PanelContext(advisors, goalStore, itemManager, skillIcons, config, this::refresh);
 
 		overview = new OverviewTab(context);
 		skills = new SkillsTab(context);
@@ -76,6 +75,18 @@ public class RunebuddyPanel extends PluginPanel
 		SwingUtilities.invokeLater(() ->
 		{
 			this.profile = profile;
+			refresh();
+		});
+	}
+
+	/**
+	 * Switches every tab to a new data set at once. Safe to call from any thread.
+	 */
+	public void setAdvisors(Advisors advisors)
+	{
+		SwingUtilities.invokeLater(() ->
+		{
+			context.setAdvisors(advisors);
 			refresh();
 		});
 	}

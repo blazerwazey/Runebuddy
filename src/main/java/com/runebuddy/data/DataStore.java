@@ -236,6 +236,40 @@ public class DataStore
 	}
 
 	/**
+	 * The activity with the given id, or null when the data has no such activity.
+	 */
+	@Nullable
+	public ContentActivity activity(String id)
+	{
+		for (ContentActivity activity : content)
+		{
+			if (activity.getId().equals(id))
+			{
+				return activity;
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * The first gear entry for an item id in any ladder, or null when no ladder lists it.
+	 */
+	@Nullable
+	public GearItem gearItem(int itemId)
+	{
+		for (GearItem item : gear)
+		{
+			if (item.getItemId() == itemId)
+			{
+				return item;
+			}
+		}
+
+		return null;
+	}
+
+	/**
 	 * Every method that trains the given skill, in data-file order.
 	 */
 	public List<TrainingMethod> methodsFor(Skill skill)

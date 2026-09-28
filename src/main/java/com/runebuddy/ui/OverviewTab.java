@@ -1,5 +1,7 @@
 package com.runebuddy.ui;
 
+import com.runebuddy.engine.Goal;
+import com.runebuddy.engine.GoalPlan;
 import com.runebuddy.engine.MethodScore;
 import com.runebuddy.engine.PlayerProfile;
 import java.awt.BorderLayout;
@@ -50,6 +52,7 @@ class OverviewTab extends JPanel
 		}
 
 		content.add(header(profile));
+		addGoals(profile);
 
 		List<MethodScore> suggestions = context.engine()
 			.topOverall(profile, context.settings(), context.itemNames(profile), SUGGESTIONS);
@@ -72,6 +75,32 @@ class OverviewTab extends JPanel
 
 		revalidate();
 		repaint();
+	}
+
+	private void addGoals(PlayerProfile profile)
+	{
+		List<Goal> goals = context.goals().goals();
+		content.add(sectionHeading("Your goals"));
+
+		if (goals.isEmpty())
+		{
+			JLabel hint = UiUtils.muted("<html><body style='width:170px'>Set a goal from the Skills tab,"
+				+ " or right-click anything on the Gear or Do tabs.</body></html>");
+			hint.setBorder(UiUtils.padding(0, 6, 4, 6));
+			JPanel wrap = new JPanel(new BorderLayout());
+			wrap.setBackground(ColorScheme.DARK_GRAY_COLOR);
+			wrap.add(hint, BorderLayout.CENTER);
+			UiUtils.capHeight(wrap);
+			content.add(wrap);
+			return;
+		}
+
+		List<GoalPlan> plans = context.goalPlanner()
+			.planAll(goals, profile, context.settings(), context.itemNames(profile));
+		for (GoalPlan plan : plans)
+		{
+			content.add(new GoalCard(plan, () -> context.removeGoal(plan.getGoal())));
+		}
 	}
 
 	private static JPanel header(PlayerProfile profile)

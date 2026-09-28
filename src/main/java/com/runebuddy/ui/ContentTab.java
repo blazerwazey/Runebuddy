@@ -107,7 +107,7 @@ class ContentTab extends JPanel
 				break;
 			}
 
-			content.add(new ContentCard(suggestion));
+			content.add(new ContentCard(suggestion, context));
 		}
 	}
 

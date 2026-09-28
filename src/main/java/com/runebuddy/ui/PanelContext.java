@@ -9,11 +9,14 @@ import com.runebuddy.engine.PlayerProfile;
 import com.runebuddy.engine.RecommendationEngine;
 import com.runebuddy.engine.RequirementReport;
 import com.runebuddy.engine.TimeEstimator;
+import com.runebuddy.engine.Advisors;
+import com.runebuddy.engine.Goal;
+import com.runebuddy.engine.GoalPlanner;
+import com.runebuddy.engine.GoalStore;
 import java.awt.image.BufferedImage;
 import java.util.EnumSet;
 import java.util.Set;
 import javax.annotation.Nullable;
-import lombok.RequiredArgsConstructor;
 import net.runelite.api.Skill;
 import net.runelite.client.game.ItemManager;
 import net.runelite.client.game.SkillIconManager;
@@ -27,44 +30,89 @@ import net.runelite.client.util.AsyncBufferedImage;
  * itself in when the sprite arrives — which is why the panel can render without hopping
  * back to the client thread.
  */
-@RequiredArgsConstructor
 class PanelContext
 {
-	private final RecommendationEngine engine;
-	private final GearAdvisor gearAdvisor;
-	private final ContentAdvisor contentAdvisor;
 	private final ItemManager itemManager;
 	private final SkillIconManager skillIcons;
 	private final RunebuddyConfig config;
+	private final GoalStore goalStore;
 
-	private TimeEstimator estimator;
+	/**
+	 * Replaced whole when the data changes. Only read and written on the EDT.
+	 */
+	private Advisors advisors;
+
+	/**
+	 * Called after a goal is added or removed, so every tab can reflect it.
+	 */
+	private final Runnable onGoalsChanged;
+
+	PanelContext(Advisors advisors, GoalStore goalStore, ItemManager itemManager,
+				 SkillIconManager skillIcons, RunebuddyConfig config, Runnable onGoalsChanged)
+	{
+		this.advisors = advisors;
+		this.goalStore = goalStore;
+		this.itemManager = itemManager;
+		this.skillIcons = skillIcons;
+		this.config = config;
+		this.onGoalsChanged = onGoalsChanged;
+	}
+
+	void setAdvisors(Advisors advisors)
+	{
+		this.advisors = advisors;
+	}
 
 	RecommendationEngine engine()
 	{
-		return engine;
+		return advisors.getEngine();
 	}
 
-	/**
-	 * Only ever called on the EDT, so the lazy creation needs no locking.
-	 */
 	TimeEstimator estimator()
 	{
-		if (estimator == null)
-		{
-			estimator = new TimeEstimator(engine);
-		}
+		return advisors.getEstimator();
+	}
 
-		return estimator;
+	GoalPlanner goalPlanner()
+	{
+		return advisors.getGoals();
 	}
 
 	GearAdvisor gear()
 	{
-		return gearAdvisor;
+		return advisors.getGear();
 	}
 
 	ContentAdvisor content()
 	{
-		return contentAdvisor;
+		return advisors.getContent();
+	}
+
+	GoalStore goals()
+	{
+		return goalStore;
+	}
+
+	/**
+	 * Adds a goal and repaints.
+	 *
+	 * @return false when there is no account to save against or the list is full
+	 */
+	boolean addGoal(Goal goal)
+	{
+		boolean added = goalStore.add(goal);
+		if (added)
+		{
+			onGoalsChanged.run();
+		}
+
+		return added;
+	}
+
+	void removeGoal(Goal goal)
+	{
+		goalStore.remove(goal);
+		onGoalsChanged.run();
 	}
 
 	/**

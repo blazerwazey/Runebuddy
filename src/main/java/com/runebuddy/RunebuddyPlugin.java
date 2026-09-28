@@ -3,11 +3,10 @@ package com.runebuddy;
 import com.google.gson.Gson;
 import com.google.inject.Provides;
 import com.runebuddy.data.DataStore;
-import com.runebuddy.engine.ContentAdvisor;
-import com.runebuddy.engine.GearAdvisor;
+import com.runebuddy.engine.Advisors;
+import com.runebuddy.engine.GoalStore;
 import com.runebuddy.engine.PlayerProfile;
 import com.runebuddy.engine.ProfileTracker;
-import com.runebuddy.engine.RecommendationEngine;
 import com.runebuddy.ui.RunebuddyPanel;
 import java.awt.image.BufferedImage;
 import javax.inject.Inject;
@@ -68,6 +67,9 @@ public class RunebuddyPlugin extends Plugin
 	@Inject
 	private Gson gson;
 
+	@Inject
+	private ConfigManager configManager;
+
 	private RunebuddyPanel panel;
 	private NavigationButton navigationButton;
 
@@ -93,9 +95,8 @@ public class RunebuddyPlugin extends Plugin
 		profileTracker.prime(data);
 
 		panel = new RunebuddyPanel(
-			new RecommendationEngine(data),
-			new GearAdvisor(data),
-			new ContentAdvisor(data),
+			new Advisors(data),
+			new GoalStore(configManager, gson),
 			itemManager,
 			skillIconManager,
 			config);
@@ -186,7 +187,11 @@ public class RunebuddyPlugin extends Plugin
 	@Subscribe
 	public void onConfigChanged(ConfigChanged event)
 	{
-		if (RunebuddyConfig.GROUP.equals(event.getGroup()) && panel != null)
+		// The plugin's own saves (the bank snapshot, goals) land in the same group but
+		// are not preferences; goal edits repaint themselves.
+		if (RunebuddyConfig.GROUP.equals(event.getGroup()) && panel != null
+			&& !ProfileTracker.BANK_SNAPSHOT_KEY.equals(event.getKey())
+			&& !GoalStore.GOALS_KEY.equals(event.getKey()))
 		{
 			// The weights changed rather than the account, so re-rank what we already
 			// have instead of waiting for the next tick.

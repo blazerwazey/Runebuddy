@@ -54,7 +54,7 @@ import net.runelite.client.game.ItemStats;
 @Singleton
 public class ProfileTracker
 {
-	private static final String BANK_SNAPSHOT_KEY = "bankSnapshot";
+	public static final String BANK_SNAPSHOT_KEY = "bankSnapshot";
 
 	private static final Type BANK_SNAPSHOT_TYPE = new TypeToken<Map<Integer, Integer>>()
 	{

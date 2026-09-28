@@ -1,6 +1,7 @@
 package com.runebuddy.ui;
 
 import com.runebuddy.data.Skills;
+import com.runebuddy.engine.Goal;
 import com.runebuddy.engine.MethodScore;
 import com.runebuddy.engine.PlayerProfile;
 import com.runebuddy.engine.RouteOption;
@@ -187,19 +188,43 @@ class SkillsTab extends JPanel
 		List<RouteOption> options = context.estimator().alternatives(
 			selected, profile, target, context.settings(), context.itemNames(profile));
 
+		Integer goalLevel = context.goals().skillTarget(selected);
+		boolean isGoal = goalLevel != null && goalLevel == target;
+		Skill skill = selected;
+
 		return new RouteComparison(options, level, target, chosen ->
 		{
-			targets.put(selected, chosen);
+			targets.put(skill, chosen);
 			buildDetail();
+		}, isGoal, () ->
+		{
+			if (isGoal)
+			{
+				context.removeGoal(Goal.skill(skill, target));
+			}
+			else
+			{
+				context.addGoal(Goal.skill(skill, target));
+			}
 		});
 	}
 
+	/**
+	 * The level to plan to: whatever the spinner was set to this session, else the
+	 * player's goal for the skill, else a few levels on.
+	 */
 	private int targetFor(Skill skill, int level)
 	{
 		Integer chosen = targets.get(skill);
 		if (chosen != null && chosen > level)
 		{
 			return chosen;
+		}
+
+		Integer goal = context.goals().skillTarget(skill);
+		if (goal != null && goal > level)
+		{
+			return goal;
 		}
 
 		return Math.min(level + DEFAULT_LOOKAHEAD, TimeEstimator.MAX_LEVEL);

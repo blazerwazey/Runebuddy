@@ -86,7 +86,7 @@ public class ContentAdvisor
 	/**
 	 * Whether the account can ever do this, regardless of level.
 	 */
-	private boolean isPossible(ContentActivity activity, PlayerProfile profile)
+	boolean isPossible(ContentActivity activity, PlayerProfile profile)
 	{
 		if (activity.isMembers() && !profile.isMembers())
 		{
@@ -96,7 +96,7 @@ public class ContentAdvisor
 		return activity.isIronmanFriendly() || !profile.isIronman();
 	}
 
-	private ContentSuggestion evaluate(ContentActivity activity, PlayerProfile profile,
+	ContentSuggestion evaluate(ContentActivity activity, PlayerProfile profile,
 									   @Nullable RequirementReport.ItemNameResolver itemNames)
 	{
 		RequirementReport report = RequirementReport.check(activity.getRequirements(), profile, itemNames);

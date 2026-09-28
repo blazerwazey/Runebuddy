@@ -2,11 +2,14 @@ package com.runebuddy.ui;
 
 import com.runebuddy.data.ContentActivity;
 import com.runebuddy.engine.ContentSuggestion;
+import com.runebuddy.engine.Goal;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Collections;
+import java.util.Map;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
@@ -19,7 +22,7 @@ import net.runelite.client.util.LinkBrowser;
  */
 class ContentCard extends JPanel
 {
-	ContentCard(ContentSuggestion suggestion)
+	ContentCard(ContentSuggestion suggestion, PanelContext context)
 	{
 		ContentActivity activity = suggestion.getActivity();
 
@@ -36,6 +39,12 @@ class ContentCard extends JPanel
 		JLabel name = UiUtils.title(UiUtils.ellipsise(activity.getName(), 30));
 		name.setToolTipText(activity.getName());
 		body.add(name);
+
+		Map<String, Goal> goals = Collections.singletonMap(activity.getName(), Goal.content(activity.getId()));
+		if (GoalMenu.anySet(context, goals))
+		{
+			body.add(goalMarker());
+		}
 
 		// The rewards are the reason to go, so they lead.
 		JLabel rewards = UiUtils.body("<html><body style='width:150px'>"
@@ -69,6 +78,14 @@ class ContentCard extends JPanel
 
 		add(body, BorderLayout.CENTER);
 		UiUtils.capHeight(this);
+		GoalMenu.attach(this, context, goals);
+	}
+
+	static JLabel goalMarker()
+	{
+		JLabel marker = UiUtils.body("★ Your goal");
+		marker.setForeground(UiUtils.PENDING);
+		return marker;
 	}
 
 	private static JLabel wikiLink(String url)

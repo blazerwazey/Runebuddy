@@ -24,7 +24,7 @@ public class RouteComparisonTest
 		{
 			RouteComparison panel = new RouteComparison(
 				estimator.alternatives(skill, profile, 50, EngineSettings.defaults(), null),
-				40, 50, target -> { });
+				40, 50, target -> { }, false, () -> { });
 
 			assertTrue(skill + " should render at least the header", panel.getComponentCount() >= 2);
 		}

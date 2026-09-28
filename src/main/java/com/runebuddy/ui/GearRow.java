@@ -2,9 +2,12 @@ package com.runebuddy.ui;
 
 import com.runebuddy.data.GearItem;
 import com.runebuddy.engine.GearSuggestion;
+import com.runebuddy.engine.Goal;
 import com.runebuddy.engine.PlayerProfile;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import javax.annotation.Nullable;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -41,6 +44,21 @@ class GearRow extends JPanel
 		body.setBackground(ColorScheme.DARKER_GRAY_COLOR);
 
 		body.add(UiUtils.title(suggestion.label()));
+
+		Map<String, Goal> goals = new LinkedHashMap<>();
+		for (GearItem item : new GearItem[]{suggestion.getNext(), suggestion.getGoal(), suggestion.getLocked()})
+		{
+			if (item != null && !profile.owns(item.getItemId()))
+			{
+				goals.putIfAbsent(item.getName(), Goal.gear(item.getItemId()));
+			}
+		}
+
+		if (GoalMenu.anySet(context, goals))
+		{
+			body.add(ContentCard.goalMarker());
+		}
+
 		body.add(currentLine(suggestion));
 
 		if (suggestion.getNext() != null)
@@ -75,6 +93,7 @@ class GearRow extends JPanel
 
 		add(body, BorderLayout.CENTER);
 		UiUtils.capHeight(this);
+		GoalMenu.attach(this, context, goals);
 	}
 
 	/**

@@ -6,6 +6,9 @@ import com.runebuddy.engine.RouteOption;
 import com.runebuddy.engine.RouteStyle;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.IntConsumer;
@@ -28,8 +31,11 @@ class RouteComparison extends JPanel
 	/**
 	 * @param currentLevel   the player's level, so the target cannot go below it
 	 * @param onTargetChange called on the EDT with the new target level
+	 * @param isGoal         true when the target is the player's saved goal for the skill
+	 * @param onToggleGoal   saves the target as a goal, or clears it when it is one
 	 */
-	RouteComparison(List<RouteOption> options, int currentLevel, int target, IntConsumer onTargetChange)
+	RouteComparison(List<RouteOption> options, int currentLevel, int target, IntConsumer onTargetChange,
+					boolean isGoal, Runnable onToggleGoal)
 	{
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setBackground(ColorScheme.DARKER_GRAY_COLOR);
@@ -38,6 +44,7 @@ class RouteComparison extends JPanel
 			UiUtils.padding(6, 6, 6, 6)));
 
 		add(header(currentLevel, target, onTargetChange));
+		add(goalLink(target, isGoal, onToggleGoal));
 
 		boolean anyLegs = false;
 		for (RouteOption option : options)
@@ -90,6 +97,41 @@ class RouteComparison extends JPanel
 
 		UiUtils.capHeight(header);
 		return header;
+	}
+
+	private static JPanel goalLink(int target, boolean isGoal, Runnable onToggleGoal)
+	{
+		JLabel link = UiUtils.body(isGoal ? "★ Your goal. Click to clear" : "Set " + target + " as a goal");
+		Color normal = isGoal ? UiUtils.PENDING : ColorScheme.BRAND_ORANGE;
+		link.setForeground(normal);
+		link.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		link.addMouseListener(new MouseAdapter()
+		{
+			@Override
+			public void mouseClicked(MouseEvent e)
+			{
+				onToggleGoal.run();
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e)
+			{
+				link.setForeground(Color.WHITE);
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e)
+			{
+				link.setForeground(normal);
+			}
+		});
+
+		JPanel wrap = new JPanel(new BorderLayout());
+		wrap.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+		wrap.setBorder(UiUtils.padding(2, 0, 0, 0));
+		wrap.add(link, BorderLayout.CENTER);
+		UiUtils.capHeight(wrap);
+		return wrap;
 	}
 
 	private static JPanel row(RouteOption option)
