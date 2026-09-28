@@ -111,6 +111,17 @@ public class PlayerProfile
 	private final Map<Integer, EquipmentStats> itemStats;
 
 	/**
+	 * The current Slayer assignment, or null when there is none.
+	 */
+	@Nullable
+	private final SlayerTask slayerTask;
+
+	/**
+	 * Slayer reward points, which decide whether a skip is affordable.
+	 */
+	private final int slayerPoints;
+
+	/**
 	 * Real level in a skill, defaulting to whatever that skill starts at.
 	 */
 	public int level(Skill skill)

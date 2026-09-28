@@ -36,6 +36,7 @@ public class DataStore
 	private static final String METHODS_RESOURCE = "/com/runebuddy/training_methods.json";
 	private static final String GEAR_RESOURCE = "/com/runebuddy/gear.json";
 	private static final String CONTENT_RESOURCE = "/com/runebuddy/content.json";
+	private static final String SLAYER_RESOURCE = "/com/runebuddy/slayer.json";
 
 	private static final Type METHOD_LIST = new TypeToken<List<TrainingMethod>>()
 	{
@@ -46,6 +47,10 @@ public class DataStore
 	}.getType();
 
 	private static final Type CONTENT_LIST = new TypeToken<List<ContentActivity>>()
+	{
+	}.getType();
+
+	private static final Type SLAYER_LIST = new TypeToken<List<SlayerTaskInfo>>()
 	{
 	}.getType();
 
@@ -67,6 +72,11 @@ public class DataStore
 	@Getter
 	private final List<ContentActivity> content;
 
+	/**
+	 * Slayer advice, keyed by lower-cased task name.
+	 */
+	private final Map<String, SlayerTaskInfo> slayerByTask;
+
 	private final Map<Skill, List<TrainingMethod>> methodsBySkill;
 	private final Map<GearCategory, Map<EquipSlot, List<GearItem>>> gearByCategory;
 	private final Map<Skill, List<GearItem>> toolsBySkill;
@@ -78,8 +88,10 @@ public class DataStore
 	private final List<String> warnings;
 
 	private DataStore(List<TrainingMethod> methods, List<GearItem> gear,
-					  List<ContentActivity> content, List<String> warnings)
+					  List<ContentActivity> content, Map<String, SlayerTaskInfo> slayer,
+					  List<String> warnings)
 	{
+		this.slayerByTask = Collections.unmodifiableMap(slayer);
 		this.methods = Collections.unmodifiableList(methods);
 		this.gear = Collections.unmodifiableList(gear);
 		this.content = Collections.unmodifiableList(content);
@@ -96,16 +108,11 @@ public class DataStore
 	 */
 	public static DataStore load(Gson gson)
 	{
-		return load(gson, METHODS_RESOURCE, GEAR_RESOURCE, CONTENT_RESOURCE);
-	}
-
-	static DataStore load(Gson gson, String methodsResource, String gearResource,
-						  String contentResource)
-	{
 		return fromJson(gson,
-			readResource(methodsResource),
-			readResource(gearResource),
-			readResource(contentResource));
+			readResource(METHODS_RESOURCE),
+			readResource(GEAR_RESOURCE),
+			readResource(CONTENT_RESOURCE),
+			readResource(SLAYER_RESOURCE));
 	}
 
 	/**
@@ -114,11 +121,13 @@ public class DataStore
 	 *
 	 * @throws IllegalStateException if any file cannot be parsed or does not validate
 	 */
-	public static DataStore fromJson(Gson gson, String methodsJson, String gearJson, String contentJson)
+	public static DataStore fromJson(Gson gson, String methodsJson, String gearJson, String contentJson,
+									 String slayerJson)
 	{
 		List<TrainingMethod> methods = parse(gson, methodsJson, METHOD_LIST, "training methods");
 		List<GearItem> gear = parse(gson, gearJson, GEAR_LIST, "gear");
 		List<ContentActivity> content = parse(gson, contentJson, CONTENT_LIST, "content");
+		List<SlayerTaskInfo> slayer = parse(gson, slayerJson, SLAYER_LIST, "slayer");
 
 		List<String> warnings = new ArrayList<>();
 
@@ -156,12 +165,22 @@ public class DataStore
 			}
 		}
 
+		Map<String, SlayerTaskInfo> slayerByTask = new LinkedHashMap<>();
+		for (SlayerTaskInfo info : slayer)
+		{
+			info.resolve(warnings::add);
+			if (slayerByTask.put(slayerKey(info.getTask()), info) != null)
+			{
+				throw new IllegalStateException("duplicate slayer task: " + info.getTask());
+			}
+		}
+
 		for (String warning : warnings)
 		{
 			log.warn("Runebuddy data: {}", warning);
 		}
 
-		return new DataStore(methods, gear, content, warnings);
+		return new DataStore(methods, gear, content, slayerByTask, warnings);
 	}
 
 	private static String readResource(String resource)
@@ -233,6 +252,28 @@ public class DataStore
 		}
 
 		return Collections.unmodifiableList(matching);
+	}
+
+	/**
+	 * Advice for a Slayer task by the name the game gives it, or null when there is none.
+	 */
+	@Nullable
+	public SlayerTaskInfo slayerTask(String taskName)
+	{
+		return taskName == null ? null : slayerByTask.get(slayerKey(taskName));
+	}
+
+	/**
+	 * Every Slayer task with advice, in data-file order.
+	 */
+	public java.util.Collection<SlayerTaskInfo> getSlayerTasks()
+	{
+		return slayerByTask.values();
+	}
+
+	private static String slayerKey(String taskName)
+	{
+		return taskName.trim().toLowerCase(java.util.Locale.ROOT);
 	}
 
 	/**

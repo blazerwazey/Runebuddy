@@ -1,0 +1,423 @@
+[
+  {
+    "task": "Abyssal demons",
+    "locations": [
+      "Catacombs of Kourend",
+      "Abyssal Sire (counts as the task)"
+    ],
+    "style": "MELEE",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Steady XP and whip drops",
+    "notes": "Cannons cannot be used in the Catacombs.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Abyssal_demon"
+  },
+  {
+    "task": "Nechryael",
+    "locations": [
+      "Catacombs of Kourend (greater nechryael)",
+      "Slayer Tower"
+    ],
+    "style": "MELEE",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Good XP; bursting works in the Slayer Tower",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Nechryael"
+  },
+  {
+    "task": "Dust devils",
+    "locations": [
+      "Catacombs of Kourend",
+      "Smoke Dungeon"
+    ],
+    "style": "MAGIC",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Burst or barrage them in groups for fast XP",
+    "notes": "Needs a facemask or Slayer helmet.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Dust_devil"
+  },
+  {
+    "task": "Smoke devils",
+    "locations": [
+      "Smoke Devil Dungeon",
+      "Thermonuclear smoke devil (counts as the task)"
+    ],
+    "style": "MAGIC",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Burst or barrage for fast XP",
+    "notes": "Needs a facemask or Slayer helmet.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Smoke_devil"
+  },
+  {
+    "task": "Gargoyles",
+    "locations": [
+      "Slayer Tower"
+    ],
+    "style": "MELEE",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Reliable alchables and the granite maul",
+    "notes": "Finish them with a rock hammer, or get the auto-finish unlock.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Gargoyle"
+  },
+  {
+    "task": "Cave kraken",
+    "locations": [
+      "Kraken Cove",
+      "Kraken boss (counts as the task)"
+    ],
+    "style": "MAGIC",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Very AFK, especially as the Kraken boss",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Cave_kraken"
+  },
+  {
+    "task": "Hellhounds",
+    "locations": [
+      "Taverley Dungeon",
+      "Cerberus (counts as the task)"
+    ],
+    "style": "MELEE",
+    "cannonable": true,
+    "verdict": "DO",
+    "why": "Fast XP with a cannon",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Hellhound"
+  },
+  {
+    "task": "Greater demons",
+    "locations": [
+      "Chasm of Fire",
+      "Catacombs of Kourend"
+    ],
+    "style": "MELEE",
+    "cannonable": true,
+    "verdict": "DO",
+    "why": "Demonbane weapons make them quick",
+    "notes": "Cannon works in the Chasm of Fire.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Greater_demon"
+  },
+  {
+    "task": "Black demons",
+    "locations": [
+      "Taverley Dungeon",
+      "Catacombs of Kourend",
+      "Demonic gorillas (counts as the task)"
+    ],
+    "style": "MELEE",
+    "cannonable": true,
+    "verdict": "DO",
+    "why": "Good XP with a cannon or demonbane",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Black_demon"
+  },
+  {
+    "task": "Bloodveld",
+    "locations": [
+      "Catacombs of Kourend (mutated)",
+      "Slayer Tower"
+    ],
+    "style": "MELEE",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Low defence, fast kills",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Bloodveld"
+  },
+  {
+    "task": "Aberrant spectres",
+    "locations": [
+      "Slayer Tower",
+      "Stronghold Slayer Cave"
+    ],
+    "style": "MAGIC",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Herb drops make them profitable",
+    "notes": "Needs a nose peg or Slayer helmet.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Aberrant_spectre"
+  },
+  {
+    "task": "Dagannoth",
+    "locations": [
+      "Lighthouse basement",
+      "Catacombs of Kourend",
+      "Dagannoth Kings (count as the task)"
+    ],
+    "style": "MELEE",
+    "cannonable": true,
+    "verdict": "DO",
+    "why": "Fast XP with a cannon at the Lighthouse",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Dagannoth"
+  },
+  {
+    "task": "Kalphite",
+    "locations": [
+      "Kalphite Cave",
+      "Kalphite Queen (counts as the task)"
+    ],
+    "style": "MELEE",
+    "cannonable": true,
+    "verdict": "DO",
+    "why": "Very fast with a cannon",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Kalphite"
+  },
+  {
+    "task": "Trolls",
+    "locations": [
+      "Death Plateau",
+      "Troll Stronghold area"
+    ],
+    "style": "MELEE",
+    "cannonable": true,
+    "verdict": "DO",
+    "why": "Fast with a cannon",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Troll"
+  },
+  {
+    "task": "Fire giants",
+    "locations": [
+      "Catacombs of Kourend",
+      "Waterfall Dungeon"
+    ],
+    "style": "MELEE",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Easy, steady XP",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Fire_giant"
+  },
+  {
+    "task": "Wyrms",
+    "locations": [
+      "Karuulm Slayer Dungeon"
+    ],
+    "style": "MAGIC",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Good XP and dragon sword drops",
+    "notes": "Needs boots of stone in the dungeon.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Wyrm"
+  },
+  {
+    "task": "Drakes",
+    "locations": [
+      "Karuulm Slayer Dungeon"
+    ],
+    "style": "RANGED",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Slow, but decent drops",
+    "notes": "Needs boots of stone in the dungeon.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Drake"
+  },
+  {
+    "task": "Hydras",
+    "locations": [
+      "Karuulm Slayer Dungeon",
+      "Alchemical Hydra (counts as the task)"
+    ],
+    "style": "RANGED",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Very profitable, especially as the Alchemical Hydra",
+    "notes": "Needs boots of stone in the dungeon.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Hydra"
+  },
+  {
+    "task": "Kurask",
+    "locations": [
+      "Fremennik Slayer Dungeon"
+    ],
+    "style": "MELEE",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Solid XP",
+    "notes": "Needs a leaf-bladed weapon or broad ammunition.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Kurask"
+  },
+  {
+    "task": "Dark beasts",
+    "locations": [
+      "Mourner Tunnels",
+      "Iorwerth Dungeon"
+    ],
+    "style": "RANGED",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Dark bow drops",
+    "notes": "Needs Mourning's End Part II.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Dark_beast"
+  },
+  {
+    "task": "Adamant dragons",
+    "locations": [
+      "Lithkren Vault"
+    ],
+    "style": "RANGED",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Profitable",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Adamant_dragon"
+  },
+  {
+    "task": "Rune dragons",
+    "locations": [
+      "Lithkren Vault"
+    ],
+    "style": "RANGED",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Profitable",
+    "notes": "Needs insulated boots.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Rune_dragon"
+  },
+  {
+    "task": "Blue dragons",
+    "locations": [
+      "Taverley Dungeon",
+      "Vorkath (counts as the task)"
+    ],
+    "style": "RANGED",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Worth doing as Vorkath if you have Dragon Slayer II",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Blue_dragon"
+  },
+  {
+    "task": "Lizardmen",
+    "locations": [
+      "Lizardman Canyon",
+      "Molch (shamans)"
+    ],
+    "style": "RANGED",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "Lizardman shamans drop the dragon warhammer",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Lizardman"
+  },
+  {
+    "task": "TzHaar",
+    "locations": [
+      "Mor Ul Rek",
+      "Fight Caves or the Inferno"
+    ],
+    "style": "RANGED",
+    "cannonable": false,
+    "verdict": "DO",
+    "why": "The only way to take the Inferno on task",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/TzHaar"
+  },
+  {
+    "task": "Spiritual creatures",
+    "locations": [
+      "God Wars Dungeon"
+    ],
+    "style": "MELEE",
+    "cannonable": false,
+    "verdict": "BLOCK",
+    "why": "Slow and needs god items to be left alone",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Spiritual_creature"
+  },
+  {
+    "task": "Aviansie",
+    "locations": [
+      "God Wars Dungeon (Armadyl)"
+    ],
+    "style": "RANGED",
+    "cannonable": false,
+    "verdict": "SKIP",
+    "why": "Slow XP for the effort",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Aviansie"
+  },
+  {
+    "task": "Waterfiends",
+    "locations": [
+      "Ancient Cavern"
+    ],
+    "style": "RANGED",
+    "cannonable": false,
+    "verdict": "SKIP",
+    "why": "Hard to hit and slow",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Waterfiend"
+  },
+  {
+    "task": "Elves",
+    "locations": [
+      "Lletya",
+      "Prifddinas"
+    ],
+    "style": "MELEE",
+    "cannonable": false,
+    "verdict": "SKIP",
+    "why": "Hit hard for middling XP",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Elf"
+  },
+  {
+    "task": "Mutated zygomites",
+    "locations": [
+      "Zanaris",
+      "Fossil Island"
+    ],
+    "style": "MELEE",
+    "cannonable": false,
+    "verdict": "SKIP",
+    "why": "Slow, and needs fungicide",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Mutated_zygomite"
+  },
+  {
+    "task": "Skeletal wyverns",
+    "locations": [
+      "Asgarnian Ice Dungeon"
+    ],
+    "style": "MELEE",
+    "cannonable": false,
+    "verdict": "SKIP",
+    "why": "Dangerous and slow",
+    "notes": "Needs an elemental, mind or dragonfire ward shield.",
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Skeletal_wyvern"
+  },
+  {
+    "task": "Steel dragons",
+    "locations": [
+      "Brimhaven Dungeon",
+      "Catacombs of Kourend"
+    ],
+    "style": "MELEE",
+    "cannonable": false,
+    "verdict": "SKIP",
+    "why": "Long and dangerous for the reward",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Steel_dragon"
+  },
+  {
+    "task": "Iron dragons",
+    "locations": [
+      "Brimhaven Dungeon",
+      "Catacombs of Kourend"
+    ],
+    "style": "MELEE",
+    "cannonable": false,
+    "verdict": "SKIP",
+    "why": "Long and dangerous for the reward",
+    "notes": null,
+    "wikiUrl": "https://oldschool.runescape.wiki/w/Iron_dragon"
+  }
+]

@@ -6,6 +6,7 @@ import com.runebuddy.engine.MethodScore;
 import com.runebuddy.engine.PlayerProfile;
 import com.runebuddy.engine.RouteOption;
 import com.runebuddy.engine.SkillAdvice;
+import com.runebuddy.engine.SlayerAdvice;
 import com.runebuddy.engine.TimeEstimator;
 import java.awt.BorderLayout;
 import java.awt.Cursor;
@@ -146,6 +147,15 @@ class SkillsTab extends JPanel
 			.adviceFor(selected, profile, context.settings(), context.itemNames(profile));
 
 		detail.add(heading(Skills.displayName(selected) + " — level " + advice.getLevel()));
+
+		if (selected == Skill.SLAYER)
+		{
+			SlayerAdvice slayer = context.slayer().advise(profile);
+			if (slayer != null)
+			{
+				detail.add(new SlayerTaskCard(slayer));
+			}
+		}
 
 		if (advice.getLevel() < TimeEstimator.MAX_LEVEL)
 		{

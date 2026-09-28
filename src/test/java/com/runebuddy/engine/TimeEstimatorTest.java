@@ -23,7 +23,7 @@ public class TimeEstimatorTest
 	 */
 	private static DataStore data(String... methods)
 	{
-		return DataStore.fromJson(new Gson(), "[" + String.join(",", methods) + "]", "[]", "[]");
+		return DataStore.fromJson(new Gson(), "[" + String.join(",", methods) + "]", "[]", "[]", "[]");
 	}
 
 	private static String method(String id, int minLevel, String curve, int gpPerHour, String effort)

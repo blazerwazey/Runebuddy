@@ -4,6 +4,7 @@ import com.runebuddy.engine.Goal;
 import com.runebuddy.engine.GoalPlan;
 import com.runebuddy.engine.MethodScore;
 import com.runebuddy.engine.PlayerProfile;
+import com.runebuddy.engine.SlayerAdvice;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.util.List;
@@ -52,6 +53,13 @@ class OverviewTab extends JPanel
 		}
 
 		content.add(header(profile));
+
+		SlayerAdvice slayer = context.slayer().advise(profile);
+		if (slayer != null)
+		{
+			content.add(new SlayerTaskCard(slayer));
+		}
+
 		addGoals(profile);
 
 		List<MethodScore> suggestions = context.engine()

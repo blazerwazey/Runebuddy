@@ -16,8 +16,10 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import javax.annotation.Nullable;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
@@ -31,6 +33,7 @@ import net.runelite.api.Quest;
 import net.runelite.api.QuestState;
 import net.runelite.api.Skill;
 import net.runelite.api.WorldType;
+import net.runelite.api.gameval.DBTableID;
 import net.runelite.api.gameval.InventoryID;
 import net.runelite.api.gameval.ItemID;
 import net.runelite.api.gameval.VarPlayerID;
@@ -54,6 +57,11 @@ import net.runelite.client.game.ItemStats;
 @Singleton
 public class ProfileTracker
 {
+	/**
+	 * The Slayer task id meaning "a boss", resolved through a sub-table.
+	 */
+	private static final int BOSS_TASK_ID = 98;
+
 	public static final String BANK_SNAPSHOT_KEY = "bankSnapshot";
 
 	private static final Type BANK_SNAPSHOT_TYPE = new TypeToken<Map<Integer, Integer>>()
@@ -224,6 +232,9 @@ public class ProfileTracker
 			builder.xp(skill, client.getSkillExperience(skill));
 		}
 
+		builder.slayerTask(readSlayerTask());
+		builder.slayerPoints(client.getVarbitValue(VarbitID.SLAYER_POINTS));
+
 		for (Quest quest : questsOfInterest)
 		{
 			if (quest.getState(client) == QuestState.FINISHED)
@@ -297,6 +308,91 @@ public class ProfileTracker
 				log.debug("Runebuddy: could not resolve item {}", itemId, e);
 			}
 		}
+	}
+
+	/**
+	 * Reads the current Slayer task the same way RuneLite's own Slayer plugin does: the
+	 * task id is looked up in the game's database tables rather than a hand-kept list,
+	 * so a new task is named correctly the day it ships.
+	 */
+	@Nullable
+	private SlayerTask readSlayerTask()
+	{
+		int remaining = client.getVarpValue(VarPlayerID.SLAYER_COUNT);
+		if (remaining <= 0)
+		{
+			return null;
+		}
+
+		try
+		{
+			int taskId = client.getVarpValue(VarPlayerID.SLAYER_TARGET);
+			int taskRow;
+
+			if (taskId == BOSS_TASK_ID)
+			{
+				List<Integer> bossRows = client.getDBRowsByValue(DBTableID.SlayerTaskSublist.ID,
+					DBTableID.SlayerTaskSublist.COL_TASK_SUBTABLE_ID, 0,
+					client.getVarbitValue(VarbitID.SLAYER_TARGET_BOSSID));
+				if (bossRows.isEmpty())
+				{
+					return null;
+				}
+
+				taskRow = (Integer) client.getDBTableField(bossRows.get(0), DBTableID.SlayerTaskSublist.COL_TASK, 0)[0];
+			}
+			else
+			{
+				List<Integer> taskRows = client.getDBRowsByValue(DBTableID.SlayerTask.ID,
+					DBTableID.SlayerTask.COL_ID, 0, taskId);
+				if (taskRows.isEmpty())
+				{
+					return null;
+				}
+
+				taskRow = taskRows.get(0);
+			}
+
+			String name = (String) client.getDBTableField(taskRow, DBTableID.SlayerTask.COL_NAME_UPPERCASE, 0)[0];
+			if (name == null || name.isEmpty())
+			{
+				return null;
+			}
+
+			String area = null;
+			int areaId = client.getVarpValue(VarPlayerID.SLAYER_AREA);
+			if (areaId > 0)
+			{
+				List<Integer> areaRows = client.getDBRowsByValue(DBTableID.SlayerArea.ID,
+					DBTableID.SlayerArea.COL_AREA_ID, 0, areaId);
+				if (!areaRows.isEmpty())
+				{
+					area = (String) client.getDBTableField(areaRows.get(0),
+						DBTableID.SlayerArea.COL_AREA_NAME_IN_HELPER, 0)[0];
+				}
+			}
+
+			int assigned = client.getVarpValue(VarPlayerID.SLAYER_COUNT_ORIGINAL);
+			if (client.getVarbitValue(VarbitID.SLAYER_MODIFIER_ID) == 2)
+			{
+				int modifier = client.getVarbitValue(VarbitID.SLAYER_MODIFIER_VALUE);
+				assigned += client.getVarbitValue(VarbitID.SLAYER_MODIFIER_NEGATIVE) == 1 ? -modifier : modifier;
+			}
+
+			return new SlayerTask(capitalise(name), remaining, Math.max(assigned, remaining), area);
+		}
+		catch (RuntimeException e)
+		{
+			// The tables are game data we do not control. A shape change should cost the
+			// Slayer card, not the whole snapshot.
+			log.debug("Runebuddy: could not read the Slayer task", e);
+			return null;
+		}
+	}
+
+	private static String capitalise(String text)
+	{
+		return Character.toUpperCase(text.charAt(0)) + text.substring(1);
 	}
 
 	/**

@@ -13,6 +13,7 @@ import com.runebuddy.engine.Advisors;
 import com.runebuddy.engine.Goal;
 import com.runebuddy.engine.GoalPlanner;
 import com.runebuddy.engine.GoalStore;
+import com.runebuddy.engine.SlayerAdvisor;
 import java.awt.image.BufferedImage;
 import java.util.EnumSet;
 import java.util.Set;
@@ -76,6 +77,11 @@ class PanelContext
 	GoalPlanner goalPlanner()
 	{
 		return advisors.getGoals();
+	}
+
+	SlayerAdvisor slayer()
+	{
+		return advisors.getSlayer();
 	}
 
 	GearAdvisor gear()
